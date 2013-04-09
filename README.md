@@ -9,6 +9,7 @@ http://www.jsued.com/
 
  WWW.JSUED.COM
  喜欢机车、音乐、摄影、武术、行为学、心理学、经济学。不是很随众的理想青年。 关注JavaScript/HTML5/CSS3/Jquery/Bootstrap最新技术
+ 
  目前职位：Java developer-Web developer (专注WEB前端)
 
 
