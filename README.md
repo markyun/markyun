@@ -3,7 +3,7 @@
 对于github还不是很熟悉。希望能尽快改变这个情况。
 
  
-https://github.com/markyun/My-blog/issues  
+https://github.com/markyun/My-blog/issues   文章列表
 
 http://markyun.github.io/My-blog/ 介绍页
 
