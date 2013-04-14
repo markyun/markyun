@@ -2,6 +2,8 @@
 
 对于github还不是很熟悉。希望能尽快改变这个情况。
 
+https://github.com/markyun/My-blog
+
 附上我的一些资料：
 
 about me： 喜欢机车、音乐、摄影、武术、行为学、心理学。不随众的理想青年。关注前端开发
