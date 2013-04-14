@@ -1,47 +1,45 @@
-JSUED
-==============================
- 喜欢机车、音乐、摄影、武术、行为学、心理学。不随众的理想青年。关注前端开发
-所在地区：江苏无锡
-目前职位：前端工程师（关注 JavaScript/HTML5/CSS3/Jquery/Bootstrap/Node.js最新技术 ）
+打算在github里面来分享我的原创文章。开始时间：2013年4月14日17  
 
-个人网站：  http://www.jsued.com/（主要是收集资源用）
+对于github还不是很熟悉。希望能尽快改变这个情况。
 
-新浪微博：  http://weibo.com/920802999
+附上我的一些资料：
 
-腾讯微博：  http://t.qq.com/majinyun0802
+about me： 喜欢机车、音乐、摄影、武术、行为学、心理学。不随众的理想青年。关注前端开发
 
-Twitter ：  https://twitter.com/majinyun0802 
+所在地区： 江苏无锡  
 
-github  ：  https://github.com/markyun 
+目前职位： 前端工程师（关注 JavaScript/HTML5/CSS3/Jquery/Bootstrap/Node.js最新技术 ）
 
-豆瓣     ：  http://www.douban.com/people/majinyun0802/
+个人网站： http://www.jsued.com/ （收集资源用）
 
-Facebook：http://www.facebook.com/majinyun0802  
+新浪微博： http://weibo.com/920802999
 
-Google profiles：http://www.google.com/profiles/ markYun0802 
+腾讯微博： http://t.qq.com/majinyun0802
 
-about.me  http://about.me/majinyun 
+Twitter ： https://twitter.com/majinyun0802
 
-Google talk： majinyun0802.mark@gmail.com
+github  ： https://github.com/markyun
 
+豆瓣    ： http://www.douban.com/people/majinyun0802/
 
- 
+Facebook ： http://www.facebook.com/majinyun0802
 
-JSUED：专注提供高质量技术博文（大部分都是我收集的）；
+Google profiles：http://www.google.com/profiles/ markYun0802
 
-文章范围包含：前端开发 · 视觉设计 · 交互设计 · 用户体验 · 行为心理学 的优质文章和资源. 
+点点   ： http://jsued.diandian.com/
 
-关注 JavaScript/HTML5/CSS3/Jquery/Bootstrap/Node.js
+flickr  : http://www.flickr.com/photos/markyun/
 
-WWW.JSUED.COM。域名JSUED解释：
+Speaker Deck:  https://speakerdeck.com/markyun
 
-JS 江苏，UED全称User Experience Design，中文叫“用户体验设计”。
+about.me http://about.me/majinyun
 
-作为个人网站，提供markyun收集的一些资源和分享一些自己认为好的资源和用户体验设计学习分享。
-
-因为国内各大博客和空间有 诸多限制，十分不便，所以便想自己做一个个人的网站。于是JSUED诞生。
+Slow and Steady Wins the Race    
 
 —————————————————————————————————————— 
+别说我玩的东西多，作为一个前端开发来说，特别是一个各个环节都由你把控的前端来说，了解最新的互联网动态我觉得是非常重要的。
+同时这些站点能让我获取大量有用的信息和资源。
+
 
 莎士比亚曾说过：“人生就是一部作品。谁有生活理想和实现的计划，谁就有好的情节和结尾，谁便能写得十分精彩和引人注目。”
 
