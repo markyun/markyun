@@ -1,4 +1,8 @@
-#github里面一些原创文字。开始时间：2013年4月14日17   
+#GiHub里面一些原创文字。
+
+
+
+开始时间：2013年4月14日17   
  
 https://github.com/markyun/My-blog/issues   文章列表
 
@@ -6,7 +10,9 @@ https://github.com/markyun/My-blog/blob/master/Front-end-Developer-Questions   F
 
 http://markyun.github.io/My-blog/ 介绍页 
 
-about me： 　喜歡骑行、旅行、摄影、阅读行为心理学、热爱前端开发。
+
+
+about me： 喜歡骑行、旅行、摄影、阅读行为心理学、热爱前端开发。
 
 所在地区： 江苏无锡  
 
