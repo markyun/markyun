@@ -12,5 +12,5 @@ about me： 　喜歡骑行、旅行、摄影、阅读行为心理学、热爱�
 
 新浪微博： http://weibo.com/920802999 
 
-![Stated Clearly Image](http://ww3.sinaimg.cn/mw690/9c491e0bjw1dx8w0kqletj.jpg)  <br>
+![Stated Clearly Image](http://farm4.staticflickr.com/3757/9364862224_217bcf88a8_c.jpg)  
 
