@@ -1,4 +1,3 @@
-
 打算在github里面来分享我的原创文章。开始时间：2013年4月14日17   
  
 https://github.com/markyun/My-blog/issues   文章列表
@@ -12,3 +11,6 @@ about me： 　喜歡骑行、旅行、摄影、阅读行为心理学、热爱�
 目前职位： 前端工程师（关注 JavaScript/HTML5/CSS3/Jquery/Node.js ） 
 
 新浪微博： http://weibo.com/920802999 
+
+![Stated Clearly Image](http://ww3.sinaimg.cn/mw690/9c491e0bjw1dx8w0kqletj.jpg)  <br>
+
