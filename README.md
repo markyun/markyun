@@ -1,4 +1,4 @@
-打算在github里面来分享我的原创文章。开始时间：2013年4月14日17   
+#github里面一些原创文字。开始时间：2013年4月14日17   
  
 https://github.com/markyun/My-blog/issues   文章列表
 
