@@ -119,9 +119,9 @@
 	    4.浮动ie产生的双倍距离 #box{ float:left; width:10px; margin:0 0 0 100px; 
 	     //这种情况之下IE会产生20px的距离，这时需要设置display:inline; //使浮动忽略}
               
- （3）渐进识别的方式，从总体中逐渐排除局部。
+ （3）渐进识别的方式，从总体中逐渐排除局部。 
       首先，巧妙的使用“\9”这一标记，将IE游览器从所有情况中分离出来。
-	   接着，再次使用“+”将IE8和IE7、IE6分离开来，这样IE8已经独立识别。
+	  接着，再次使用“+”将IE8和IE7、IE6分离开来，这样IE8已经独立识别。
           demo：
           .bb{
            background-color:#f1ee18;/*所有识别*/
@@ -135,6 +135,8 @@
           Firefox下,只能使用getAttribute()获取自定义属性.  解决方法:统一通过getAttribute()获取自定义属性.
           IE下,even对象有x,y属性,但是没有pageX,pageY属性; 
           Firefox下,event对象有pageX,pageY属性,但是没有x,y属性.
+		  
+（5） （条件注释）缺点是在IE浏览器下可能会增加额外的HTTP请求数。
 
            
 】
@@ -275,6 +277,22 @@
 	当然，初始化样式会对SEO有一定的影响，但鱼和熊掌不可兼得，但力求影响最小的情况下初始化。
 
 	最简单的初始化方法就是： * {padding: 0; margin: 0;} 
+	  淘宝的样式初始化：
+		body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+		body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
+		h1, h2, h3, h4, h5, h6{ font-size:100%; }
+		address, cite, dfn, em, var { font-style:normal; }
+		code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+		small{ font-size:12px; }
+		ul, ol { list-style:none; }
+		a { text-decoration:none; }
+		a:hover { text-decoration:underline; }
+		sup { vertical-align:text-top; }
+		sub{ vertical-align:text-bottom; }
+		legend { color:#000; }
+		fieldset, img { border:0; }
+		button, input, select, textarea { font-size:100%; }
+		table { border-collapse:collapse; border-spacing:0; }
 	
 	
 ------------------------------------------------------------------
