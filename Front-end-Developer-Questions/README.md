@@ -1,15 +1,12 @@
  
-Update_Time:2014-01-07  
+##The last time that refresh: 2014-01-07  
 
-本文主要是用来总结一些常见前端面试的基本理论知识和一些经验，希望看的朋友，阅之后也要用心钻研其中的原理，
+本文主要是由于我最近在找前端开发职位，所以总结了一些常见前端面试的基本理论知识和一些经验，希望看的朋友，阅之后也要用心钻研其中的原理，
 不可投机取巧，只求面试过关，非长久之计也！
 
 另外： 
 欢迎补充你所知道的技巧、题目、答案；最好是现在网上找不到的。
-
-
-
-
+ 
 
 
 ------------------------------------------------------------------
@@ -34,7 +31,7 @@ Update_Time:2014-01-07
 2.行内元素有哪些？块级元素有哪些？
 【
 
-（1）根据CSS规范规定，每一个元素都有display属性，用于确定该元素的类型，每个元素都有默认的display值，比如div元素，默认display属性值为“block”，成为“块级”元素(block-level)；span元素的默认display属性值为“inline”，是“行内”元素。 
+（1）CSS规范规定，每个元素都有display属性，确定该元素的类型，每个元素都有默认的display值，比如div默认display属性值为“block”，成为“块级”元素；span默认display属性值为“inline”，是“行内”元素。 
 
 （2）行内元素有：a b span I bem img input select strong（强调的语气）
 
@@ -75,10 +72,11 @@ Update_Time:2014-01-07
   !important >  id > class > tag  
    important 比 内联优先级高
 】
+
 6.如何居中div,如何居中一个浮动元素?
 【
  （1） 给div设置一个宽度，然后添加margin:0 auto属性
-          如：div{ width:200px; margin:0 auto;}
+         如：div{ width:200px; margin:0 auto;}
 
  （2） 设置容器的浮动方式为相对定位
           确定容器的宽高 宽500 高 300 的层
@@ -96,18 +94,22 @@ Update_Time:2014-01-07
 7.浏览器的内核分别是什么?经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，hack 的技巧 ？
 【
 
-（1）  IE浏览器的内核Trident、 Mozilla的Gecko（跨平台）、google的WebKit、Opera 的内核Presto（跨平台）；
+（1）  IE浏览器的内核Trident、 Mozilla的Gecko（跨平台）、google的WebKit、Opera内核Presto（跨平台）；
 
-（2）     1.png24为的图片在iE6浏览器上出现背景，解决方案是做成PNG8.
-             2.浏览器默认的margin和padding不同。解决方案是加一个全局的*{margin:0;padding:0;}来统一。
-             3.IE6双边距bug:块属性标签float后，又有横行的margin情况下，在ie6显示margin比设置的大。
-               解决方案是在float的标签样式控制中加入 display:inline;将其转化为行内属性。
-               
-             4.浮动ie产生的双倍距离 #box{ float:left; width:10px; margin:0 0 0 100px; 
-              //这种情况之下IE会产生20px的距离，这时需要设置display:inline; //使浮动忽略}
+（2）   1.png24为的图片在iE6浏览器上出现背景，解决方案是做成PNG8.
+
+	    2.浏览器默认的margin和padding不同。解决方案是加一个全局的*{margin:0;padding:0;}来统一。
+		 
+	    3.IE6双边距bug:块属性标签float后，又有横行的margin情况下，在ie6显示margin比设置的大。
+	      解决方案是在float的标签样式控制中加入 display:inline;将其转化为行内属性。
+		   
+	    4.浮动ie产生的双倍距离 #box{ float:left; width:10px; margin:0 0 0 100px; 
+	     //这种情况之下IE会产生20px的距离，这时需要设置display:inline; //使浮动忽略}
               
- （3）    渐进识别的方式，从总体中逐渐排除局部。首先，巧妙的使用“\9”这一标记，将IE游览器从所有情况中分离出来。接着，再次使用“+”将IE8和IE7、IE6分离开来，此时，我们的IE8已经独立识别。
-          实例代码：
+ （3）渐进识别的方式，从总体中逐渐排除局部。
+      首先，巧妙的使用“\9”这一标记，将IE游览器从所有情况中分离出来。
+	   接着，再次使用“+”将IE8和IE7、IE6分离开来，这样IE8已经独立识别。
+          demo：
           .bb{
            background-color:#f1ee18;/*所有识别*/
           .background-color:#00deff\9; /*IE6、7、8识别*/
@@ -142,8 +144,7 @@ Update_Time:2014-01-07
 9.你怎么来实现设计图，如何高质量完成页面和脚本?
 【
 
-（1）首先划分成头部、body、脚部；。。。。。。。。。。。。
-  
+（1）首先划分成头部、body、脚部；。。。。。 
 （2）
   实现效果图是最基本的工作，精确到2px；
 
@@ -154,28 +155,63 @@ Update_Time:2014-01-07
   处理hack，兼容、写出优美的代码格式
 
   针对服务器的优化、拥抱 HTML5。
-】
-
+】 
 
 10.常使用的库有哪些？常用的前端开发工具？开发过什么应用或组件？
 【
-
+ （1）jquery 、ExtJS、easyui、kissy （淘宝）  
+ （2）Sublime Text 、Eclipse、Notepad、Firebug、HttpWatch
+ （3）城市选择插件，汽车型号选择插件、幻灯片插件。弹出层。
 】
+
 11.什么是面向对象，有什么特点？
 【
-  一切都是对象。
+  （1）一切都是对象。
+  （2） 
   抽象：抽象为了简化问题，简单即美，相信我，人类很笨
 
-  继承：为了便于扩展或改写原有的功能
+  继承：为了便于扩展或改写原有的功能   　　Object.create()来实际继承,（不行就看6） demo：var Student = Object.create(Person); Person是父类
 
   多态：为了便于改写原有的功能
 
   封装：组件化，便于理解、替换与复用，因此系统会更加灵活（后文提到封装XXX时，就不具体说这些优点了）
+  
+  （3） 数据对象有 属性配置的值。
+
+　　writable：这个属性的值是否可以改。
+
+　　configurable：这个属性的配置是否可以删除，修改。
+
+　　enumerable：这个属性是否能在for…in循环中遍历出来或在Object.keys中列举出来。
+
+　　value：属性值。
+
+   （4）当我们需要一个属性的时，Javascript引擎会先看当前对象中是否有这个属性，如果没有的话，就会查找他的Prototype对象是否有这个属性
+   
+   （5）  
+     function clone(proto) {
+
+	　　function Dummy() { }
+
+	　　Dummy.prototype = proto;
+
+	　　Dummy.prototype.constructor = Dummy;
+
+	　　return new Dummy(); //等价于Object.create(Person);
+
+	 } 
+					 function object(old) {
+					   function F() {};
+					   F.prototype = old;
+					   return new F();
+					}
+					var newObj = object(oldObject);
 
 】
+
 12.列出display的值 和position的值  相对谁定位？
 【
-（1）  可用值的说明
+ （1）  可用值的说明
   block 象块类型元素一样显示。
   none 缺省值。向行内元素类型一样显示。
   inline-block 象行内元素一样显示，但其内容象块类型元素一样显示。
@@ -190,20 +226,33 @@ Update_Time:2014-01-07
   static	默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。
   inherit	规定应该从父元素继承 position 属性的值。
 】
+
 13.页面重构怎么操作？
 
+
 14.语义化的理解？ W3C 标准的理解？ 
+
 
 15、HTML5的离线储存？
 
 
+16、为什么要初始化CSS样式。
+	考虑到浏览器的兼容问题，其实不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面差异。
+	当然，初始化样式会对SEO有一定的影响，但鱼和熊掌不可兼得，但力求影响最小的情况下初始化。
+
+	最简单的初始化方法就是： * {padding: 0; margin: 0;} 
+	
 ------------------------------------------------------------------
 #### JavaScript部分
 
 
     要点：  面向对象、继承、闭包、插件、作用域、跨域、原型链、模块化、自定义事件、异步装载回调、模板引擎。新知识：Nodejs等
 ------------------------------------------------------------------ 
+js的几种数据类型：number,string,boolean,object,undefined五种数据类型
 
+js的常见内置对象类：Date,Array,Math、Number、Boolean、String、Array、RegExp、Function、Object。
+
+js的两个类型判断方法：typeof、instanceof
  
 通常可以做一些小练习来判断TA的水平，js 虽然很灵活，但是具体的代码和实现方式能体现出一个人的全局观，随着代码规模的增长，复杂度增加，如何合理划分模块实现功能和接口的能力比较重要。 
 
@@ -231,10 +280,68 @@ Update_Time:2014-01-07
 
 4.什么是闭包？
 【
-  
+  （1）闭包就是在函数执行后，函数的“堆栈”的数据并不释放（在内存中维持一个变量）
+  （2）这个函数的局部变量全部集合在闭包内、保护函数内的变量安全
+  （3）当在一个函数内定义另外一个函数就会产生闭包
+  （4）可以把外层函数理解成一个类，变量理解为静态成员，内部函数是成员方法。 
+  （5） 闭包返回的函数内部不能有return.(因为这样就真的结束了)
+        执行闭包后,闭包内部变量会存在,而闭包内部函数的内部变量不会存在.
+		  function say667() {
+			// Local variable that ends up within closure
+			var num = 666;
+			var sayAlert = function() { alert(num); }
+			num++;
+			return sayAlert;
+		}
+		 
+		 var sayAlert = say667();
+		 sayAlert()
+		 执行结果应该弹出的667 
+		 
+		 Singleton ：
+			 var singleton = function () {
+				var privateVariable;
+				function privateFunction(x) {
+					...privateVariable...
+				}
+			 
+				return {
+					firstMethod: function (a, b) {
+						...privateVariable...
+					},
+					secondMethod: function (c) {
+						...privateFunction()...
+					}
+				};
+			}();
 
 】
 
+5.如何判断一个对象是否属于某个类？
+【
+    使用instanceof、使用constructor
+       if(a instanceof Person){
+           alert('yes');
+       }
+】
+
+6.new操作符具体干了什么呢?
+【
+		var obj  = {};
+		obj.__proto__ = Base.prototype;
+		Base.call(obj);	 
+】
+
+7.JSON 的了解
+【
+
+】
+8.js延迟加载的方式有哪些
+【
+defer和async、动态创建DOM方式（用得最多）、按需异步载入js
+】
+
+		
 5.ajax 是什么?ajax 的交互模型?同步和异步的区别?如何解决跨域问题?
 【
   1. 通过异步模式，提升了用户体验
@@ -317,9 +424,10 @@ Update_Time:2014-01-07
   （7） 图片预加载，将样式表放在顶部，将脚本放在底部  加上时间戳。
 
   （8） 避免在页面的主体布局中使用table，table要等其中的内容完全下载之后才会显示出来，显示比div+css布局慢。
-
-4、初始化CSS样式。
-
+ 
+ 
+ 
+ 4.
 
 
 11.谈谈你认为怎样做能是项目做的更好？
@@ -328,11 +436,30 @@ Update_Time:2014-01-07
 
 12.你对前端界面工程师这个职位是怎么样理解的？它的前景会怎么样？
 
+
 13.加班的看法
 
     加班就像借钱，原则应当是------救急不救穷
+	
 
+14.如何设计突发大规模并发架构？
 
-
+	 
+	 
+	
+	
+	
+	
+   作为一名前端工程师，无论工作年头长短都应该必须掌握的知识点有：
+		1、DOM结构 —— 两个节点之间可能存在哪些关系以及如何在节点之间任意移动。
+		2、DOM操作 ——如何添加、移除、移动、复制、创建和查找节点等。
+		3、事件 —— 如何使用事件，以及IE和标准DOM事件模型之间存在的差别。
+		4、XMLHttpRequest —— 这是什么、怎样完整地执行一次GET请求、怎样检测错误。
+		5、严格模式与混杂模式 —— 如何触发这两种模式，区分它们有何意义。
+		6、盒模型 —— 外边距、内边距和边框之间的关系，及IE8以下版本的浏览器中的盒模型
+		7、块级元素与行内元素 —— 怎么用CSS控制它们、以及如何合理的使用它们
+		8、浮动元素——怎么使用它们、它们有什么问题以及怎么解决这些问题。
+		9、HTML与XHTML——二者有什么区别，你觉得应该使用哪一个并说出理由。
+		10、JSON —— 作用、用途、设计结构。
 待完善、、、、、、、
 微博：http://weibo.com/920802999
