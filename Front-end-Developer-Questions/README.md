@@ -25,6 +25,7 @@
 （3）、在混杂模式中，页面以宽松的向后兼容的方式显示。模拟老式浏览器的行为以防止老站点无法工作。
 
 （4）、DOCTYPE不存在或格式不正确会导致文档以混杂模式呈现。
+
 】
 
 
@@ -46,6 +47,7 @@
 （1）有两种， IE 盒子模型、标准 W3C 盒子模型；IE 的 content 部分包含了 border 和 pading  （需要加上文档type）
 
 （2）盒模型： 内容(content)的宽度和高度、填充(padding)、边界(margin)、 边框(border)、
+
 】
 
 
@@ -59,6 +61,7 @@
 （3）、import只有在IE5以上的才能识别，而link是XHTML标签，无兼容问题。
 
 （4）、link方式的样式的权重 高于@import的权重
+
 】
 
 
@@ -77,6 +80,7 @@
   优先级为
   !important >  id > class > tag  
    important 比 内联优先级高
+   
 】
 
 
@@ -96,6 +100,7 @@
           left:50%;
           top:50%;
         }
+		
 】
  
 
@@ -148,6 +153,7 @@
   表单控件，calendar、date、time、email、url、search
   CSS3实现圆角，阴影，对文字加特效，增加了更多的CSS选择器  多背景 rgba
   新的技术webworker websockt
+  
 】
 
 
@@ -167,6 +173,7 @@
   处理hack，兼容、写出优美的代码格式
 
   针对服务器的优化、拥抱 HTML5。
+  
 】 
 
 
@@ -176,6 +183,7 @@
  （1）jquery 、ExtJS、easyui、kissy （淘宝）  
  （2）Sublime Text 、Eclipse、Notepad、Firebug、HttpWatch
  （3）城市选择插件，汽车型号选择插件、幻灯片插件。弹出层。
+ 
 】
 
 
@@ -223,6 +231,7 @@
 					   return new F();
 					}
 					var newObj = object(oldObject);
+					
 
 】
 
@@ -244,6 +253,7 @@
   生成相对定位的元素，相对于其正常位置进行定位。 
   static	默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。
   inherit	规定应该从父元素继承 position 属性的值。
+  
 】
 
 
@@ -365,6 +375,7 @@ js的两个类型判断方法：typeof、instanceof
 		var obj  = {};
 		obj.__proto__ = Base.prototype;
 		Base.call(obj);	 
+		
 】
 
 
@@ -377,6 +388,7 @@ js的两个类型判断方法：typeof、instanceof
 【
 
 defer和async、动态创建DOM方式（用得最多）、按需异步载入js
+
 】
 
 	
@@ -424,10 +436,12 @@ defer和async、动态创建DOM方式（用得最多）、按需异步载入js
 （优点）因为Node是基于事件驱动和无阻塞的，所以非常适合处理并发请求，因此构建在Node上的代理服务器相比其他技术实现（如Ruby）的服务器表现要好得多。此外，与Node代理服务器交互的客户端代码是由javascript语言编写的，因此客户端和服务器端都用同一种语言编写，这是非常美妙的事情。
 
 （缺点）Node是一个相对新的开源项目，所以不太稳定，它总是一直在变，而且缺少足够多的第三方库支持。看起来，就像是Ruby/Rails当年的样子。
+
 】
 
 
 8.异步加载的方式
+
 【 
 
   (1) defer，只支持IE
@@ -441,6 +455,7 @@ defer和async、动态创建DOM方式（用得最多）、按需异步载入js
   document.write只能重绘整个页面
   
   innerHTML可以重绘页面的一部分
+  
 】
 
 
