@@ -24,3 +24,4 @@ about me： 喜歡骑行、旅行、摄影、阅读行为心理学、热爱前�
 
 ![Stated Clearly Image](http://farm4.staticflickr.com/3757/9364862224_217bcf88a8_c.jpg)  
 
+配图是 无锡-蠡湖 ，与太湖接壤。喜欢下班后，在湖边坐一会然后回家。
