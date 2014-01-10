@@ -1,10 +1,10 @@
 #2014年最新前端开发面试题
 
-####The last time that refresh: 2014-01-09  
+####The last time that refresh: 2014-01-10
 
 本文主要是由于我最近在找前端开发职位，所以总结了一些常见前端面试（多数来源于网络），希望看的朋友，阅后也要用心钻研其中的原理，重要知识需要系统学习，形成自己的知识链；
 
-####万不可投机取巧。只求当时过关，非长久之计也！
+###万不可投机取巧。只求当时过关，非长久之计也！
 
 
 ####面试有几点需要注意：（来源 @wintercn）
@@ -24,6 +24,7 @@
  
 
 格式不太美观，容我学一下markdown语法再来排版。
+
 
  Begin！
  
@@ -133,10 +134,10 @@
 【
 
 （1） 
-            IE浏览器的内核Trident、 Mozilla的Gecko（跨平台）、google的WebKit、Opera内核Presto（跨平台）；
+        IE浏览器的内核Trident、 Mozilla的Gecko（跨平台）、google的WebKit、Opera内核Presto（跨平台）；
 
 （2）      
-            1.png24为的图片在iE6浏览器上出现背景，解决方案是做成PNG8.
+        1.png24为的图片在iE6浏览器上出现背景，解决方案是做成PNG8.
 
 	    2.浏览器默认的margin和padding不同。解决方案是加一个全局的*{margin:0;padding:0;}来统一。
 		 
@@ -256,7 +257,7 @@
 	  
  （2）Sublime Text 、Eclipse、Notepad、Firebug、HttpWatch
  
- （3）城市选择插件，汽车型号选择插件、幻灯片插件。弹出层。（写过开源程序，加载器，引擎更好）
+ （3）城市选择插件，汽车型号选择插件、幻灯片插件。弹出层。（写过开源程序，加载器，js引擎更好）
  
 】
 
@@ -264,7 +265,7 @@
 11.什么是面向对象，有什么特点？
 【
 
-  （1）一切都是对象。
+  （1）。。。。。
   （2） 
 	  抽象：抽象为了简化问题，简单即美，相信我，人类很笨
 	
@@ -487,14 +488,25 @@
 【
 
 】
-27.
+
+27.WEB应用从服务器主动推送Data到客户端有那些方式？
+【
+
+		html5 websoket
+		WebSocket通过Flash
+		XHR长时间连接
+		XHR Multipart Streaming
+		不可见的Iframe
+		<script>标签的长时间连接(可跨域)
+
+】
 ------------------------------------------------------------------
 #JavaScript部分
 
 
     要点：  面向对象、继承、闭包、插件、作用域、跨域、原型链、模块化、自定义事件、异步装载回调、模板引擎。新知识：Nodejs等
 ------------------------------------------------------------------ 
-	js的几种数据类型：number,string,boolean,object,undefined五种数据类型
+	js的几种数据类型：number,string,boolean,object,undefined
 	
 	js的常见内置对象类：Date,Array,Math、Number、Boolean、String、Array、RegExp、Function、Object。
 	
@@ -531,12 +543,8 @@
 
 4.什么是闭包，为什么要用？
 【
-
-  （1）闭包就是在函数执行后，函数的“堆栈”的数据并不释放（在内存中维持一个变量）
-  （2）这个函数的局部变量全部集合在闭包内、保护函数内的变量安全
-  （3）当在一个函数内定义另外一个函数就会产生闭包
-  （4）可以把外层函数理解成一个类，变量理解为静态成员，内部函数是成员方法。 
-  （5） 闭包返回的函数内部不能有return.(因为这样就真的结束了)
+   。。。。。。
+   
         执行闭包后,闭包内部变量会存在,而闭包内部函数的内部变量不会存在.
 		  function say667() {
 			// Local variable that ends up within closure
@@ -573,7 +581,7 @@
 5.如何判断一个对象是否属于某个类？
 【
 
-    使用instanceof、使用constructor
+    使用instanceof、
        if(a instanceof Person){
            alert('yes');
        }
