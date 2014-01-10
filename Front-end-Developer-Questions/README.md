@@ -2,8 +2,7 @@
 
 ####The last time that refresh: 2014-01-09  
 
-本文主要是由于我最近在找前端开发职位，所以总结了一些常见前端面试的基本理论知识和一些经验，希望看的朋友，阅之后也要用心钻研其中的原理，
-不可投机取巧，只求面试过关，非长久之计也！
+本文主要是由于我最近在找前端开发职位，所以总结了一些常见前端面试，希望看的朋友，阅后也要用心钻研其中的原理，形成自己的知识链；不可投机取巧，只求面试过关，非长久之计也！
 
 
 ##几点需要注意的：（来源 @wintercn）
@@ -49,10 +48,10 @@
 【
 
 
-（1）CSS规范规定，每个元素都有display属性，确定该元素的类型，每个元素都有默认的display值，比如div默认display属性值为“block”，成为“块级”元素；span默认display属性值为“inline”，是“行内”元素。 
+/*1  */ CSS规范规定，每个元素都有display属性，确定该元素的类型，每个元素都有默认的display值，比如div默认display属性值为“block”，成为“块级”元素；span默认display属性值为“inline”，是“行内”元素。 
 
 
-（2）行内元素有：a b span I bem img input select strong（强调的语气）
+/*2  */ 行内元素有：a b span I bem img input select strong（强调的语气）
 
     块级元素有：div ul ol lidl dt dd h1 h2 h3 h4…p  
 】
