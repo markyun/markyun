@@ -124,9 +124,11 @@
 7.浏览器的内核分别是什么?经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，hack 的技巧 ？
 【
 
-（1）  IE浏览器的内核Trident、 Mozilla的Gecko（跨平台）、google的WebKit、Opera内核Presto（跨平台）；
+（1） 
+            IE浏览器的内核Trident、 Mozilla的Gecko（跨平台）、google的WebKit、Opera内核Presto（跨平台）；
 
-（2）   1.png24为的图片在iE6浏览器上出现背景，解决方案是做成PNG8.
+（2）      
+            1.png24为的图片在iE6浏览器上出现背景，解决方案是做成PNG8.
 
 	    2.浏览器默认的margin和padding不同。解决方案是加一个全局的*{margin:0;padding:0;}来统一。
 		 
@@ -136,7 +138,8 @@
 	    4.浮动ie产生的双倍距离 #box{ float:left; width:10px; margin:0 0 0 100px; 
 	     //这种情况之下IE会产生20px的距离，这时需要设置display:inline; //使浮动忽略}
               
- （3）渐进识别的方式，从总体中逐渐排除局部。 
+ （3）
+      渐进识别的方式，从总体中逐渐排除局部。 
       首先，巧妙的使用“\9”这一标记，将IE游览器从所有情况中分离出来。
 	  接着，再次使用“+”将IE8和IE7、IE6分离开来，这样IE8已经独立识别。
           demo：
@@ -148,7 +151,8 @@
           
           }
           
-（4）  IE下,可以使用获取常规属性的方法来获取自定义属性,也可以使用getAttribute()获取自定义属性;
+（4）    
+	  IE下,可以使用获取常规属性的方法来获取自定义属性,也可以使用getAttribute()获取自定义属性;
           Firefox下,只能使用getAttribute()获取自定义属性.  解决方法:统一通过getAttribute()获取自定义属性.
           IE下,even对象有x,y属性,但是没有pageX,pageY属性; 
           Firefox下,event对象有pageX,pageY属性,但是没有x,y属性.
@@ -192,11 +196,11 @@
 	   
 	   当然最好的方式是直接使用成熟的框架、使用最多的是html5shim框架
 	   
-	   <!--[if lt IE 9]>
+	   < !--[if lt IE 9]>
 	   
-	   <script> src="http://html5shim.googlecode.com/svn/trunk/html5.js"</script>
+	   < script> src="http://html5shim.googlecode.com/svn/trunk/html5.js"</script>
 	
-	   <![endif]-->
+	   < ![endif]-->
 		   
 	   
 】
@@ -209,15 +213,15 @@
 
 （2）
 
-  实现效果图是最基本的工作，精确到2px；
-
-  与设计师，产品经理的沟通和项目的参与
-
-  做好的页面结构，页面重构和用户体验
-
-  处理hack，兼容、写出优美的代码格式
-
-  针对服务器的优化、拥抱 HTML5。
+	  实现效果图是最基本的工作，精确到2px；
+	
+	  与设计师，产品经理的沟通和项目的参与
+	
+	  做好的页面结构，页面重构和用户体验
+	
+	  处理hack，兼容、写出优美的代码格式
+	
+	  针对服务器的优化、拥抱 HTML5。
   
 】 
 
@@ -241,45 +245,45 @@
 
   （1）一切都是对象。
   （2） 
-  抽象：抽象为了简化问题，简单即美，相信我，人类很笨
-
-  继承：为了便于扩展或改写原有的功能   　　Object.create()来实际继承,（不行就看6） demo：var Student = Object.create(Person); Person是父类
-
-  多态：为了便于改写原有的功能
-
-  封装：组件化，便于理解、替换与复用，因此系统会更加灵活（后文提到封装XXX时，就不具体说这些优点了）
+	  抽象：抽象为了简化问题，简单即美，相信我，人类很笨
+	
+	  继承：为了便于扩展或改写原有的功能   　　Object.create()来实际继承,（不会看6） demo：var Student = Object.create(Person); Person是父类
+	
+	  多态：为了便于改写原有的功能
+	
+	  封装：组件化，便于理解、替换与复用，因此系统会更加灵活（后文提到封装XXX时，就不具体说这些优点了）
   
   （3） 数据对象有 属性配置的值。
 
-　　writable：这个属性的值是否可以改。
-
-　　configurable：这个属性的配置是否可以删除，修改。
-
-　　enumerable：这个属性是否能在for…in循环中遍历出来或在Object.keys中列举出来。
-
-　　value：属性值。
+	　　writable：这个属性的值是否可以改。
+	
+	　　configurable：这个属性的配置是否可以删除，修改。
+	
+	　　enumerable：这个属性是否能在for…in循环中遍历出来或在Object.keys中列举出来。
+	
+	　　value：属性值。
 
    （4）当我们需要一个属性的时，Javascript引擎会先看当前对象中是否有这个属性，如果没有的话，就会查找他的Prototype对象是否有这个属性
    
    （5）  
-     function clone(proto) {
-
-	　　function Dummy() { }
-
-	　　Dummy.prototype = proto;
-
-	　　Dummy.prototype.constructor = Dummy;
-
-	　　return new Dummy(); //等价于Object.create(Person);
-
-	 } 
-				
-     				function object(old) {
-					   function F() {};
-					   F.prototype = old;
-					   return new F();
-					}
-					var newObj = object(oldObject);
+	     function clone(proto) {
+	
+		　　function Dummy() { }
+	
+		　　Dummy.prototype = proto;
+	
+		　　Dummy.prototype.constructor = Dummy;
+	
+		　　return new Dummy(); //等价于Object.create(Person);
+	
+		 } 
+					
+	     				function object(old) {
+						   function F() {};
+						   F.prototype = old;
+						   return new F();
+						}
+						var newObj = object(oldObject);
 					
 
 】
@@ -289,19 +293,19 @@
 【
 
  （1）  可用值的说明
-  block 象块类型元素一样显示。
-  none 缺省值。向行内元素类型一样显示。
-  inline-block 象行内元素一样显示，但其内容象块类型元素一样显示。
-  list-item 象块类型元素一样显示，并添加样式列表标记。
+	  block 象块类型元素一样显示。
+	  none 缺省值。向行内元素类型一样显示。
+	  inline-block 象行内元素一样显示，但其内容象块类型元素一样显示。
+	  list-item 象块类型元素一样显示，并添加样式列表标记。
   
  （2） absolute	
-  生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。 
-  fixed	
-  生成绝对定位的元素，相对于浏览器窗口进行定位。 
-  relative	
-  生成相对定位的元素，相对于其正常位置进行定位。 
-  static	默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。
-  inherit	规定应该从父元素继承 position 属性的值。
+	  生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。 
+	  fixed	
+	  生成绝对定位的元素，相对于浏览器窗口进行定位。 
+	  relative	
+	  生成相对定位的元素，相对于其正常位置进行定位。 
+	  static	默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。
+	  inherit	规定应该从父元素继承 position 属性的值。
   
 】
 
@@ -463,11 +467,11 @@
 
     要点：  面向对象、继承、闭包、插件、作用域、跨域、原型链、模块化、自定义事件、异步装载回调、模板引擎。新知识：Nodejs等
 ------------------------------------------------------------------ 
-js的几种数据类型：number,string,boolean,object,undefined五种数据类型
-
-js的常见内置对象类：Date,Array,Math、Number、Boolean、String、Array、RegExp、Function、Object。
-
-js的两个类型判断方法：typeof、instanceof
+	js的几种数据类型：number,string,boolean,object,undefined五种数据类型
+	
+	js的常见内置对象类：Date,Array,Math、Number、Boolean、String、Array、RegExp、Function、Object。
+	
+	js的两个类型判断方法：typeof、instanceof
  
 通常可以做一些小练习来判断TA的水平，js 虽然很灵活，但是具体的代码和实现方式能体现出一个人的全局观，随着代码规模的增长，复杂度增加，如何合理划分模块实现功能和接口的能力比较重要。 
 
@@ -576,30 +580,30 @@ defer和async、动态创建DOM方式（用得最多）、按需异步载入js
 9.ajax 是什么?ajax 的交互模型?同步和异步的区别?如何解决跨域问题?
 【
 
-  1. 通过异步模式，提升了用户体验
-  
-  2. 优化了浏览器和服务器之间的传输，减少不必要的数据往返，减少了带宽占用
-  
-  3. Ajax引擎在客户端运行，承担了一部分本来由服务器承担的工作，从而减少了大用户量下的服务器负载。
-  
-  2. Ajax的最大的特点是什么。
-  
-  Ajax可以实现动态不刷新（局部刷新）
-  readyState属性   请求的状态 有5个可取值： 0=未初始化 ，1=正在加载 2=以加载，3=交互中，4=完成
+	  1. 通过异步模式，提升了用户体验
+	  
+	  2. 优化了浏览器和服务器之间的传输，减少不必要的数据往返，减少了带宽占用
+	  
+	  3. Ajax引擎在客户端运行，承担了一部分本来由服务器承担的工作，从而减少了大用户量下的服务器负载。
+	  
+	  2. Ajax的最大的特点是什么。
+	  
+	  Ajax可以实现动态不刷新（局部刷新）
+	  readyState属性   请求的状态 有5个可取值： 0=未初始化 ，1=正在加载 2=以加载，3=交互中，4=完成
   
   ajax的缺点
   
-  1、ajax不支持浏览器back按钮。
-  
-  2、安全问题 AJAX暴露了与服务器交互的细节。
-  
-  3、对搜索引擎的支持比较弱。
-  
-  4、破坏了程序的异常机制。
-  
-  5、不容易调试。
-
- 跨域： jsonp、 iframe、window.name、HTML5中新引进的window.postMessage、服务器上设置代理页面
+	  1、ajax不支持浏览器back按钮。
+	  
+	  2、安全问题 AJAX暴露了与服务器交互的细节。
+	  
+	  3、对搜索引擎的支持比较弱。
+	  
+	  4、破坏了程序的异常机制。
+	  
+	  5、不容易调试。
+	
+	 跨域： jsonp、 iframe、window.name、HTML5中新引进的window.postMessage、服务器上设置代理页面
 
 】
 
@@ -655,23 +659,23 @@ defer和async、动态创建DOM方式（用得最多）、按需异步载入js
 2、频繁操作的DOM，先缓存起来再操作。用Jquery的链式调用更好。    比如：var str=$("a").attr("href");
 
 3、前端开发的优化问题（雅虎14条性能优化原则）。
-  （1） 减少http请求次数：CSS Sprites, JS、CSS源码压缩、图片大小控制合适；网页Gzip，CDN托管，data缓存 ，图片服务器。
-
-  （2） 前端模板 JS+数据，减少由于HTML标签导致的带宽浪费，前端用变量保存AJAX请求结果，每次操作本地变量，不用请求，减少请求次数
-
-  （3） 用innerHTML代替DOM操作，减少DOM操作次数，优化javascript性能。
-
-  （4） 当需要设置的样式很多时设置className而不是直接操作style。
-
-  （5） 少用全局变量、缓存DOM节点查找的结果。减少IO读取操作。
-
-  （6） 避免使用CSS Expression（css表达式)又称Dynamic properties(动态属性)。
-
-  （7） 图片预加载，将样式表放在顶部，将脚本放在底部  加上时间戳。
-
-  （8） 避免在页面的主体布局中使用table，table要等其中的内容完全下载之后才会显示出来，显示比div+css布局慢。
- 
- 
+	  （1） 减少http请求次数：CSS Sprites, JS、CSS源码压缩、图片大小控制合适；网页Gzip，CDN托管，data缓存 ，图片服务器。
+	
+	  （2） 前端模板 JS+数据，减少由于HTML标签导致的带宽浪费，前端用变量保存AJAX请求结果，每次操作本地变量，不用请求，减少请求次数
+	
+	  （3） 用innerHTML代替DOM操作，减少DOM操作次数，优化javascript性能。
+	
+	  （4） 当需要设置的样式很多时设置className而不是直接操作style。
+	
+	  （5） 少用全局变量、缓存DOM节点查找的结果。减少IO读取操作。
+	
+	  （6） 避免使用CSS Expression（css表达式)又称Dynamic properties(动态属性)。
+	
+	  （7） 图片预加载，将样式表放在顶部，将脚本放在底部  加上时间戳。
+	
+	  （8） 避免在页面的主体布局中使用table，table要等其中的内容完全下载之后才会显示出来，显示比div+css布局慢。
+	 
+	 
  
  4.
 
@@ -733,8 +737,11 @@ defer和async、动态创建DOM方式（用得最多）、按需异步载入js
 		他们也许不是产品经理，但是产品的质量几乎都是由他们来决定。
 		
 		
-		#什么都略懂一点生活更美好！
+		什么都略懂一点生活更美好！
 		
 		
-待完善、、、、、、、
-微博：http://weibo.com/920802999
+		不断完善中。
+		
+		喜歡机车、骑行、旅行、摄影、行为心理学的理想青年，前端开发攻城师。
+		
+		联系微博：http://weibo.com/920802999
