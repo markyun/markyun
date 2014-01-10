@@ -2,10 +2,12 @@
 
 ####The last time that refresh: 2014-01-09  
 
-本文主要是由于我最近在找前端开发职位，所以总结了一些常见前端面试，希望看的朋友，阅后也要用心钻研其中的原理，形成自己的知识链；不可投机取巧，只求面试过关，非长久之计也！
+本文主要是由于我最近在找前端开发职位，所以总结了一些常见前端面试，希望看的朋友，阅后也要用心钻研其中的原理，重要知识需要系统学习，形成自己的知识链；
+
+##万不可投机取巧。只求当时面试过关，非长久之计也！！！！！！
 
 
-##几点需要注意的：（来源 @wintercn）
+##面试有几点需要注意：（来源 @wintercn）
 
 面试题目会根据你的等级和职位变化，入门级到专家级：【范围↑、深度↑、方向↑】；类型： 技术视野、项目细节、理论知识型题，算法题，开放性题，案例题。
 
@@ -18,11 +20,13 @@
 
 另外： 
 
-欢迎补充你所知道的技巧、题目、答案；最好是现在网上找不到的。
+资料刚刚收集，答案正确性有些不够正确和全面，欢迎补充你所知道的答案、技巧、题目；最好是现在网上找不到的。
  
 
+格式不太美观，容我学一下markdown语法再来排版。
 
  Begin！
+ 
  
 ------------------------------------------------------------------
 #HTML、CSS部分
@@ -53,7 +57,7 @@
 
 （2） 行内元素有：a b span I bem img input select strong（强调的语气）
 
-    块级元素有：div ul ol lidl dt dd h1 h2 h3 h4…p  
+      块级元素有：div ul ol lidl dt dd h1 h2 h3 h4…p  
 】
 
 3.CSS的盒子模型？
@@ -84,6 +88,7 @@
 【
 
   ID 和 Class
+  
   Class 可继承、   font-size font-family color可以继承  列表 UL LI DL DD DT 可继承
 
   不可继承 ：border padding margin width height 
@@ -93,7 +98,9 @@
   载入样式以最后载入的定位为准
 
   优先级为
+  
   !important >  id > class > tag  
+  
    important 比 内联优先级高
    
    如果父元素定义字体大小12px，子元素定义1em，大小就是12px。
@@ -110,6 +117,7 @@
  （2） 设置容器的浮动方式为相对定位
           确定容器的宽高 宽500 高 300 的层
           设置层的外边距
+          
          .Div {
           Width:500px ; height:300px;
           Margin: -150px 0 0 -250px;
@@ -133,27 +141,33 @@
 	    2.浏览器默认的margin和padding不同。解决方案是加一个全局的*{margin:0;padding:0;}来统一。
 		 
 	    3.IE6双边距bug:块属性标签float后，又有横行的margin情况下，在ie6显示margin比设置的大。
+	    
 	      解决方案是在float的标签样式控制中加入 display:inline;将其转化为行内属性。
 		   
 	    4.浮动ie产生的双倍距离 #box{ float:left; width:10px; margin:0 0 0 100px; 
+	    
 	     //这种情况之下IE会产生20px的距离，这时需要设置display:inline; //使浮动忽略}
               
  （3）
       渐进识别的方式，从总体中逐渐排除局部。 
+      
       首先，巧妙的使用“\9”这一标记，将IE游览器从所有情况中分离出来。
 	  接着，再次使用“+”将IE8和IE7、IE6分离开来，这样IE8已经独立识别。
           demo：
-          .bb{
-           background-color:#f1ee18;/*所有识别*/
-          .background-color:#00deff\9; /*IE6、7、8识别*/
-          +background-color:#a200ff;/*IE6、7识别*/
-          _background-color:#1e0bd1;/*IE6识别*/
           
-          }
+          
+	          .bb{
+	           background-color:#f1ee18;/*所有识别*/
+	          .background-color:#00deff\9; /*IE6、7、8识别*/
+	          +background-color:#a200ff;/*IE6、7识别*/
+	          _background-color:#1e0bd1;/*IE6识别*/
+	          
+	          }
           
 （4）    
 	  IE下,可以使用获取常规属性的方法来获取自定义属性,也可以使用getAttribute()获取自定义属性;
           Firefox下,只能使用getAttribute()获取自定义属性.  解决方法:统一通过getAttribute()获取自定义属性.
+          
           IE下,even对象有x,y属性,但是没有pageX,pageY属性; 
           Firefox下,event对象有pageX,pageY属性,但是没有x,y属性.
 		  
@@ -248,7 +262,11 @@
   （2） 
 	  抽象：抽象为了简化问题，简单即美，相信我，人类很笨
 	
-	  继承：为了便于扩展或改写原有的功能   　　Object.create()来实际继承,（不会看6） demo：var Student = Object.create(Person); Person是父类
+	  继承：为了便于扩展或改写原有的功能   　
+	        
+	        Object.create()来实际继承,（不会看6） 
+	        
+	        demo：var Student = Object.create(Person); Person是父类
 	
 	  多态：为了便于改写原有的功能
 	
@@ -329,6 +347,7 @@
 	当然，初始化样式会对SEO有一定的影响，但鱼和熊掌不可兼得，但力求影响最小的情况下初始化。
 
 	最简单的初始化方法就是： * {padding: 0; margin: 0;} 
+	
 	  淘宝的样式初始化：
 		body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
 		body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
@@ -379,7 +398,7 @@
 】
 	
 	
-#太深入的题了，一般人都不知道：
+#深入题了，一般都不知道：
 
 18.absolute的containing block计算方式跟正常流有什么不同？
 【
@@ -462,6 +481,7 @@
 【
 
 】
+27.
 ------------------------------------------------------------------
 #JavaScript部分
 
@@ -643,12 +663,34 @@ defer和async、动态创建DOM方式（用得最多）、按需异步载入js
 】
 
 13.告诉我答案是多少？
+【
 	(function(x){
 		delete x;
 		alert(x);
 	})(1+5);
-	函数参数无法通过delete删除，delete只能删除通过for in访问的属性。当然，删除失败也不会报错，所以代码运行会弹出“1”。
+	函数参数无法delete删除，delete只能删除通过for in访问的属性。当然，删除失败也不会报错，所以代码运行会弹出“1”。
+	
+】
+	
+14.JS中的call()和apply()方法的区别？
+【
 
+  例子中用 add 来替换 sub，add.call(sub,3,1) == add(3,1) ，所以运行结果为：alert(4); 
+
+  注意：js 中的函数其实是对象，函数名是对 Function 对象的引用。
+
+	function add(a,b)
+	{
+	    alert(a+b);
+	}
+	
+	function sub(a,b)
+	{
+	    alert(a-b);
+	}
+	
+	add.call(sub,3,1); 
+】
 
 ------------------------------------------------------------------
 #其他部分
@@ -657,9 +699,11 @@ defer和async、动态创建DOM方式（用得最多）、按需异步载入js
 ------------------------------------------------------------------
 
 1、基于Class的选择性的性能相对于Id选择器开销很大，因为需遍历所有DOM元素。
+
 2、频繁操作的DOM，先缓存起来再操作。用Jquery的链式调用更好。    比如：var str=$("a").attr("href");
 
 3、前端开发的优化问题（雅虎14条性能优化原则）。
+
 	  （1） 减少http请求次数：CSS Sprites, JS、CSS源码压缩、图片大小控制合适；网页Gzip，CDN托管，data缓存 ，图片服务器。
 	
 	  （2） 前端模板 JS+数据，减少由于HTML标签导致的带宽浪费，前端用变量保存AJAX请求结果，每次操作本地变量，不用请求，减少请求次数
@@ -725,15 +769,25 @@ defer和async、动态创建DOM方式（用得最多）、按需异步载入js
 
 	
    作为一名前端工程师，无论工作年头长短都应该必须掌握的知识点有：
+   
 		1、DOM结构 —— 两个节点之间可能存在哪些关系以及如何在节点之间任意移动。
+		
 		2、DOM操作 ——如何添加、移除、移动、复制、创建和查找节点等。
+		
 		3、事件 —— 如何使用事件，以及IE和标准DOM事件模型之间存在的差别。
+		
 		4、XMLHttpRequest —— 这是什么、怎样完整地执行一次GET请求、怎样检测错误。
+		
 		5、严格模式与混杂模式 —— 如何触发这两种模式，区分它们有何意义。
+		
 		6、盒模型 —— 外边距、内边距和边框之间的关系，及IE8以下版本的浏览器中的盒模型
+		
 		7、块级元素与行内元素 —— 怎么用CSS控制它们、以及如何合理的使用它们
+		
 		8、浮动元素——怎么使用它们、它们有什么问题以及怎么解决这些问题。
+		
 		9、HTML与XHTML——二者有什么区别，你觉得应该使用哪一个并说出理由。
+		
 		10、JSON —— 作用、用途、设计结构。
 		
 		
@@ -748,6 +802,6 @@ defer和async、动态创建DOM方式（用得最多）、按需异步载入js
 		
 		不断完善中。
 		
-		喜歡机车、骑行、旅行、摄影、行为心理学的理想青年，前端开发攻城师。
+		喜欢骑行、旅行、摄影、行为心理学，前端开发攻城师。
 		
 		联系微博：http://weibo.com/920802999
