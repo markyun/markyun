@@ -1,44 +1,44 @@
-2014年最新前端开发面试题
-======
+#2014年最新前端开发面试题
 
-The last time that refresh: 2014/1/13 12:37:57 
--------
+##The last time that refresh: 2014/3/11 13:47:07  
 
-本文主要是由于我最近在找前端开发职位，所以总结了一些常见前端面试（多数来源于网络），希望看的朋友，阅后也要用心钻研其中的原理，重要知识需要系统学习，形成自己的知识链。
+
+本文总结了一些常见前端面试（多数源于网络），希望阅后也要用心钻研其中的原理，重要知识需要系统学习，透彻学习，形成自己的知识链。
 
 ###万不可投机取巧。只求当时过关，非长久之计也！
 
 
-####面试有几点需要注意：（来源 @wintercn）
+####面试有几点需要注意：（来源程劭非老师 Github:@wintercn  |  Weibo:寒冬winter）
 
-面试题目会根据你的等级和职位变化，入门级到专家级：范围↑、深度↑、方向↑;
-类型： 技术视野、项目细节、理论知识型题，算法题，开放性题，案例题。
+1. 面试题目： 根据你的等级和职位变化，入门级到专家级：范围↑、深度↑、方向↑。
 
-进行追问，可以确保问到你开始不懂或者面试官开始不懂为止，这样可以大大延展题目的区分度和深度，知道你的实际能力。因为这种关联知识是长时期的学习，绝对不是临时记得住。
+1. 题目类型： 技术视野、项目细节、理论知识型题，算法题，开放性题，案例题。
 
-回答问题再棒，面试官（一般是你顶头上司面你），会考虑，我要不要这个人做我的同事？  所以态度很重要。
+1. 进行追问： 可以确保问到你开始不懂或者面试官开始不懂为止，这样可以大大延展题目的区分度和深度，知道你的实际能力。因为这种关联知识是长时期的学习，绝对不是临时记得住。
 
-资深的工程师能把absolute和relative弄混，这样的人不要也罢，因为团队需要的你这个人具有可以依靠的才能（靠谱）。
+1. 回答问题再棒，面试官（一般是你的直接领导面试），会考虑我要不要这个人做我的同事？所以态度很重要。（感觉像是相亲一样）
+
+1. 资深的工程师能把absolute和relative弄混，这样的人不要也罢，因为团队需要的你这个人具有可以依靠的才能（靠谱）。
 
 
 另外： 
 
-资料刚刚收集，答案有些不够正确和全面，欢迎补充你所知道的答案、技巧、题目；最好是现在网上找不到的。
- 
+资料刚刚收集，覆盖面比较广，包括了web端、移动端的知识点，根据你自己的需要选择性阅读即可。
 
-格式不太美观，容我学一下markdown语法再来排版。
+再次提一下： 看 或 背 面试题不像学校考试，死记硬背是没什么用的，看面试题是对理论知识的总结让自己表达的时候知道怎么说。
 
+答案有些不够正确和全面，问题问的不够好，欢迎补充你所知道的答案、技巧、题目；最好是现在网上找不到的。 
 
- Begin！
+格式不断优化中。 
  
  
 ------------------------------------------------------------------
 #HTML、CSS部分
 
-要点：对Web标准的理解、浏览器差异、CSS基本功：布局、盒子模型、选择器优先级及使用、HTML5、CSS3技术等
+要点：对Web标准的理解、浏览器差异、CSS基本功：布局、盒子模型、选择器优先级及使用、HTML5、CSS3、移动端开发 技术等
 ------------------------------------------------------------------
 
-1. Doctype作用? 严格模式与混杂模式-如何触发这两种模式，区分它们有何意义? 
+1.Doctype作用? 严格模式与混杂模式-如何触发这两种模式，区分它们有何意义? 
 
 		（1）、<!DOCTYPE> 声明位于文档中的最前面，处于 <html> 标签之前。告知浏览器的解析器，
               用什么文档类型 规范来解析这个文档。 
@@ -70,27 +70,26 @@ The last time that refresh: 2014/1/13 12:37:57
 
 
 
-
 4.link 和@import 的区别是?
 
 
-		（1）、link属于XHTML标签，而@import完全是CSS提供的一种方式;
+		（1）、link属于XHTML标签，而@import是CSS提供的;
 
-		（2）、页面被加载的时候，link-会同时被加载，而@import引用的CSS会等到页面被加载完再加载;
+		（2）、页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载;
 
-		（3）、import只有在IE5以上的才能识别，而link是XHTML标签，无兼容问题;
+		（3）、import只在IE5以上才能识别，而link是XHTML标签，无兼容问题;
 
 		（4）、link方式的样式的权重 高于@import的权重.
 
 
 
 
-5.CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？ em和px有什么关系？
+5.CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？
 
 
-		*  ID 和 Class;
+		*   ID 、 Class、类型、后代、子、匹配、伪类、临近;
 		  
-		*  Class 可继承、   font-size font-family color, 列表 UL LI DL DD DT 可继承;
+		*   可继承： font-size font-family color, UL LI DL DD DT;
 
 		*   不可继承 ：border padding margin width height ;
 		  
@@ -104,9 +103,7 @@ The last time that refresh: 2014/1/13 12:37:57
 		  
 		   important 比 内联优先级高
 		   
-		   
- 		如果父元素定义字体大小12px，子元素定义1em，大小就是12px。
-		    
+ 		    
 
 6.如何居中div,如何居中一个浮动元素?
 
@@ -120,15 +117,17 @@ The last time that refresh: 2014/1/13 12:37:57
 			 }  
 
 			 
-*  设置容器的浮动方式为相对定位
+*  居中一个浮动元素
+*  
 			  确定容器的宽高 宽500 高 300 的层
 			  设置层的外边距
-			  
 			 
 		     .Div {
-			  Width:500px ; height:300px;
+			  
+			  Width:500px ; height:300px;//高度可以不设
 			  Margin: -150px 0 0 -250px;
-			  position: absolute;
+			  position: absolute;//绝对定位
+              background-color:pink;//方便看效果
 			  left:50%;
 			  top:50%;
 			} 
@@ -136,7 +135,7 @@ The last time that refresh: 2014/1/13 12:37:57
 
  
 
-7.浏览器的内核分别是什么?经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，hack 的技巧 ？
+7.浏览器的内核分别是什么?经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧 ？
 
 
 		* IE浏览器的内核Trident、 Mozilla的Gecko、google的WebKit、Opera内核Presto；
@@ -145,28 +144,25 @@ The last time that refresh: 2014/1/13 12:37:57
 	
 		* 浏览器默认的margin和padding不同。解决方案是加一个全局的*{margin:0;padding:0;}来统一。
 		 
-		* IE6双边距bug:块属性标签float后，又有横行的margin情况下，在ie6显示margin比设置的大。
+		* IE6双边距bug:块属性标签float后，又有横行的margin情况下，在ie6显示margin比设置的大。 
+	       
+		  浮动ie产生的双倍距离 #box{ float:left; width:10px; margin:0 0 0 100px;} 
 	    
-	      解决方案是在float的标签样式控制中加入 display:inline;将其转化为行内属性。
-		   
-		* 浮动ie产生的双倍距离 #box{ float:left; width:10px; margin:0 0 0 100px; 
-	    
-	     //这种情况之下IE会产生20px的距离，这时需要设置display:inline; //使浮动忽略}
+	     这种情况之下IE会产生20px的距离，解决方案是在float的标签样式控制中加入 display:inline;将其转化为行内属性。
 	
 		* 渐进识别的方式，从总体中逐渐排除局部。 
 	  
 		* 首先，巧妙的使用“\9”这一标记，将IE游览器从所有情况中分离出来。 
 		  接着，再次使用“+”将IE8和IE7、IE6分离开来，这样IE8已经独立识别。
          
-         ```css
+         css
 	          .bb{
 	           background-color:#f1ee18;/*所有识别*/
 	          .background-color:#00deff\9; /*IE6、7、8识别*/
 	          +background-color:#a200ff;/*IE6、7识别*/
 	          _background-color:#1e0bd1;/*IE6识别*/
 	          
-	          }
-           ```
+	          } 
   
 		*  IE下,可以使用获取常规属性的方法来获取自定义属性,
 		   也可以使用getAttribute()获取自定义属性;
@@ -186,9 +182,9 @@ The last time that refresh: 2014/1/13 12:37:57
 
 
 
-* HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，功能的优化和改进。
+* HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，地理定位等功能的增加。
 
-		* 绘画  canvas 元素
+		* 绘画 canvas 元素
 		  
 		  用于媒介回放的 video 和 audio 元素
 		  
@@ -201,7 +197,7 @@ The last time that refresh: 2014/1/13 12:37:57
 		  
 		  CSS3实现圆角，阴影，对文字加特效，增加了更多的CSS选择器  多背景 rgba
 		  
-		  新的技术webworker websockt
+		  新的技术webworker, websockt, Geolocation
   
 * 移除的元素
 		
@@ -212,17 +208,16 @@ The last time that refresh: 2014/1/13 12:37:57
 		* 是IE8/IE7/IE6支持通过document.createElement方法产生的标签，
 		  可以利用这一特性让这些浏览器支持HTML5新标签，
   
-       浏览器支持新标签后，还需要添加标签默认的样式：
+          浏览器支持新标签后，还需要添加标签默认的样式：
 	   
-		*  当然最好的方式是直接使用成熟的框架、使用最多的是html5shim框架
- 
+		* 当然最好的方式是直接使用成熟的框架、使用最多的是html5shim框架
 		   <!--[if lt IE 9]> 
 		   <script> src="http://html5shim.googlecode.com/svn/trunk/html5.js"</script> 
 		   <![endif]--> 
 
 
 
-9.你怎么来实现设计图，你认为前端应该如何高质量完成工作? 一个满屏 品 字布局 如何设计?
+9.你怎么来实现页面设计图，你认为前端应该如何高质量完成工作? 一个满屏 品 字布局 如何设计?
 
 
 	* 首先划分成头部、body、脚部；。。。。。 
@@ -237,11 +232,7 @@ The last time that refresh: 2014/1/13 12:37:57
 	  处理hack，兼容、写出优美的代码格式
 	
 	  针对服务器的优化、拥抱 HTML5。
-	   
-
-   ![Stated Clearly Image](http://www.w3school.com.cn/i/html_layout_div.gif)
 	    
-
   
  
 
@@ -249,36 +240,25 @@ The last time that refresh: 2014/1/13 12:37:57
 10.常使用的库有哪些？常用的前端开发工具？开发过什么应用或组件？
 
 
-		* 使用率较高的框架有jQuery、YUI、Prototype、Ext.js、Mootools等。尤其是jQuery，超过91%。
+		* 使用率较高的框架有jQuery、YUI、Prototype、Dojo、Ext.js、Mootools等。尤其是jQuery，超过91%。
  
       轻量级框架有Modernizr、underscore.js、backbone.js、Raphael.js等。
      （理解这些框架的功能、性能、设计原理）
 	  
-		* Sublime Text 、Eclipse、Notepad、Firebug、HttpWatch
+		* Sublime Text 、Eclipse、Notepad、Firebug、HttpWatch、Yslow。
  
 		* 城市选择插件，汽车型号选择插件、幻灯片插件。弹出层。（写过开源程序，加载器，js引擎更好）
- 
-
+  
 
 
 11.什么是面向对象，有什么特点？
 
 
-		*  。。。。。待完善
-		
-		*  抽象：抽象为了简化问题，简单即美，相信我，人类很笨
-		*  继承：为了便于扩展或改写原有的功能   　
-	        
-	        Object.create()来实际继承,（不会看6） 
-	        
-	        demo：var Student = Object.create(Person); Person是父类
-	
-		* 多态：为了便于改写原有的功能
-	
-		* 封装：组件化，便于理解、替换与复用，因此系统会更加灵活
-		*（后文提到封装XXX时，就不具体说这些优点了）
+		*  待完善。。。。。 
   
-* JavaScript的数据对象有 属性配置的值。
+
+ 
+        * JavaScript的数据对象有那些属性值？
 
 		　　writable：这个属性的值是否可以改。
 		
@@ -288,7 +268,7 @@ The last time that refresh: 2014/1/13 12:37:57
 		
 		　　value：属性值。
 
-* 当我们需要一个属性的时，Javascript引擎会先看当前对象中是否有这个属性， 如果没有的话，就会查找他的Prototype对象是否有这个属性
+        * 当我们需要一个属性的时，Javascript引擎会先看当前对象中是否有这个属性， 如果没有的话，就会查找他的Prototype对象是否有这个属性。
      
 	     function clone(proto) {
 	
@@ -302,60 +282,69 @@ The last time that refresh: 2014/1/13 12:37:57
 	
 		 } 
 					
-	     				function object(old) {
-						   function F() {};
-						   F.prototype = old;
-						   return new F();
-						}
-						var newObj = object(oldObject);
+				function object(old) {
+			     function F() {};
+			     F.prototype = old;
+			     return new F();
+			    }
+			var newObj = object(oldObject);
 		 
 
 
-12.列出display的值 和position的值  相对谁进行定位？
+12.列出display的值，说明他们的作用。position的值， relative和absolute定位原点是？
+ 
 
- *可用值的说明
-
-	  block 象块类型元素一样显示。
+      1.    block 象块类型元素一样显示。
 	  none 缺省值。向行内元素类型一样显示。
 	  inline-block 象行内元素一样显示，但其内容象块类型元素一样显示。
 	  list-item 象块类型元素一样显示，并添加样式列表标记。
   
-		* absolute	
+      2. 
+	  *absolute	
 			生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。 
-		*fixed	
+
+	  *fixed （老IE不支持）
 			生成绝对定位的元素，相对于浏览器窗口进行定位。 
-		*relative	
+
+	  *relative	
 			生成相对定位的元素，相对于其正常位置进行定位。 
-		* static	默认值。没有定位，元素出现在正常的流中
-		*（忽略 top, bottom, left, right z-index 声明）。
-		inherit	规定应该从父元素继承 position 属性的值。
+
+	  * static	默认值。没有定位，元素出现在正常的流中
+	  *（忽略 top, bottom, left, right z-index 声明）。
+
+	  * inherit	规定从父元素继承 position 属性的值。
   
 
 
 
 13.页面重构怎么操作？
 
+	编写 CSS、让页面结构更合理化，提升用户体验，实现良好的页面效果和提升性能。
 
+14.语义化的理解？  
 
-14.语义化的理解？ W3C标准的理解？ 弹性布局和响应式的理解？
-
+    html语义化就是让页面的内容结构化，便于对浏览器、搜索引擎解析；
+    在没有样式CCS情况下也以一种文档格式显示，并且是容易阅读的。
+    搜索引擎的爬虫依赖于标记来确定上下文和各个关键字的权重，利于 SEO。
+    使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。
 
 
 15.HTML5的离线储存？
+ 
+    localStorage    长期存储数据，浏览器关闭后数据不丢失；
+    sessionStorage  数据在浏览器关闭后自动删除。
 
 
-
-16.为什么要初始化CSS样式。
-
+16.为什么要初始化CSS样式。 
 
 
-- 考虑到浏览器的兼容问题，其实不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面差异。
+- 因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。
 
 - 当然，初始化样式会对SEO有一定的影响，但鱼和熊掌不可兼得，但力求影响最小的情况下初始化。
 
-*最简单的初始化方法就是： * {padding: 0; margin: 0;} 
+*最简单的初始化方法就是： * {padding: 0; margin: 0;} （不建议）
 	
-		*淘宝的样式初始化： 
+		淘宝的样式初始化： 
 		body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
 		body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
 		h1, h2, h3, h4, h5, h6{ font-size:100%; }
@@ -376,22 +365,13 @@ The last time that refresh: 2014/1/13 12:37:57
 17.(写)描述一段语义的html代码吧。
 
 		（HTML5中新增加的很多标签（如：<article>、<nav>、<header>和<footer>等）
-         就是基于语义化设计原则）
+         就是基于语义化设计原则）  
 
-
-* 语义 HTML 是一种使用正确的元素或标记制作的HTML
-
-			< div id="header">
-
-			< h1>标题< /h1>
-
-			< h2>专注Web前端技术< /h2>
-
+			< div id="header"> 
+			< h1>标题< /h1> 
+			< h2>专注Web前端技术< /h2> 
 			< /div>
-
-
-
-
+  
 - 语义 HTML 具有以下特性：
 
 		文字包裹在元素中，用以反映内容。例如：
@@ -406,10 +386,7 @@ The last time that refresh: 2014/1/13 12:37:57
 		不使用 <font> 或 <center> 等格式标记。
 		类或 ID 中不引用颜色或位置。
 
-
-	
-	
-#深入题了，一般都不知道：
+ 
 
 18.absolute的containing block计算方式跟正常流有什么不同？
 
@@ -464,34 +441,110 @@ The last time that refresh: 2014/1/13 12:37:57
 	如果权重相同，则最后定义的样式会起作用，但是应该避免这种情况出现
 
 
-23.eval是做什么的？有什么理解？
+23.eval是做什么的？ 
 
-
-* 避免使用eval，eval非常耗性能。
+    它的功能是把对应的字符串解析成JS代码并运行；
+    避免使用eval，不安全，非常耗性能（2次，一次解析成js语句，一次执行）。
 
 
 
 23.写一个通用的事件侦听器函数
 
-
+	`// event(事件)工具集，来源：https://github.com/markyun
+	markyun.Event = {
+		// 页面加载完成后
+		readyEvent : function(fn) {
+			if (fn==null) {
+				fn=document;
+			}
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = fn;
+			} else {
+				window.onload = function() {
+					oldonload();
+					fn();
+				};
+			}
+		},
+		// 视能力分别使用dom0||dom2||IE方式 来绑定事件
+		// 参数： 操作的元素,事件名称 ,事件处理程序
+		addEvent : function(element, type, handler) {
+			if (element.addEventListener) {
+				element.addEventListener(type, handler, false);
+			} else if (element.attachEvent) {
+				element.attachEvent('on' + type, function() {
+					handler.call(element);
+				});
+			} else {
+				element['on' + type] = handler;
+			}
+		},
+		// 移除事件
+		removeEvent : function(element, type, handler) {
+			if (element.removeEnentListener) {
+				element.removeEnentListener(type, handler, false);
+			} else if (element.datachEvent) {
+				element.detachEvent('on' + type, handler);
+			} else {
+				element['on' + type] = null;
+			}
+		}, 
+		// 阻止事件 (主要是事件冒泡，因为IE不支持事件捕获)
+		stopPropagation : function(ev) {
+			if (ev.stopPropagation) {
+				ev.stopPropagation();
+			} else {
+				ev.cancelBubble = true;
+			}
+		},
+		// 取消事件的默认行为
+		preventDefault : function(event) {
+			if (event.preventDefault) {
+				event.preventDefault();
+			} else {
+				event.returnValue = false;
+			}
+		},
+		// 获取事件目标
+		getTarget : function(event) {
+			return event.target || event.srcElement;
+		},
+		// 获取event对象的引用，取到事件的所有信息，确保随时能使用event；
+		getEvent : function(e) {
+			var ev = e || window.event;
+			if (!ev) {
+				var c = this.getEvent.caller;
+				while (c) {
+					ev = c.arguments[0];
+					if (ev && Event == ev.constructor) {
+						break;
+					}
+					c = c.caller;
+				}
+			}
+			return ev;
+		}
+	}; 
 
 
 24.99%的网站都需要被重构是那本书上写的？
 
 
-* 网站重构：应用web标准进行设计（第2版）
+    * 网站重构：应用web标准进行设计（第2版）
 
 
 
 25.什么叫优雅降级和渐进增强？
+ 
+	优雅降级：Web站点在所有新式浏览器中都能正常工作，如果用户使用的是老式浏览器，则代码会检查以确认它们是否能正常工作。由于IE独特的盒模型布局问题，针对不同版本的IE的hack实践过优雅降级了,为那些无法支持功能的浏览器增加候选方案，使之在旧式浏览器上以某种形式降级体验却不至于完全失效.
 
-
-
+	渐进增强：从被所有浏览器支持的基本功能开始，逐步地添加那些只有新式浏览器才支持的功能,向页面增加无害于基础浏览器的额外样式和功能的。当浏览器支持时，它们会自动地呈现出来并发挥作用。
 
 
 26.Node.js的适用场景
-
-
+ 
+	高并发、聊天、实时消息推送
 
 
 27.WEB应用从服务器主动推送Data到客户端有那些方式？
@@ -511,14 +564,12 @@ The last time that refresh: 2014/1/13 12:37:57
 #JavaScript部分
 
 
-    要点：  面向对象、继承、闭包、插件、作用域、跨域、原型链、模块化、自定义事件、异步装载回调、模板引擎。新知识：Nodejs等
+    要点：  数据类型、面向对象、继承、闭包、插件、作用域、跨域、原型链、模块化、自定义事件、异步装载回调、模板引擎、Nodejs等。
 ------------------------------------------------------------------ 
 	js的几种数据类型：number,string,boolean,object,undefined
 	
 	js的常见内置对象类：Date,Array,Math、Number、Boolean、String、Array、RegExp、Function...
-	
-	js的两个类型判断方法：typeof、instanceof
- 
+	  
 
 
 - 通常可以做一些小练习来判断TA的水平，js 虽然很灵活，但是具体的代码和实现方式能体现出一个人的全局观，随着代码规模的增长，复杂度增加，如何合理划分模块实现功能和接口的能力比较重要。 
@@ -530,32 +581,33 @@ The last time that refresh: 2014/1/13 12:37:57
 		  function Person(name, age) {
 		    this.name = name;
 		    this.age = age;
-		    this.sing = function() { ... } 
+		    this.sing = function() { alert(this.name) } 
 		  } 
 
 
 2.谈谈This对象的理解。
 
-  
+    this是js的一个关键字，随着函数使用场合不同，this的值会发生变化。但是总有一个原则，那就是this指的是调用函数的那个对象。
+	this一般情况下：是全局对象Global。 作为方法调用，那么this就是指这个对象
 
 
 
 
-3.事件、IE与火狐的事件机制有什么区别？ （事件冒泡 和事件捕获）如何阻止冒泡？？
+3.事件、IE与火狐的事件机制有什么区别？ 如何阻止冒泡？？ 
+    
 
-  
+     1. 我们在网页中的某个操作（有的操作对应多个事件）。例如：当我们点击一个按钮就会产生一个事件。是可以被 JavaScript 侦测到的行为。  
+	 2. 事件处理机制：IE是事件冒泡、火狐是 事件捕获；
+	 3.  ev.stopPropagation();
 
 
-
-
-4.什么是闭包，为什么要用？
+4.什么是闭包（closure），为什么要用？
 
 		
 -  待完善
    
--  执行闭包后,闭包内部变量会存在,而闭包内部函数的内部变量不会存在.
--  
- 
+-  执行say667()后,say667()闭包内部变量会存在,而闭包内部函数的内部变量不会存在.使得Javascript的垃圾回收机制GC不会收回say667()所占用的资源，因为say667()的内部函数的执行需要依赖say667()中的变量。这是对闭包作用的非常直白的描述.
+  
 		  function say667() {
 			// Local variable that ends up within closure
 			var num = 666;
@@ -565,32 +617,12 @@ The last time that refresh: 2014/1/13 12:37:57
 		}
 		 
 		 var sayAlert = say667();
-		 sayAlert()
- 
-		 执行结果应该弹出的667 
-		 
--  Singleton;
--   
-			 var singleton = function () {
-				var privateVariable;
-				function privateFunction(x) {
-					...privateVariable...
-				}
-			 
-				return {
-					firstMethod: function (a, b) {
-						...privateVariable...
-					},
-					secondMethod: function (c) {
-						...privateFunction()...
-					}
-				};
-			}(); 
+		 sayAlert()//执行结果应该弹出的667  
 
 
 5.如何判断一个对象是否属于某个类？
 
-- 使用instanceof、
+ 使用instanceof （待完善）
 
 	       if(a instanceof Person){
 	           alert('yes');
@@ -600,7 +632,10 @@ The last time that refresh: 2014/1/13 12:37:57
 
 6.new操作符具体干了什么呢?
 
-    
+	  1、创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。
+	  2、属性和方法被加入到 this 引用的对象中。
+	  3、新创建的对象由 this 所引用，并且最后隐式的返回 this 。
+		    
 		var obj  = {};
 		obj.__proto__ = Base.prototype;
 		Base.call(obj); 
@@ -608,22 +643,20 @@ The last time that refresh: 2014/1/13 12:37:57
 
 7.JSON 的了解
 
-
+	JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。它是基于JavaScript的一个子集。数据格式简单, 易于读写, 占用带宽小
+    {'age':'12', 'name':'back'}
 
 
 8.js延迟加载的方式有哪些
 
 
 -  defer和async、动态创建DOM方式（用得最多）、按需异步载入js
-
-
-
+ 
 	
 	
 9.ajax 是什么?ajax 的交互模型?同步和异步的区别?如何解决跨域问题?
 
-- 待完善
-
+- 待完善 
 
 	      1. 通过异步模式，提升了用户体验
     	  
@@ -647,15 +680,28 @@ The last time that refresh: 2014/1/13 12:37:57
     	  4、破坏了程序的异常机制。
     	  
     	  5、不容易调试。
-	
-		*跨域： jsonp、 iframe、window.name、HTML5window.postMessage、服务器上设置代理页面
+- 跨域： jsonp、 iframe、window.name、window.postMessage、服务器上设置代理页面
 
 
 
 
 10.模块化怎么做？
 
+[ 立即执行函数](http://benalman.com/news/2010/11/immediately-invoked-function-expression/),不暴露私有成员
 
+    var module1 = (function(){
+    　　　　var _count = 0;
+    　　　　var m1 = function(){
+    　　　　　　//...
+    　　　　};
+    　　　　var m2 = function(){
+    　　　　　　//...
+    　　　　};
+    　　　　return {
+    　　　　　　m1 : m1,
+    　　　　　　m2 : m2
+    　　　　};
+    　　})(); 
 
 
 
@@ -782,25 +828,21 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 		  （8） 避免在页面的主体布局中使用table，table要等其中的内容完全下载之后才会显示出来，显示比div+css布局慢。
 		 
 	 
- 
- 4.
-
-
-11.谈谈你认为怎样做能是项目做的更好？
+18.谈谈你认为怎样做能是项目做的更好？
 
 
 
-12.你对前端界面工程师这个职位是怎么样理解的？它的前景会怎么样？
+19.你对前端界面工程师这个职位是怎么样理解的？它的前景会怎么样？
 
 
 
-13.加班的看法
+20.加班的看法
 
     加班就像借钱，原则应当是------救急不救穷
 	
 
 	
-14.平时如何管理你的项目，如何设计突发大规模并发架构？
+21.平时如何管理你的项目，如何设计突发大规模并发架构？
 
   		*
 	先期团队必须确定好全局样式（globe.css），编码模式(utf-8) 等
@@ -817,14 +859,21 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 	图片采用整合的 images.png png8 格式文件使用 尽量整合在一起使用方便将来的管理
 
+22. 那些操作会造成内存泄漏？
 	 
+	    内存泄漏指任何对象在您不再拥有或需要它之后仍然存在。
+        垃圾回收器定期扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为 0（没有其他对象引用过该对象），或对该对象的惟一引用是循环的，那么该对象的内存即可回收。
+
+        setTimeout 的第一个参数使用字符串而非函数的话，会引发内存泄漏。
+		闭包、控制台日志、循环（在两个对象彼此引用且彼此保留时，就会产生一个循环）
+
 	 
-15.你说你热爱前端，那么应该WEB行业的发展很关注吧？ 说说最近最流行的一些东西吧？
+23.你说你热爱前端，那么应该WEB行业的发展很关注吧？ 说说最近最流行的一些东西吧？
 
 	
-16.你有了解我们公司吗？说说你的认识？
+24.你有了解我们公司吗？说说你的认识？
  
--    因为我想去阿里，所以我针对阿里的说
+     因为我想去阿里，所以我针对阿里的说
 	 最羡慕就是在双十一购物节，350.19亿元，每分钟支付79万笔。海量数据，居然无一漏单、无一故障。太厉害了。
 
 
@@ -863,10 +912,10 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 		什么都略懂一点生活更美好！
 		
 		
-不断完善中。
+不断完善中。2014/3/11
 
 
 		
-		喜欢骑行、旅行、摄影、行为心理学，前端开发攻城师。
+		爱机车、爱骑行、爱旅行、爱摄影、爱阅读的理想青年，前端开发攻城师。
 		
-		联系微博：http://weibo.com/920802999
+		微博：http://weibo.com/920802999
