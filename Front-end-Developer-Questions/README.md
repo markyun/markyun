@@ -87,7 +87,15 @@
 5.CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？
 
 
-		*   ID 、 Class、类型、后代、子、匹配、伪类、临近;
+		*   1.id选择器（ # myid）
+			2.类选择器（.myclassname）
+			3.标签选择器（div, h1, p）
+			4.相邻选择器（h1 + p）
+			5.子选择器（ul < li）
+			6.后代选择器（li a）
+			7.通配符选择器（ * ）
+			8.属性选择器（a[rel = "external"]）
+			9.伪类选择器（a: hover, li: nth - child）
 		  
 		*   可继承： font-size font-family color, UL LI DL DD DT;
 
@@ -109,8 +117,7 @@
 
 
 *  给div设置一个宽度，然后添加margin:0 auto属性
-		
-			
+		 
 			div{
 				width:200px;
 				margin:0 auto;
@@ -118,15 +125,14 @@
 
 			 
 *  居中一个浮动元素
-*  
+  
 			  确定容器的宽高 宽500 高 300 的层
 			  设置层的外边距
 			 
-		     .Div {
-			  
+		     .div { 
 			  Width:500px ; height:300px;//高度可以不设
 			  Margin: -150px 0 0 -250px;
-			  position: absolute;//绝对定位
+			  position:relative;相对定位
               background-color:pink;//方便看效果
 			  left:50%;
 			  top:50%;
@@ -148,14 +154,14 @@
 	       
 		  浮动ie产生的双倍距离 #box{ float:left; width:10px; margin:0 0 0 100px;} 
 	    
-	     这种情况之下IE会产生20px的距离，解决方案是在float的标签样式控制中加入 display:inline;将其转化为行内属性。
+	     这种情况之下IE会产生20px的距离，解决方案是在float的标签样式控制中加入 ——_display:inline;将其转化为行内属性。(_这个符号只有ie6会识别)
 	
-		* 渐进识别的方式，从总体中逐渐排除局部。 
+		  渐进识别的方式，从总体中逐渐排除局部。 
 	  
-		* 首先，巧妙的使用“\9”这一标记，将IE游览器从所有情况中分离出来。 
+		  首先，巧妙的使用“\9”这一标记，将IE游览器从所有情况中分离出来。 
 		  接着，再次使用“+”将IE8和IE7、IE6分离开来，这样IE8已经独立识别。
          
-         css
+          css
 	          .bb{
 	           background-color:#f1ee18;/*所有识别*/
 	          .background-color:#00deff\9; /*IE6、7、8识别*/
@@ -173,7 +179,12 @@
           Firefox下,event对象有pageX,pageY属性,但是没有x,y属性.
 		  
 		* （条件注释）缺点是在IE浏览器下可能会增加额外的HTTP请求数。
+		
+		* Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示, 
+		  可通过加入 CSS 属性 -webkit-text-size-adjust: none; 解决.
 
+		超链接访问过后hover样式就不出现了 被点击访问过的超链接样式不在具有hover和active了解决方法是改变CSS属性的排列顺序:
+	    L-V-H-A :  a:link {} a:visited {} a:hover {} a:active {}
            
 
 
@@ -251,12 +262,11 @@
   
 
 
-11.什么是面向对象，有什么特点？
-
-
-		*  待完善。。。。。 
+11. JavaScript原型，原型链 ? 有什么特点？
+ 
   
-
+		*  原型对象也是普通的对象，是对象一个自带隐式的 __proto__ 属性，原型也有可能有自己的原型，如果一个原型对象的原型不为null的话，我们就称之为原型链。
+		*  原型链是由一些用来继承和共享属性的对象组成的（有限的）对象链。
  
         * JavaScript的数据对象有那些属性值？
 
@@ -471,6 +481,7 @@
 		// 参数： 操作的元素,事件名称 ,事件处理程序
 		addEvent : function(element, type, handler) {
 			if (element.addEventListener) {
+				//事件类型、需要执行的函数、是否捕捉
 				element.addEventListener(type, handler, false);
 			} else if (element.attachEvent) {
 				element.attachEvent('on' + type, function() {
@@ -587,14 +598,16 @@
 
 2.谈谈This对象的理解。
 
-    this是js的一个关键字，随着函数使用场合不同，this的值会发生变化。但是总有一个原则，那就是this指的是调用函数的那个对象。
-	this一般情况下：是全局对象Global。 作为方法调用，那么this就是指这个对象
+    this是js的一个关键字，随着函数使用场合不同，this的值会发生变化。
+
+    但是总有一个原则，那就是this指的是调用函数的那个对象。
+	
+    this一般情况下：是全局对象Global。 作为方法调用，那么this就是指这个对象
 
 
 
 
-3.事件、IE与火狐的事件机制有什么区别？ 如何阻止冒泡？？ 
-    
+3.事件、IE与火狐的事件机制有什么区别？ 如何阻止冒泡？ 
 
      1. 我们在网页中的某个操作（有的操作对应多个事件）。例如：当我们点击一个按钮就会产生一个事件。是可以被 JavaScript 侦测到的行为。  
 	 2. 事件处理机制：IE是事件冒泡、火狐是 事件捕获；
@@ -767,8 +780,7 @@
 	
 	add.call(sub,3,1);  
 
-15.Jquery与jQuery UI 有啥区别？
-
+15.Jquery与jQuery UI 有啥区别？ 
 
 		*jQuery是一个js库，主要提供的功能是选择器，属性修改和事件绑定等等。
 
@@ -801,11 +813,16 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 ### （正则、优化、重构、响应式、移动端、团队协作、SEO、UED、职业生涯）
 
 ------------------------------------------------------------------
-
-		*基于Class的选择性的性能相对于Id选择器开销很大，因为需遍历所有DOM元素。
+	
+		
+        *基于Class的选择性的性能相对于Id选择器开销很大，因为需遍历所有DOM元素。
 
 		*频繁操作的DOM，先缓存起来再操作。用Jquery的链式调用更好。   
          比如：var str=$("a").attr("href");
+
+		*for (var i = size; i < arr.length; i++) {}
+         for 循环每一次循环都查找了数组 (arr) 的.length 属性，在开始循环的时候设置一个变量来存储这个数字，可以让循环跑得更快： 
+         for (var i = size, length = arr.length; i < length; i++) {}
 
 
 
@@ -844,7 +861,7 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 	
 21.平时如何管理你的项目，如何设计突发大规模并发架构？
 
-  		*
+  		
 	先期团队必须确定好全局样式（globe.css），编码模式(utf-8) 等
 
 	编写习惯必须一致（例如都是采用继承式的写法，单样式都写成一行）；
