@@ -51,7 +51,7 @@
  
 
 
-2.行内元素有哪些？块级元素有哪些？ 
+2.行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？
 
 	（1）CSS规范规定，每个元素都有display属性，确定该元素的类型，每个元素都有默认的display值，
 		比如div默认display属性值为“block”，成为“块级”元素；
@@ -59,6 +59,11 @@
 
 	（2）行内元素有：a b span img input select strong（强调的语气） 
 		 块级元素有：div ul ol li dl dt dd h1 h2 h3 h4…p  
+	
+	（3）知名的空元素： 
+		<br> <hr> <img> <input> <link> <meta> 
+		鲜为人知的是： 
+		<area> <base> <col> <command> <embed> <keygen> <param> <source> <track> <wbr>
 
 
 3.CSS的盒子模型？
@@ -594,7 +599,21 @@ CSS3新增伪类举例：
 	  
 
 
-- 通常可以做一些小练习来判断TA的水平，js 虽然很灵活，但是具体的代码和实现方式能体现出一个人的全局观，随着代码规模的增长，复杂度增加，如何合理划分模块实现功能和接口的能力比较重要。 
+- 通常可以做一些小练习来判断TA的水平，js 虽然很灵活，但是具体的代码和实现方式能体现出一个人的全局观，随着代码规模的增长，复杂度增加，如何合理划分模块实现功能和接口的能力比较重要。（下面例题） 
+
+		["1", "2", "3"].map(parseInt)
+
+		[typeof null, null instanceof Object]
+
+		[ [3,2,1].reduce(Math.pow), [].reduce(Math.pow)] ]
+
+		
+
+		 var val = 'smtg';
+         console.log('Value is ' + (val === 'smtg') ? 'Something' : 'Nothing');
+
+
+
 
 
 1.创建一个对象
@@ -868,6 +887,9 @@ http状态码有那些？分别代表是什么意思？
 
 除了前端以外还了解什么其它技术么？你最最厉害的技能是什么？
 
+AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规范区别？
+
+
 
 18.谈谈你认为怎样做能是项目做的更好？
 
@@ -911,7 +933,7 @@ http状态码有那些？分别代表是什么意思？
 	 
 23.你说你热爱前端，那么应该WEB行业的发展很关注吧？ 说说最近最流行的一些东西吧？
 
-	MVVM、 Node.js、Mongodb、npm
+	Node.js、Mongodb、npmM、MVVM、MEAN
 	
 24.你有了解我们公司吗？说说你的认识？
  
