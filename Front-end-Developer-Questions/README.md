@@ -1,6 +1,6 @@
 #2014年最新前端开发面试题
 
-##The last time that refresh: 2014/3/11 13:47:07  
+##The last time that refresh: 2014/4/1
 
 
 本文总结了一些常见前端面试（多数源于网络），希望阅后也要用心钻研其中的原理，重要知识需要系统学习，透彻学习，形成自己的知识链。
@@ -23,7 +23,7 @@
 
 另外： 
 
-资料刚刚收集，覆盖面比较广，包括了web端、移动端的知识点，根据你自己的需要选择性阅读即可。
+资料刚刚收集，知识覆盖面比较广，根据你自己的需要选择性阅读即可。
 
 再次提一下： 看 或 背 面试题不像学校考试，死记硬背是没什么用的，看面试题是对理论知识的总结让自己表达的时候知道怎么说。
 
@@ -33,7 +33,7 @@
  
  
 ------------------------------------------------------------------
-#HTML、CSS部分
+#[HTML CSS部分]
 
 要点：对Web标准的理解、浏览器差异、CSS基本功：布局、盒子模型、选择器优先级及使用、HTML5、CSS3、移动端开发 技术等
 ------------------------------------------------------------------
@@ -54,8 +54,8 @@
 2.行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？
 
 	（1）CSS规范规定，每个元素都有display属性，确定该元素的类型，每个元素都有默认的display值，
-		比如div默认display属性值为“block”，成为“块级”元素；
-		span默认display属性值为“inline”，是“行内”元素。  
+		  比如div默认display属性值为“block”，成为“块级”元素；
+		  span默认display属性值为“inline”，是“行内”元素。  
 
 	（2）行内元素有：a b span img input select strong（强调的语气） 
 		 块级元素有：div ul ol li dl dt dd h1 h2 h3 h4…p  
@@ -69,7 +69,7 @@
 3.CSS的盒子模型？
 
 
-	（1）两种， IE 盒子模型、标准 W3C 盒子模型；IE 的content部分包含了 border 和 pading;
+	（1）有两种， IE 盒子模型、标准 W3C 盒子模型；IE的content部分包含了 border 和 pading;
 
 	（2）盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border).
 
@@ -78,13 +78,13 @@
 4.link 和@import 的区别是?
 
 
-		（1）、link属于XHTML标签，而@import是CSS提供的;
+		（1）link属于XHTML标签，而@import是CSS提供的;
 
-		（2）、页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载;
+		（2）页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载;
 
-		（3）、import只在IE5以上才能识别，而link是XHTML标签，无兼容问题;
+		（3）import只在IE5以上才能识别，而link是XHTML标签，无兼容问题;
 
-		（4）、link方式的样式的权重 高于@import的权重.
+		（4）link方式的样式的权重 高于@import的权重.
 
 
 
@@ -102,11 +102,11 @@
 			8.属性选择器（a[rel = "external"]）
 			9.伪类选择器（a: hover, li: nth - child）
 		  
-		*   可继承： font-size font-family color, UL LI DL DD DT;
+		*   可继承的样式： font-size font-family color, UL LI DL DD DT;
 
-		*   不可继承 ：border padding margin width height ;
+		*   不可继承的样式：border padding margin width height ;
 		  
-		*   优先级就近原则，样式定义最近者为准;
+		*   优先级就近原则，同权重情况下样式定义最近者为准;
 
 		*   载入样式以最后载入的定位为准;
 
@@ -123,8 +123,8 @@ CSS3新增伪类举例：
         p:only-of-type	选择属于其父元素唯一的 <p> 元素的每个 <p> 元素。
 		p:only-child	选择属于其父元素的唯一子元素的每个 <p> 元素。
 		p:nth-child(2)	选择属于其父元素的第二个子元素的每个 <p> 元素。
- 	    :enabled、:disabled 控制表单控件的禁用状态。
-		:checked，单选框或复选框被选中。
+ 	    :enabled  :disabled 控制表单控件的禁用状态。
+		:checked        单选框或复选框被选中。
 
 	   
  		    
@@ -194,7 +194,7 @@ CSS3新增伪类举例：
 		*  IE下,even对象有x,y属性,但是没有pageX,pageY属性; 
           Firefox下,event对象有pageX,pageY属性,但是没有x,y属性.
 		  
-		* （条件注释）缺点是在IE浏览器下可能会增加额外的HTTP请求数。
+		* 解决方法：（条件注释）缺点是在IE浏览器下可能会增加额外的HTTP请求数。
 		
 		* Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示, 
 		  可通过加入 CSS 属性 -webkit-text-size-adjust: none; 解决.
@@ -211,26 +211,26 @@ CSS3新增伪类举例：
 
 * HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，地理定位等功能的增加。
 
-		* 绘画 canvas 元素
-		  
-		  用于媒介回放的 video 和 audio 元素
-		  
+		* 绘画 canvas  
+		  用于媒介回放的 video 和 audio 元素 
 		  本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失；
           sessionStorage 的数据在浏览器关闭后自动删除
 		  
-		  语意化更好的内容元素，比如 article、footer、header、nav、section
-		  
-		  表单控件，calendar、date、time、email、url、search
-		  
-		  CSS3实现圆角，阴影，对文字加特效，增加了更多的CSS选择器  多背景 rgba
-		  
+		  语意化更好的内容元素，比如 article、footer、header、nav、section 
+		  表单控件，calendar、date、time、email、url、search  
 		  新的技术webworker, websockt, Geolocation
+
+ 		  CSS3实现圆角（border-radius:8px），阴影（box-shadow:10px），
+		  对文字加特效（text-shadow、），线性渐变（gradient），旋转（transform）
+          transform:rotate(9deg) scale(0.85,0.90) translate(0px,-30px) skew(-9deg,0deg);//旋转,缩放,定位,倾斜
+          增加了更多的CSS选择器  多背景 rgba 
   
 * 移除的元素
 		
 		纯表现的元素：basefont，big，center，font, s，strike，tt，u；
 		
 		对可用性产生负面影响的元素：frame，frameset，noframes；
+* 支持HTML5新标签
 		
 		* 是IE8/IE7/IE6支持通过document.createElement方法产生的标签，
 		  可以利用这一特性让这些浏览器支持HTML5新标签，
@@ -241,26 +241,31 @@ CSS3新增伪类举例：
 		   <!--[if lt IE 9]> 
 		   <script> src="http://html5shim.googlecode.com/svn/trunk/html5.js"</script> 
 		   <![endif]--> 
+如何区分 
+
+			DOCTYPE声明\新增的结构元素\功能元素
 
 
-
-9.你怎么来实现页面设计图，你认为前端应该如何高质量完成工作? 一个满屏 品 字布局 如何设计?
+9.你怎么来实现页面设计图，你认为前端的理解? 一个满屏 品 字布局 如何设计?
 
 
 	* 首先划分成头部、body、脚部；。。。。。 
 
-	*  
-	  实现效果图是最基本的工作，精确到2px；
-	
-	  与设计师，产品经理的沟通和项目的参与
-	
-	  做好的页面结构，页面重构和用户体验
-	
-	  处理hack，兼容、写出优美的代码格式
-	
-	  针对服务器的优化、拥抱 HTML5。
+	* 前端的理解：
+
+		 前端是最贴近用户的程序员，前端的能力就是能让产品从 90分进化到 100 分，甚至更好，
+		
+		 参与项目，快速高质量完成实现效果图，精确到1px；
+		
+		 与团队成员，UI设计，产品经理的沟通；
+		
+		 做好的页面结构，页面重构和用户体验；
+		
+		 处理hack，兼容、写出优美的代码格式；
+		
+		 针对服务器的优化、拥抱最新前端技术。
 	    
-  
+   * 品 字布局
  
 
 
@@ -269,12 +274,14 @@ CSS3新增伪类举例：
 
 		* 使用率较高的框架有jQuery、YUI、Prototype、Dojo、Ext.js、Mootools等。尤其是jQuery，超过91%。
  
-      轻量级框架有Modernizr、underscore.js、backbone.js、Raphael.js等。
-     （理解这些框架的功能、性能、设计原理）
+          轻量级框架有Modernizr、underscore.js、backbone.js、Raphael.js等。
+         （理解这些框架的功能、性能、设计原理）
+
+		 第三方库：three.js 
 	  
 		* Sublime Text 、Eclipse、Notepad、Firebug、HttpWatch、Yslow。
  
-		* 城市选择插件，汽车型号选择插件、幻灯片插件。弹出层。（写过开源程序，加载器，js引擎更好）
+		* 城市选择插件，汽车型号选择插件、图片轮播、tips。（写过开源项目，加载器，js引擎更好）
   
 
 
@@ -290,7 +297,7 @@ CSS3新增伪类举例：
 		
 		　　configurable：这个属性的配置是否可以删除，修改。
 		
-		　　enumerable：这个属性是否能在for…in循环中遍历出来或在Object.keys中列举出来。
+		　　enumerable：这个属性是否能在（for in）循环中遍历出来或在Object.keys中列举出来。
 		
 		　　value：属性值。
 
@@ -320,7 +327,8 @@ CSS3新增伪类举例：
 12.列出display的值，说明他们的作用。position的值， relative和absolute定位原点是？
  
 
-      1.    block 象块类型元素一样显示。
+      1.   
+      block 象块类型元素一样显示。
 	  none 缺省值。向行内元素类型一样显示。
 	  inline-block 象行内元素一样显示，但其内容象块类型元素一样显示。
 	  list-item 象块类型元素一样显示，并添加样式列表标记。
@@ -345,10 +353,11 @@ CSS3新增伪类举例：
 
 13.页面重构怎么操作？
 
-	编写 CSS、让页面结构更合理化，提升用户体验，实现良好的页面效果和提升性能。
+	编写HTML CSS、让页面结构更合理化，提升用户体验，实现良好的页面效果，提升性能，便于维护。
 
 14.语义化的理解？  
 
+	用正确的标签做正确的事情！
     html语义化就是让页面的内容结构化，便于对浏览器、搜索引擎解析；
     在没有样式CCS情况下也以一种文档格式显示，并且是容易阅读的。
     搜索引擎的爬虫依赖于标记来确定上下文和各个关键字的权重，利于 SEO。
@@ -364,9 +373,9 @@ CSS3新增伪类举例：
 16.为什么要初始化CSS样式。 
 
 
-- 因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。
-
-- 当然，初始化样式会对SEO有一定的影响，但鱼和熊掌不可兼得，但力求影响最小的情况下初始化。
+	- 因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。
+	
+	- 当然，初始化样式会对SEO有一定的影响，但鱼和熊掌不可兼得，但力求影响最小的情况下初始化。
 
 *最简单的初始化方法就是： * {padding: 0; margin: 0;} （不建议）
 	
@@ -476,7 +485,7 @@ CSS3新增伪类举例：
 
 23.写一个通用的事件侦听器函数
 
-	`// event(事件)工具集，来源：https://github.com/markyun
+	`// event(事件)工具集，来源：github.com/markyun
 	markyun.Event = {
 		// 页面加载完成后
 		readyEvent : function(fn) {
@@ -605,9 +614,7 @@ CSS3新增伪类举例：
 
 		[typeof null, null instanceof Object]
 
-		[ [3,2,1].reduce(Math.pow), [].reduce(Math.pow)] ]
-
-		
+		[ [3,2,1].reduce(Math.pow), [].reduce(Math.pow)] ] 
 
 		 var val = 'smtg';
          console.log('Value is ' + (val === 'smtg') ? 'Something' : 'Nothing');
@@ -641,7 +648,7 @@ CSS3新增伪类举例：
 
      1. 我们在网页中的某个操作（有的操作对应多个事件）。例如：当我们点击一个按钮就会产生一个事件。是可以被 JavaScript 侦测到的行为。  
 	 2. 事件处理机制：IE是事件冒泡、火狐是 事件捕获；
-	 3.  ev.stopPropagation();
+	 3. ev.stopPropagation();
 
 
 4.什么是闭包（closure），为什么要用？
@@ -670,8 +677,7 @@ CSS3新增伪类举例：
 	       if(a instanceof Person){
 	           alert('yes');
 	       }
-
-
+ 
 
 6.new操作符具体干了什么呢?
 
@@ -883,17 +889,28 @@ http状态码有那些？分别代表是什么意思？
 		500-599 用于支持服务器错误。 503 – 服务不可用
 一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）
 
-你所知道的页面性能优化方法有那些？
+    查找浏览器缓存 
+    DNS解析、查找该域名对应的IP地址、重定向（301）、发出第二个GET请求
+    进行HTTP协议会话
+    客户端发送报头(请求报头)
+    服务器回馈报头(响应报头)
+    html文档开始下载
+    文档树建立，根据标记请求所需指定MIME类型的文件
+    文件显示
+	[
+	浏览器这边做的工作大致分为以下几步：
+	
+	加载：根据请求的URL进行域名解析，向服务器发起请求，接收文件（HTML、JS、CSS、图象等）。
+	
+	解析：对加载到的资源（HTML、JS、CSS等）进行语法解析，建议相应的内部数据结构（比如HTML的DOM树，JS的（对象）属性表，CSS的样式规则等等）
+	}
 
-除了前端以外还了解什么其它技术么？你最最厉害的技能是什么？
 
-AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规范区别？
+18.除了前端以外还了解什么其它技术么？你最最厉害的技能是什么？
 
+   AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规范区别？
 
-
-18.谈谈你认为怎样做能是项目做的更好？
-
-
+ 
 
 19.你对前端界面工程师这个职位是怎么样理解的？它的前景会怎么样？
 
@@ -922,7 +939,8 @@ AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规�
 
 	图片采用整合的 images.png png8 格式文件使用 尽量整合在一起使用方便将来的管理
 
-22. 那些操作会造成内存泄漏？
+
+22.那些操作会造成内存泄漏？
 	 
 	    内存泄漏指任何对象在您不再拥有或需要它之后仍然存在。
         垃圾回收器定期扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为 0（没有其他对象引用过该对象），或对该对象的惟一引用是循环的，那么该对象的内存即可回收。
@@ -931,16 +949,20 @@ AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规�
 		闭包、控制台日志、循环（在两个对象彼此引用且彼此保留时，就会产生一个循环）
 
 	 
-23.你说你热爱前端，那么应该WEB行业的发展很关注吧？ 说说最近最流行的一些东西吧？
+23.你热爱前端，那么应该WEB行业发展趋势很关注吧？ 说说最近最流行的一些东西吧？
 
-	Node.js、Mongodb、npmM、MVVM、MEAN
+	Node.js、Mongodb、npm、MVVM、MEAN、three.js
 	
 24.你有了解我们公司吗？说说你的认识？
  
-     因为我想去阿里，所以我针对阿里的说
+     对支付宝说
 	 最羡慕就是在双十一购物节，350.19亿元，每分钟支付79万笔。海量数据，居然无一漏单、无一故障。太厉害了。
 
-25.移动端（比如：Android IOS）怎么做好用户体验?
+25.移动端（Android IOS）怎么做好用户体验?
+
+	清晰的视觉纵线、信息的分组、极致的减法、
+	利用选择代替输入、标签及文字的排布方式、
+	依靠明文确认密码、合理的键盘利用、
 
 ----------
 	
@@ -950,7 +972,7 @@ AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规�
 		
 		2、DOM操作 ——如何添加、移除、移动、复制、创建和查找节点等。
 		
-		3、事件 —— 如何使用事件，以及IE和标准DOM事件模型之间存在的差别。
+		3、事件   —— 如何使用事件，以及IE和标准DOM事件模型之间存在的差别。
 		
 		4、XMLHttpRequest —— 这是什么、怎样完整地执行一次GET请求、怎样检测错误。
 		
@@ -964,7 +986,7 @@ AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规�
 		
 		9、HTML与XHTML——二者有什么区别，你觉得应该使用哪一个并说出理由。
 		
-		10、JSON —— 作用、用途、设计结构。
+		10、JSON  —— 作用、用途、设计结构。
 		
 		
 		他们也许不懂交互设计，但是没人比他们懂交互设计的实现，和每一个细节。
@@ -989,6 +1011,4 @@ AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规�
 
 	http://css-tricks.com/interview-questions-css/
 
-	http://www.ruanyifeng.com/blog/2012/08/questions_you_need_to_ask_in_an_interview.html 面试时，如何向公司提问？
-	
-
+	http://www.ruanyifeng.com/blog/2012/08/questions_you_need_to_ask_in_an_interview.html 面试时，如何向公司提问？ 
