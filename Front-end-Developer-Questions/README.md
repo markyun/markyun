@@ -1,6 +1,11 @@
 #2014年最新前端开发面试题   
 ## <a name='preface'>前言</a> ##
 
+[
+只看问题点这里 ](https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Question "Questions")
+
+[看全部问题和答案点这里](https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers "Questions-and-Answers")
+
 本文总结了一些优质的前端面试题（多数源于网络），初学者阅后也要用心钻研其中的原理，重要知识需要系统学习，透彻学习，形成自己的知识链。万不可投机取巧，只求面试过关是错误的！
 
 
