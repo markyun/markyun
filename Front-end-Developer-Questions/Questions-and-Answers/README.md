@@ -222,8 +222,7 @@ HTML5？
 			< /div>
 
 
-- iframe有那些缺点？
-
+- iframe有那些缺点？ 
 
 		*iframe会阻塞主页面的Onload事件；
 
@@ -315,7 +314,29 @@ HTML5？
 
 
 - 列出display的值，说明他们的作用。position的值， relative和absolute定位原点是？
-
+ 
+	
+	      1.   
+	      block 象块类型元素一样显示。
+		  none 缺省值。向行内元素类型一样显示。
+		  inline-block 象行内元素一样显示，但其内容象块类型元素一样显示。
+		  list-item 象块类型元素一样显示，并添加样式列表标记。
+	  
+	      2. 
+		  *absolute	
+				生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。 
+	
+		  *fixed （老IE不支持）
+				生成绝对定位的元素，相对于浏览器窗口进行定位。 
+	
+		  *relative	
+				生成相对定位的元素，相对于其正常位置进行定位。 
+	
+		  * static	默认值。没有定位，元素出现在正常的流中
+		  *（忽略 top, bottom, left, right z-index 声明）。
+	
+		  * inherit	规定从父元素继承 position 属性的值。
+	  
 - CSS3有哪些新特性？
 
   		  CSS3实现圆角（border-radius:8px），阴影（box-shadow:10px），
