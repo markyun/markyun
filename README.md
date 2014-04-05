@@ -1,25 +1,19 @@
-#在GiHub里面的一些记录。
- 
-  
- 
-https://github.com/markyun/My-blog/issues   文章列表
 
+#我在Github里面的一些记录。
 
-http://markyun.github.io/My-blog/           介绍页 
+目前坐标： 中国-南京 (Nanjing city , People's Republic of China)
 
+目前职位：  前端开发  (Front-End Developer)
 
-https://github.com/markyun/My-blog/blob/master/Front-end-Developer-Questions   Front-end-Developer-Questions
+[介绍页](http://markyun.github.io/My-blog/ "My-blog")
 
+[文章列表](https://github.com/markyun/My-blog/issues "文章issues") 
 
+[最新前端开发面试题 Front-end-Developer-Questions    ](https://github.com/markyun/My-blog/blob/master/Front-end-Developer-Questions "最新前端开发面试题")
 
-爱机车、爱骑行、爱旅行、爱摄影、爱阅读的理想青年，前端开发攻城师。
+爱机车、爱骑行、爱旅行、爱摄影、爱阅读的理想青年，前端开发攻城师。weibo：[马云云_理想青年](http://weibo.com/920802999 "markyun的微博")  
 
-所在地区： 江苏无锡  
-
-目前职位： 前端工程师 
-
-新浪微博： http://weibo.com/920802999 
 
 ![Stated Clearly Image](http://farm4.staticflickr.com/3757/9364862224_217bcf88a8_c.jpg)  
 
-配图是 无锡-蠡湖 。 
+配图 无锡 蠡湖 
