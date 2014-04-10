@@ -1,4 +1,3 @@
-
 #我在Github里面的一些记录。
 
 目前坐标： 中国-南京 (Nanjing city , People's Republic of China)
@@ -7,7 +6,7 @@
 
 [介绍页](http://markyun.github.io/My-blog/ "My-blog")
 
-[文章列表](https://github.com/markyun/My-blog/issues "文章issues") 
+[文章列表](https://github.com/markyun/My-blog/issues "文章issues") (不定期更新)
 
 [最新前端开发面试题 Front-end-Developer-Questions    ](https://github.com/markyun/My-blog/blob/master/Front-end-Developer-Questions "最新前端开发面试题")
 
