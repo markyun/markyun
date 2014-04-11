@@ -119,7 +119,8 @@
 
 - 浏览器的内核分别是什么?
 	
-	     * IE浏览器的内核Trident、 Mozilla的Gecko、google的WebKit、Opera内核Presto；
+	     * IE浏览器的内核Trident、Mozilla的Gecko、Chrome的Blink（WebKit的分支）、Opera内核原为Presto，现为Blink；
+
 
 - 常见兼容性问题？
 
