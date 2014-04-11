@@ -123,7 +123,7 @@
 
 - 常见兼容性问题？
 
-	    * png24为的图片在iE6浏览器上出现背景，解决方案是做成PNG8.
+	    * png24位的图片在iE6浏览器上出现背景，解决方案是做成PNG8.
 	
 		* 浏览器默认的margin和padding不同。解决方案是加一个全局的*{margin:0;padding:0;}来统一。
 		 
@@ -187,7 +187,7 @@ HTML5？
 
 	    支持HTML5新标签：
 		
-		* 是IE8/IE7/IE6支持通过document.createElement方法产生的标签，
+		* IE8/IE7/IE6支持通过document.createElement方法产生的标签，
 		  可以利用这一特性让这些浏览器支持HTML5新标签，
   
           浏览器支持新标签后，还需要添加标签默认的样式：
@@ -318,7 +318,7 @@ HTML5？
 	
 	      1.   
 	      block 象块类型元素一样显示。
-		  none 缺省值。向行内元素类型一样显示。
+		  none 缺省值。象行内元素类型一样显示。
 		  inline-block 象行内元素一样显示，但其内容象块类型元素一样显示。
 		  list-item 象块类型元素一样显示，并添加样式列表标记。
 	  
@@ -644,11 +644,11 @@ HTML5？
 	      
 	      (3) 创建script，插入到DOM中，加载完毕后callBack
 	  
-			  documen.write和 innerHTML的区别
+- documen.write和 innerHTML的区别
 			  
-			  document.write只能重绘整个页面
-			  
-			  innerHTML可以重绘页面的一部分
+document.write只能重绘整个页面
+
+innerHTML可以重绘页面的一部分
 		  
 
 -  .call() 和 .apply() 的区别？
