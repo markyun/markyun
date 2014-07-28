@@ -44,10 +44,12 @@ HTML5？
 
 - iframe有那些缺点？
 
+-  Label的作用是什么？是怎么用的？（加 for） 
+
 - 请描述一下 cookies，sessionStorage 和 localStorage 的区别？
 
+- 你是怎么切图的？ 
  
-
 
 
 ## <a name='css'>CSS</a> 
@@ -68,7 +70,7 @@ HTML5？
 
 - 对BFC规范的理解？
 
-- css定义的权重
+- css定义的权重？
 
 - 解释下浮动和它的工作原理？清除浮动的技巧
 
@@ -76,11 +78,25 @@ HTML5？
 
 - 使用 CSS 预处理器吗？喜欢那个？
 
+- CSS 优化、提高性能的方法有哪些？
 
+- 浏览器是怎样解析CSS选择器的？
+
+- 在网页中的应该使用奇数还是偶数的字体？为什么呢？
+
+- margin和padding分别适合什么场景使用？
+- 
+- 你对line-height是如何理解的？
+
+- 怎么让Chrome支持小于12px 的文字？
  
 
 
+
+
 ## <a name='js'>JavaScript</a>
+
+-  用原生JS的写过东西吗？
 
 -  JavaScript原型，原型链 ? 有什么特点？
 
@@ -180,6 +196,8 @@ HTML5？
 
 - 对前端界面工程师这个职位是怎么样理解的？它的前景会怎么样？
 
+- 你怎么看待Web App 、hybrid App、Native App？
+
 
 - 加班的看法？
 
@@ -203,8 +221,18 @@ HTML5？
 
 - 介绍一个你最得意的作品吧？
 
+- 你常去那些技术博客？
+
 
 - 最近在学什么？能谈谈你未来3，5年给自己的规划吗？
+
+## 有趣的问题
+
+
+- .A、B两人分别在两座岛上。B生病了，A有B所需要的药。C有一艘小船和一个可以上锁的箱子。C愿意在A和B之间运东西，但东西只能放在箱子里。只要箱子没被上锁，C都会偷走箱子里的东西，不管箱子里有什么。如果A和B各自有一把锁和只能开自己那把锁的钥匙，A应该如何把东西安全递交给B？
+	
+		答案：A把药放进箱子，用自己的锁把箱子锁上。B拿到箱子后，再在箱子上加一把自己的锁。
+		箱子运回A后，A取下自己的锁。箱子再运到B手中时，B取下自己的锁，获得药物。
 
 
 ## <a name='web'>优质网站推荐</a>
@@ -218,29 +246,26 @@ HTML5？
 3. 前端周刊：		 http://www.feweekly.com/issues
 
 
-9. 极客头条： 	 http://geek.csdn.net/
+4. 极客头条： 	 http://geek.csdn.net/
 
 
-3. Startup News：http://news.dbanotes.net/
+5. Startup News：http://news.dbanotes.net/
 
 
-4. Hacker News： https://news.ycombinator.com/news  
+6. Hacker News： https://news.ycombinator.com/news  
 
 
-7. InfoQ：  		 http://www.infoq.com/ 
+7. InfoQ：  	     http://www.infoq.com/ 
 
 
-10. w3cplus：     http://www.w3cplus.com/
+8. w3cplus：    http://www.w3cplus.com/
 
 
-10. Stack Overflow： http://stackoverflow.com/ 
+9. Stack Overflow： http://stackoverflow.com/ 
+ 
 
 
-6. Atp：  		 http://atp-posts.b0.upaiyun.com/posts/ 
-
-
-
-###the last time that refresh: 2014/4/5 15:12:43 
+###the last time that refresh:  2014/7/28 23:09:21 
 
 	爱机车、爱骑行、爱旅行、爱摄影、爱阅读的理想青年，前端开发攻城师。
 		
