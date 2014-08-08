@@ -238,7 +238,13 @@ HTML5？
 		sessionStorage和localStorage有更多丰富易用的接口；
 		sessionStorage和localStorage各自独立的存储空间；
 		
+- 如何实现浏览器内多个标签页之间的通信? (阿里)
+		
+		调用localstorge、cookies等本地存储方式
 
+- webSocket如何兼容低浏览器？(阿里)
+		
+		Adobe Flash Socket 、 ActiveX HTMLFile (IE) 、 基于 multipart 编码发送 XHR 、 基于长轮询的 XHR
 
 
 ## <a name='css'>CSS</a> 
@@ -419,6 +425,14 @@ HTML5？
 		
 		SASS 
 
+- 如果需要手动写动画，你认为最小时间间隔是多久，为什么？（阿里）
+
+		多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小间隔为1/60＊1000ms ＝ 16.7ms
+
+
+- display:inline-block 什么时候会显示间隙？(携程)
+
+		移除空格、使用margin负值、使用font-size:0、letter-spacing、word-spacing
  
 
 
@@ -726,6 +740,10 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 		闭包、控制台日志、循环（在两个对象彼此引用且彼此保留时，就会产生一个循环）
 
 -  JQuery一个对象可以同时绑定多个事件，这是如何实现的？
+
+- 如何判断当前脚本运行在浏览器还是node环境中？（阿里）
+			
+		通过判断Global对象是否为window，如果不为window，当前脚本没有运行在浏览器中
   
 
 ## <a name='other'>其他问题</a>
