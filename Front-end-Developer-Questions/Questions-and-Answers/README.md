@@ -596,6 +596,8 @@ HTML5？
 
 -  "use strict";是什么意思 ? 使用它的好处和坏处分别是什么？
 
+    阮一峰博客写的很清楚：<http://www.ruanyifeng.com/blog/2013/01/javascript_strict_mode.html>
+
 -  如何判断一个对象是否属于某个类？
 
 
@@ -605,6 +607,11 @@ HTML5？
 	       if(a instanceof Person){
 	           alert('yes');
 	       }
+	       if(a.constructor === A){
+
+	       }
+
+
 -  new操作符具体干了什么呢?
 
 			 1、创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。
@@ -624,6 +631,8 @@ HTML5？
 		JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。
 		它是基于JavaScript的一个子集。数据格式简单, 易于读写, 占用带宽小
         {'age':'12', 'name':'back'}
+        JSON.parse();
+        JSON.stringify();
 
 -  js延迟加载的方式有哪些？
 		
@@ -655,7 +664,8 @@ HTML5？
 		    　　　　　　m1 : m1,
 		    　　　　　　m2 : m2
 		    　　　　};
-		    　　})(); 
+		    　　})();
+     sea.js require.js
 
 -  AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规范区别？
 
@@ -670,9 +680,9 @@ HTML5？
 	  
 - documen.write和 innerHTML的区别
 			  
-document.write只能重绘整个页面
+            document.write只能重绘整个页面
 
-innerHTML可以重绘页面的一部分
+            innerHTML可以重绘页面的一部分
 		  
 
 -  .call() 和 .apply() 的区别？
