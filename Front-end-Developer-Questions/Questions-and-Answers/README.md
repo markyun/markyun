@@ -446,6 +446,14 @@ HTML5？
 		应该避免使用eval，不安全，非常耗性能（2次，一次解析成js语句，一次执行）。
 
 -  null，undefined 的区别？
+        Null表示”没有对象”，即该处不应该有值
+        作为函数的参数，表示该函数的参数不是对象。
+        作为对象原型链的终点。
+        Undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义。
+        变量被声明了，但没有赋值时，就等于undefined。
+        调用函数时，应该提供的参数没有提供，该参数等于undefined。
+        对象没有赋值的属性，该属性的值为undefined。
+        函数没有返回值时，默认返回undefined。
 
 -  写一个通用的事件侦听器函数。
 
@@ -933,6 +941,7 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 6. Atp：  		 http://atp-posts.b0.upaiyun.com/posts/ 
 
+11.w3ctech:         <http://www.w3ctech.com/>
 
 
 ###the last time that refresh: 2014/4/5 15:12:43 
