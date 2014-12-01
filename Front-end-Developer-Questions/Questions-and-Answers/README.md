@@ -447,6 +447,15 @@ HTML5？
 
 -  null，undefined 的区别？
 
+        Null: 表示”没有对象”，即该处不应该有值
+        作为函数的参数，表示该函数的参数不是对象。
+        作为对象原型链的终点。
+        Undefined: 表示”缺少值”，就是此处应该有一个值，但是还没有定义。
+        变量被声明了，但没有赋值时，就等于undefined。
+        调用函数时，应该提供的参数没有提供，该参数等于undefined。
+        对象没有赋值的属性，该属性的值为undefined。
+        函数没有返回值时，默认返回undefined。
+
 -  写一个通用的事件侦听器函数。
 
 			// event(事件)工具集，来源：github.com/markyun
@@ -587,6 +596,8 @@ HTML5？
 
 -  "use strict";是什么意思 ? 使用它的好处和坏处分别是什么？
 
+    阮一峰博客写的很清楚：<http://www.ruanyifeng.com/blog/2013/01/javascript_strict_mode.html>
+
 -  如何判断一个对象是否属于某个类？
 
 
@@ -596,6 +607,11 @@ HTML5？
 	       if(a instanceof Person){
 	           alert('yes');
 	       }
+	       if(a.constructor === A){
+
+	       }
+
+
 -  new操作符具体干了什么呢?
 
 			 1、创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。
@@ -615,6 +631,8 @@ HTML5？
 		JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。
 		它是基于JavaScript的一个子集。数据格式简单, 易于读写, 占用带宽小
         {'age':'12', 'name':'back'}
+        JSON.parse();
+        JSON.stringify();
 
 -  js延迟加载的方式有哪些？
 		
@@ -646,7 +664,8 @@ HTML5？
 		    　　　　　　m1 : m1,
 		    　　　　　　m2 : m2
 		    　　　　};
-		    　　})(); 
+		    　　})();
+     sea.js require.js
 
 -  AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规范区别？
 
@@ -661,9 +680,9 @@ HTML5？
 	  
 - documen.write和 innerHTML的区别
 			  
-document.write只能重绘整个页面
+            document.write只能重绘整个页面
 
-innerHTML可以重绘页面的一部分
+            innerHTML可以重绘页面的一部分
 		  
 
 -  .call() 和 .apply() 的区别？
@@ -933,6 +952,7 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 6. Atp：  		 http://atp-posts.b0.upaiyun.com/posts/ 
 
+11.w3ctech:         <http://www.w3ctech.com/>
 
 
 ###the last time that refresh: 2014/4/5 15:12:43 
