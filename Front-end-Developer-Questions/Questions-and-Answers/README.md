@@ -614,7 +614,7 @@ HTML5？
 		
 		JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。
 		它是基于JavaScript的一个子集。数据格式简单, 易于读写, 占用带宽小
-        {'age':'12', 'name':'back'}
+        {"age":"12", "name":"back"}
 
 -  js延迟加载的方式有哪些？
 		
