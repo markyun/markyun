@@ -935,7 +935,7 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 
 
-###the last time that refresh: 2015-02-20
+###last updated:  2015-03-25
 
 	爱机车、爱骑行、爱旅行、爱摄影、爱阅读的理想青年，前端开发攻城师。
 
