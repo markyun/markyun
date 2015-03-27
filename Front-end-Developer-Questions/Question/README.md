@@ -46,6 +46,8 @@ HTML5？
 
 - Label的作用是什么？是怎么用的？（加 for）
 
+- HTML5的form如何关闭自动完成功能？给不想要提示的input是设置autocomplete=off即可
+
 - 请描述一下 cookies，sessionStorage 和 localStorage 的区别？
 
 - 如何实现浏览器内多个标签页之间的通信? (阿里)

@@ -230,6 +230,11 @@ HTML5？
 		*iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。
         使用iframe之前需要考虑这两个缺点。如果需要使用iframe，最好是通过javascript
         动态给iframe添加src属性值，这样可以可以绕开以上两个问题。
+ 
+- HTML5的form如何关闭自动完成功能？
+
+		给不想要提示的 form 或下某个input 设置为 autocomplete=off。
+
 
 - 请描述一下 cookies，sessionStorage 和 localStorage 的区别？
 
