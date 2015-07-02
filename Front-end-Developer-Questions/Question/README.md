@@ -163,9 +163,9 @@ HTML5？
 
 -  JSON 的了解？
 
--  [].forEach.call($$("*"),function(a){
+-  `[].forEach.call($$("*"),function(a){
   a.style.outline="1px solid #"+(~~(Math.random()*(1<<24))).toString(16)
-})  能解释一下这段代码的意思吗？
+})` 能解释一下这段代码的意思吗？
 
 -  js延迟加载的方式有哪些？
 
