@@ -537,6 +537,29 @@ HTML5？
 -  Node.js的适用场景？
 
 		高并发、聊天、实时消息推送
+-  实例对象属性的寻找顺序  
+	
+		function AAA(name){
+			this.name = name;
+		}
+		
+		function BBB(name){
+			if(name){
+				this.name = name;
+			}
+		}
+		
+		function CCC(name){
+			this.name = name || 'Tom';
+		}
+		
+		AAA.prototype.name = 'John';
+		BBB.prototype.name = 'John';
+		CCC.prototype.name = 'John';
+		
+		console.log( (new AAA()).name ); // undefined
+		console.log( (new CCC()).name ); // John
+		console.log( (new CCC()).name ); // Tom
 
 -  介绍js的基本数据类型。
 
