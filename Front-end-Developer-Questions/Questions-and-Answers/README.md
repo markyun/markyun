@@ -537,29 +537,31 @@ HTML5？
 -  Node.js的适用场景？
 
 		高并发、聊天、实时消息推送
--  实例对象属性的寻找顺序  
-	
-		function AAA(name){
-			this.name = name;
-		}
-		
-		function BBB(name){
-			if(name){
-				this.name = name;
-			}
-		}
-		
-		function CCC(name){
-			this.name = name || 'Tom';
-		}
-		
-		AAA.prototype.name = 'John';
-		BBB.prototype.name = 'John';
-		CCC.prototype.name = 'John';
-		
-		console.log( (new AAA()).name ); // undefined
-		console.log( (new CCC()).name ); // John
-		console.log( (new CCC()).name ); // Tom
+-  实例对象属性的寻找顺序 
+
+```javascript	
+function AAA(name){
+	this.name = name;
+}
+
+function BBB(name){
+	if(name){
+		this.name = name;
+	}
+}
+
+function CCC(name){
+	this.name = name || 'Tom';
+}
+
+AAA.prototype.name = 'John';
+BBB.prototype.name = 'John';
+CCC.prototype.name = 'John';
+
+console.log( (new AAA()).name ); // undefined
+console.log( (new CCC()).name ); // John
+console.log( (new CCC()).name ); // Tom
+```
 
 -  介绍js的基本数据类型。
 
@@ -589,6 +591,21 @@ HTML5？
 	    但是有一个总原则，那就是this指的是调用函数的那个对象。
 
 	    this一般情况下：是全局对象Global。 作为方法调用，那么this就是指这个对象
+	    
+```javascript
+var a = 10;
+function SSS(){
+	this.a = 2;
+	this.multiply = function(){
+		this.a *= 2;
+		console.log( this.a );
+	}
+}
+var ss = new SSS();
+ss.multiply(); // 4
+var get = ss.multiply;
+get(); // 20
+```
 
 -  事件是？IE与火狐的事件机制有什么区别？ 如何阻止冒泡？
 
