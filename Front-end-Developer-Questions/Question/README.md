@@ -339,7 +339,7 @@ HTML5？
 - Amazon主页的左上角有一个商品分类浏览的下拉菜单 没有延迟，而且子菜单也不会在不应该的时候消失。它是怎样做到这一点的呢？
 
 	 	 答案是通过探测鼠标移动的方向和轨迹，具体查看Khan Academy工程师 Ben Kamens 写的 jQuery插件
-		 ![这是 Khan Academy工程师 Ben Kamens 写的 jQuery插件](http://a.36krcnd.com/photo/3f716d75a80cdce23c803fc6f088846e.png)
+![这是 Khan Academy工程师 Ben Kamens 写的 jQuery插件](http://a.36krcnd.com/photo/3f716d75a80cdce23c803fc6f088846e.png)
 
 
 ## <a name='web'>前端学习网站推荐</a>
@@ -361,9 +361,14 @@ HTML5？
 	8. w3cplus：     http://www.w3cplus.com/
 	
 	9. Stack Overflow： http://stackoverflow.com/
+	
+	10.w3school：    http://www.w3school.com.cn/
+
+	11.mozilla：     https://developer.mozilla.org/zh-CN/docs/Web/JavaScript
 
 
-###last updated:   2015/7/24 10:42:15 
+
+###更新时间:  2015/7/24
 
 	  爱机车、爱骑行、爱旅行、爱摄影、爱阅读的前端开发攻城师。
 	
