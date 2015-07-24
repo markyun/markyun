@@ -1,20 +1,16 @@
-#前端开发面试题（题目列表+答案 完整版）
-
-
-## <a name='list'>目录</a>
-
-  1. [前言](#preface)
-  1. [HTML 部分](#html)
-  1. [CSS  部分](#css)
-  1. [JavaScript 部分](#js)
-  1. [其他问题](#other)
-  1. [优质网站推荐](#web)
-
-
-
+#前端开发面试题
 ## <a name='preface'>前言</a> ##
- 
-本文总结了一些优质的前端面试题（多数源于网络），初学者阅后也要用心钻研其中的原理，重要知识需要系统学习，透彻学习，形成自己的知识链。万不可投机取巧，只求面试过关是错误的！
+
+
+[只看问题点这里 ](https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Question "Questions")
+
+[看全部问题和答案点这里](https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers "Questions-and-Answers")
+
+本文收集总结了一些优质的前端面试题，初学者阅后也要用心钻研其中的原理，重要知识需要系统学习，透彻学习，形成自己的知识链。万不可投机取巧，只求面试过关是错误的！
+
+前端界不断有新的行业标准, 框架, 库会在更新和新增，正如赫门在2015深JS大会上《前端服务化之路》主题演讲中说的一句话：“每18至24个月，前端都会难一倍”，这些变化使前端的能力更加丰富、创造的应用也会更加完美。所以前端程序员们，继续学习吧。
+
+在网上发现此题目很多的分支，但都是直接拷贝粘贴，连答案和格式都没去审查修改，实在无语。我也收到许多微博私信的鼓励和更正题目信息，我这么粗心大意的人也觉得应该更新一下题目和答案，已帮助更多的前端开发者。
 
  ###面试有几点需注意：(来源程劭非老师 github:@wintercn)
 
@@ -444,6 +440,17 @@ HTML5？
 ## <a name='js'>JavaScript</a>
 
 -  JavaScript原型，原型链 ? 有什么特点？
+-  说几条写JavaScript的基本规范？
+
+		1.不要在同一行声明多个变量。
+		2.请使用 ===/!==来比较true/false或者数值
+		3.使用对象字面量替代new Array这种形式
+		4.不要使用全局函数。
+		5.Switch语句必须带有default分支
+		6.函数不应该有时候有返回值，有时候没有返回值。
+		7.For循环必须使用大括号
+		8.If语句必须使用大括号
+		9.for-in循环中的变量 应该使用var关键字明确限定作用域，从而避免作用域污染。
 
 -  eval是做什么的？
 
@@ -800,6 +807,7 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 		  （7） 图片预加载，将样式表放在顶部，将脚本放在底部  加上时间戳。
 
 		  （8） 避免在页面的主体布局中使用table，table要等其中的内容完全下载之后才会显示出来，显示比div+css布局慢。
+		  对普通的网站有一个统一的思路，就是尽量向前端优化、减少数据库操作、减少磁盘IO。向前端优化指的是，在不影响功能和体验的情况下，能在浏览器执行的不要在服务端执行，能在缓存服务器上直接返回的不要到应用服务器，程序能直接取得的结果不要到外部取得，本机内能取得的数据不要到远程取，内存能取到的不要到磁盘取，缓存中有的不要去数据库查询。减少数据库操作指减少更新次数、缓存结果减少查询次数、将数据库执行的操作尽可能的让你的程序完成（例如join查询），减少磁盘IO指尽量不使用文件系统作为缓存、减少读写文件次数等。程序优化永远要优化慢的部分，换语言是无法“优化”的。
 
 - http状态码有那些？分别代表是什么意思？
 
@@ -907,41 +915,30 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 			公司的薪资结构是什么样子的？
 
 
-## <a name='web'>优质网站推荐</a>
 
-1. 极客标签：		 http://www.gbtags.com/
+## <a name='web'>前端学习网站推荐</a>
+	
+	1. 极客标签：     http://www.gbtags.com/
 
-
-2. 码农周刊：		 http://weekly.manong.io/issues/
-
-
-3. 前端周刊：		 http://www.feweekly.com/issues
-
-
-9. 极客头条： 	 http://geek.csdn.net/
-
-
-3. Startup News：http://news.dbanotes.net/
-
-
-4. Hacker News： https://news.ycombinator.com/news
-
-
-7. InfoQ：  		 http://www.infoq.com/
-
-
-10. w3cplus：     http://www.w3cplus.com/
+	2. 码农周刊：     http://weekly.manong.io/issues/
+	
+	3. 前端周刊：     http://www.feweekly.com/issues
+	
+	4. 极客头条：   http://geek.csdn.net/
+	
+	5. Startup News：http://news.dbanotes.net/
+	
+	6. Hacker News： https://news.ycombinator.com/news
+	
+	7. InfoQ：        http://www.infoq.com/
+	
+	8. w3cplus：    http://www.w3cplus.com/
+	
+	9. Stack Overflow： http://stackoverflow.com/
 
 
-10. Stack Overflow： http://stackoverflow.com/
+###last updated:   2015/7/24 10:42:15 
 
-
-6. Atp：  		 http://atp-posts.b0.upaiyun.com/posts/
-
-
-
-###last updated:  2015-03-25
-
-	爱机车、爱骑行、爱旅行、爱摄影、爱阅读的理想青年，前端开发攻城师。
-
-	我的微博：http://weibo.com/920802999
+	  爱机车、爱骑行、爱旅行、爱摄影、爱阅读的前端开发攻城师。
+	
+	  我的微博：http://weibo.com/920802999
