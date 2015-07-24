@@ -310,12 +310,12 @@ HTML5？
 
 			  确定容器的宽高 宽500 高 300 的层
 			  设置层的外边距
-
+	
 		     .div {
 			  Width:500px ; height:300px;//高度可以不设
 			  Margin: -150px 0 0 -250px;
 			  position:relative;相对定位
-              background-color:pink;//方便看效果
+	          background-color:pink;//方便看效果
 			  left:50%;
 			  top:50%;
 			}
