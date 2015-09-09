@@ -458,6 +458,21 @@ HTML5？
 		应该避免使用eval，不安全，非常耗性能（2次，一次解析成js语句，一次执行）。
 
 -  null，undefined 的区别？
+-  	  undefined : 用来告诉你缺少某事物。
+	    
+	    typeof undefined => "undefined"
+	    
+	    注意：
+	    应该只给Javascript使用undefined，而不应该将某值设为undefined，
+	    如果想要表示某变数值仍然无法使用，应该使用null。
+		
+-	  null :  给你知道目前仍然无法使用某《可能会出现的值》。
+		
+		typeof null => object
+		
+		注意：
+		在验证null时，一定要使用　=== ，因为 == 无法分别 null 和　undefined
+
 
 -  写一个通用的事件侦听器函数。
 
