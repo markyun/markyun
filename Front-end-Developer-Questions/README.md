@@ -2,7 +2,7 @@
 ## <a name='preface'>前言</a> ##
 
 
-[只看问题点这里 ](https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Question "Questions")
+[只看问题点这里 ](http://markyun.github.io/2015/Front-end-Developer-Questions/ "Questions")
 
 [看全部问题和答案点这里](https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers "Questions-and-Answers")
 
