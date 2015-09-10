@@ -1,19 +1,17 @@
-##马云云在Github的博客，记录一些学习的片段。
 
-目前坐标： 中国-南京 (Nanjing city , People's Republic of China)
-
-目前职位：  前端开发  (Front-End Developer)
+##马云云的Github博客，记录一些学习的片段。
 
 
+[微博：马云云_理想青年](http://weibo.com/920802999 "马云云_理想青年的微博")
 
 [博客首页](http://markyun.github.io/ "马云云的博客")
 
 
-[前端开发面试题 Front-end-Developer-Questions    ](https://github.com/markyun/My-blog/blob/master/Front-end-Developer-Questions "最新前端开发面试题") (不定期更新) 欢迎Star和提交issues
+[前端开发面试题 Front-end-Developer-Questions](https://github.com/markyun/My-blog/blob/master/Front-end-Developer-Questions "最新前端开发面试题")  (不定期更新) 欢迎Star和提交issues
 
-爱机车、爱骑行、爱旅行、爱摄影、爱阅读，前端开发攻城师。 [马云云_理想青年](http://weibo.com/920802999 "马云云_理想青年的微博")
+爱机车、爱骑行、爱旅行、爱摄影、爱阅读，前端开发攻城师。 
 
 
-![Stated Clearly Image](http://farm4.staticflickr.com/3757/9364862224_217bcf88a8_c.jpg)
+![Stated Clearly Image](http://i3.tietuku.com/8d1ffe7d2f1d6bfc.jpg)
 
-无锡-太湖
+南京

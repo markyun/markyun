@@ -14,8 +14,7 @@
 
 ## <a name='preface'>前言</a>
 
-略
-
+ [前言](https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions "前言")
 
 ## <a name='html'>HTML</a>
 
@@ -23,24 +22,28 @@
 
 - 行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？
 
-- 介绍一下CSS的盒子模型？
+- 介绍一下标准的CSS的盒子模型？与IE的盒子模型有什么不同的？
 
-- link和@import的区别是？
+- 页面导入样式时，使用link和@import有什么区别？
 
-- CSS选择符有哪些？哪些属性可以继承？优先级算法如何计算？ CSS3新增伪类有那些？
+- CSS选择符有哪些？哪些属性可以继承？
+ 
+- CSS优先级算法如何计算？ 
+
+- CSS3新增伪类有那些？
 
 - 如何居中div？如何居中一个浮动元素？
 
-- 浏览器的内核分别是什么？
+- 常见的浏览器内核有哪些？
 
 - html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和
 HTML5？
 
-- HTML语义化的理解？
+- 简述一下你对HTML语义化的理解？
 
 - (写)描述一段语义的html代码吧。
 
-- HTML5的离线储存？
+- HTML5的离线储存怎么用，工作原理能不能解释一下？
 
 - 浏览器是怎么对HTML5的离线储存资源进行管理和加载的呢？
 
@@ -54,19 +57,19 @@ HTML5？
 
 - 如何实现浏览器内多个标签页之间的通信? (阿里)
 
-- webSocket如何兼容低浏览器？(阿里)
+- 如何使用websocket？如何兼容低浏览器？(阿里)
 
 - 页面可见性（Page Visibility）API 可以有哪些用途？
 
 ## <a name='css'>CSS</a>
 
-- 列出display的值，说明他们的作用。position的值， relative和absolute定位原点是？
+- display有哪些值？说明他们的作用。position的值relative和absolute定位原点是？
 
 - CSS3有哪些新特性（包含哪些模块）？
 
-- 请解释一下CSS3的Flexbox（弹性盒布局模型）,已经适用场景？
+- 请解释一下CSS3的Flexbox（弹性盒布局模型）,以及适用场景？
 
-- 用纯 CSS 创建一个三角形
+- 用纯CSS创建一个三角形的原理是什么？
 
 - 一个满屏 品 字布局 如何设计?
 
@@ -84,13 +87,13 @@ HTML5？
 
 - 对BFC规范的理解？
 
-- css定义的权重？
+- CSS权重优先级是如何计算的？
 
-- 解释下浮动和它的工作原理？清除浮动的技巧
+- 请解释一下浮动和它的工作原理？清除浮动的技巧
 
-- 用过媒体查询，针对移动端的布局吗？
+- 移动端的布局用过媒体查询吗？
 
-- 使用 CSS 预处理器吗？喜欢那个？
+- 使用 CSS 预处理器吗？喜欢那个，Why？
 
 - CSS优化、提高性能的方法有哪些？
 
@@ -100,14 +103,15 @@ HTML5？
 
 - margin和padding分别适合什么场景使用？
 
-- 元素竖向的百分比设定是相对于容器的宽度吗？
+- 元素竖向的百分比设定是相对于容器的高度吗？
 
 - 全屏滚动的原理是什么？用到了CSS的那些属性？
--  什么是响应式设计？为什么要做响应式设计？响应式设计的基本原理是什么？如何兼容低版本的 IE？
 
-- 视差滚动效果，如何给每页做动画效果？（返回之后还要再次出现，只出现一次分别怎么做？）
+- 什么是响应式设计？响应式设计的基本原理是什么？如何兼容低版本的IE？
 
-- ::before 和 :after中双冒号和单冒号 有什么区别？解释一下这2个伪元素。
+- 视差滚动效果，如何给每页做不同的动画？（回到顶部，向下滑动要再次出现，和只出现一次分别怎么做？）
+
+- ::before 和 :after中双冒号和单冒号 有什么区别？解释一下这2个伪元素的作用。
 
 - 如何修改chrome记住密码后自动填充表单的黄色背景 ？
 
@@ -119,7 +123,7 @@ HTML5？
 
 - 让页面里的字体变清晰，变细用CSS怎么做？（-webkit-font-smoothing: antialiased;）
 
-- font-style属性 可以让它赋值为“oblique” oblique是什么意思？
+- font-style属性可以让它赋值为“oblique” oblique是什么意思？
 
 - position:fixed;在android下无效怎么处理？
 
@@ -135,9 +139,9 @@ HTML5？
 
 -  介绍JavaScript的基本数据类型。
 
--  说几条写JavaScript的基本规范？
+-  说说写JavaScript的基本规范？
 
--  JavaScript原型(prototype)? 每个JS对象都有原型属性吗？
+-  请解释一下JavaScript原型(prototype)? 每个JS对象都有原型属性吗？
 
 -  JavaScript有几种类型值？（堆：原始值和 栈：引用值），你能画一下他们的内存图吗？
 
@@ -153,11 +157,11 @@ HTML5？
 
 -  null，undefined的区别？
 
--  写一个通用的事件侦听器函数。
+-  写一个通用的事件侦听器函数(机试题)。
 
 -  ["1", "2", "3"].map(parseInt) 答案是多少？
 
--  事件、IE与火狐的事件机制有什么区别？ 如何阻止冒泡？
+-  关于事件，IE与火狐的事件机制有什么区别？ 如何阻止冒泡？
 
 -  什么是闭包（closure），为什么要用它？
 
@@ -177,18 +181,20 @@ HTML5？
 
 -  js延迟加载的方式有哪些？
 
--  ajax是什么?
+-  ajax是什么，解释一下它的工作原理?
 
 -  同步和异步的区别?
 
 -  如何解决跨域问题?
 
--  模块化开发怎么做？
+-  JS模块化开发怎么做？
 
--  requireJS 的核心原理是什么？（如何动态加载的？如何避免多次加载的？如何
+-  requireJS的核心原理是什么？（如何动态加载的？如何避免多次加载的？如何
 缓存的？）
 
--  知道ECMAScript 6里怎么写class么? 
+-  谈一谈你对ECMAScript6的了解？
+
+-  ECMAScript6 怎么写class么，为什么会出现class这种东西? 
 
 -  AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规范区别？
 
@@ -202,9 +208,9 @@ HTML5？
 
 -  那些操作会造成内存泄漏？
 
--  JQuery的源码看过吗？能不能简单说一下它的实现原理？
+-  JQuery的源码看过吗？能不能简单概况一下它的实现原理？
 
--  jQuery.fn的init 方法返回的this指的是什么对象？为什么要返回this？
+-  jQuery.fn的init方法返回的this指的是什么对象？为什么要返回this？
 
 -  jquery中如何将数组转化为json字符串，然后再转化回来？
 
@@ -230,7 +236,7 @@ HTML5？
 
 -  jQueryUI如何自定义组件?
 
--  写一个无刷新的网站，并且能在浏览器前进、后退时正确响应怎么实现？
+-  需求：实现一个页面操作不会整页刷新的网站，并且能在浏览器前进、后退时正确响应。给出你的技术实现方案？
 
 -  如何判断当前脚本运行在浏览器还是node环境中？（阿里）
 
@@ -263,7 +269,7 @@ HTML5？
 
 ## <a name='other'>其他问题</a>
 
-- 原公司工作流程是怎么样的，如何与其他人协作的？
+- 原来公司工作流程是怎么样的，如何与其他人协作的？如何夸部门合作的？
 
 - 你遇到过比较难的技术问题是？你是如何解决的？
 
@@ -299,7 +305,7 @@ HTML5？
 
 - 你移动端前端开发的理解？（和 Web 前端开发的主要区别是什么？）
 
-- 对加班的看法？
+- 你对加班的看法？
 
 - 平时如何管理你的项目？
 
@@ -323,11 +329,13 @@ HTML5？
 
 - 介绍一个你最得意的作品吧？
 
-- 你有自己的技术博客吗，常去那些技术博客？
+- 你有自己的技术博客吗，常去那些博客？
 
 - 对前端安全有什么看法？
 
-- 最近在学什么？能谈谈你未来3，5年给自己的规划吗？
+- 最近在学什么东西吗？
+
+- 能谈谈你未来3，5年给自己的规划吗？
 
 ## 有趣的问题
 
@@ -352,9 +360,9 @@ HTML5？
 	
 	3. 前端周刊：     http://www.feweekly.com/issues
 	
-	4. 极客头条：     http://geek.csdn.net/
+	4. 慕课网：       http://www.imooc.com/
 	
-	5. Startup News：http://news.dbanotes.net/
+	5. div.io：		 http://div.io 
 	
 	6. Hacker News： https://news.ycombinator.com/news
 	
@@ -366,12 +374,25 @@ HTML5？
 	
 	10.w3school：    http://www.w3school.com.cn/
 
-	11.mozilla：     https://developer.mozilla.org/zh-CN/docs/Web/JavaScript
+	11.mozilla：     https://developer.mozilla.org/zh-CN/docs/Web/
+
+
+
+## <a name='web'>文档推荐</a>
+
+	
+1. [jQuery 基本原理](http://docs.huihoo.com/jquery/jquery-fundamentals/zh-cn/index.html "jQuery 基本原理")
+
+
+2. [JavaScript 秘密花园](http://bonsaiden.github.io/JavaScript-Garden/zh/)
+
+
+3. [CSS参考手册](http://css.doyoe.com/)
 
 
 
 ###更新时间:  2015/7/24
 
-	  爱机车、爱骑行、爱旅行、爱摄影、爱阅读的前端开发攻城师。
+
 	
-	  我的微博：http://weibo.com/920802999
+	资料答案不够正确和全面，欢迎欢迎Star和提交issues。我的微博：http://weibo.com/920802999
