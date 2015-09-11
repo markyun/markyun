@@ -81,42 +81,40 @@
 
 ## <a name='html'>HTML</a>
 
-- Doctype作用? 严格模式与混杂模式如何区分？它们有何意义?
+- Doctype作用？标准模式与兼容模式各有什么区别?
 
-		（1）、<!DOCTYPE> 声明位于文档中的最前面，处于 <html> 标签之前。告知浏览器的解析器，
-              用什么文档类型 规范来解析这个文档。
+		（1）、<!DOCTYPE>声明位于位于HTML文档中的第一行，处于 <html> 标签之前。告知浏览器的解析器用什么文档标准解析这个文档。DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。
 
-		（2）、严格模式的排版和 JS 运作模式是  以该浏览器支持的最高标准运行。
+		（2）、标准模式的排版 和JS运作模式都是以该浏览器支持的最高标准运行。在兼容模式中，页面以宽松的向后兼容的方式显示,模拟老式浏览器的行为以防止站点无法工作。
 
-		（3）、在混杂模式中，页面以宽松的向后兼容的方式显示。模拟老式浏览器的行为以防止站点无法工作。
+- HTML5 为什么只需要写 <!DOCTYPE HTML>？
 
-		（4）、DOCTYPE不存在或格式不正确会导致文档以混杂模式呈现。
+		 HTML5 不基于 SGML，因此不需要对DTD进行引用，但是需要doctype来规范浏览器的行为（让浏览器按照它们应该的方式来运行）；
+
+		 而HTML4.01基于SGML,所以需要对DTD进行引用，才能告知浏览器文档所使用的文档类型。
 
 - 行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？
 
-		（1）CSS规范规定，每个元素都有display属性，确定该元素的类型，每个元素都有默认的display值，
-		  比如div默认display属性值为“block”，成为“块级”元素；
-		  span默认display属性值为“inline”，是“行内”元素。
+		首先：CSS规范规定，每个元素都有display属性，确定该元素的类型，每个元素都有默认的display值，如div的display默认值为“block”，则为“块级”元素；span默认display属性值为“inline”，是“行内”元素。
 
-		（2）行内元素有：a b span img input select strong（强调的语气）
-		 块级元素有：div ul ol li dl dt dd h1 h2 h3 h4…p
+		（1）行内元素有：a b span img input select strong（强调的语气）
+		（2）块级元素有：div ul ol li dl dt dd h1 h2 h3 h4…p
 
-		（3）知名的空元素：
-		<br> <hr> <img> <input> <link> <meta>
-		鲜为人知的是：
-		<area> <base> <col> <command> <embed> <keygen> <param> <source> <track> <wbr>
+		（3）常见的空元素：
+			<br> <hr> <img> <input> <link> <meta>
+			鲜为人知的是：
+			<area> <base> <col> <command> <embed> <keygen> <param> <source> <track> <wbr>
 
 
-- link 和@import 的区别是？
+- 页面导入样式时，使用link和@import有什么区别？
 
 
-		（1）link属于XHTML标签，而@import是CSS提供的;
+		（1）link属于XHTML标签，除了加载CSS外，还能用于定义RSS, 定义rel连接属性等作用；而@import是CSS提供的，只能用于加载CSS;
 
 		（2）页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载;
 
-		（3）import只在IE5以上才能识别，而link是XHTML标签，无兼容问题;
+		（3）import是CSS2.1 提出的，只在IE5以上才能被识别，而link是XHTML标签，无兼容问题;
 
-		（4）link方式的样式的权重 高于@import的权重.
 
 - 浏览器的内核分别是什么?
 

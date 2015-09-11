@@ -20,9 +20,9 @@
 
 - Doctype作用？严格模式与混杂模式如何区分？它们有何意义?
 
-- 行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？
+- HTML5 为什么只需要写 <!DOCTYPE HTML>？
 
-- 介绍一下标准的CSS的盒子模型？与IE的盒子模型有什么不同的？
+- 行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？
 
 - 页面导入样式时，使用link和@import有什么区别？
 
@@ -62,6 +62,8 @@ HTML5？
 - 页面可见性（Page Visibility）API 可以有哪些用途？
 
 ## <a name='css'>CSS</a>
+
+- 介绍一下标准的CSS的盒子模型？与低版本IE的盒子模型有什么不同的？
 
 - display有哪些值？说明他们的作用。position的值relative和absolute定位原点是？
 
