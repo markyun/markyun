@@ -216,10 +216,10 @@ HTML5？
 
 	    （HTML5中新增加的很多标签（如：<article>、<nav>、<header>和<footer>等）
          就是基于语义化设计原则）
-			< div id="header">
+			< header >
 			< h1>标题< /h1>
 			< h2>专注Web前端技术< /h2>
-			< /div>
+			< /header >
 
 
 - iframe有那些缺点？
