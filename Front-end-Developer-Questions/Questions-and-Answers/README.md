@@ -116,51 +116,23 @@
 		（3）import是CSS2.1 提出的，只在IE5以上才能被识别，而link是XHTML标签，无兼容问题;
 
 
-- 浏览器的内核分别是什么?
+- 介绍一下你对浏览器内核的理解？
 
-	     * IE浏览器的内核Trident、Mozilla的Gecko、Chrome的Blink（WebKit的分支）、Opera内核原为Presto，现为Blink；
+		主要分成两部分：渲染引擎(layout engineer或Rendering Engine)和JS引擎。
+		渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入CSS等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。
 
+		JS引擎则：解析和执行javascript来实现网页的动态效果。
 
-- 常见兼容性问题？
+		最开始渲染引擎和JS引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。
 
-	    * png24位的图片在iE6浏览器上出现背景，解决方案是做成PNG8.
+- 常见的浏览器内核有哪些？
+	  
+        Trident内核：IE,MaxThon,TT,The World,360,搜狗浏览器等。[又称MSHTML]
+		Gecko内核：Netscape6及以上版本，FF,MozillaSuite/SeaMonkey等
+		Presto内核：Opera7及以上。      [Opera内核原为：Presto，现为：Blink;]
+		Webkit内核：Safari,Chrome等。   [ Chrome的：Blink（WebKit的分支）]
 
-		* 浏览器默认的margin和padding不同。解决方案是加一个全局的*{margin:0;padding:0;}来统一。
-
-		* IE6双边距bug:块属性标签float后，又有横行的margin情况下，在ie6显示margin比设置的大。
-
-		  浮动ie产生的双倍距离 #box{ float:left; width:10px; margin:0 0 0 100px;}
-
-	     这种情况之下IE会产生20px的距离，解决方案是在float的标签样式控制中加入 ——_display:inline;将其转化为行内属性。(_这个符号只有ie6会识别)
-
-		  渐进识别的方式，从总体中逐渐排除局部。
-
-		  首先，巧妙的使用“\9”这一标记，将IE游览器从所有情况中分离出来。
-		  接着，再次使用“+”将IE8和IE7、IE6分离开来，这样IE8已经独立识别。
-
-          css
-	          .bb{
-	           background-color:#f1ee18;/*所有识别*/
-	          .background-color:#00deff\9; /*IE6、7、8识别*/
-	          +background-color:#a200ff;/*IE6、7识别*/
-	          _background-color:#1e0bd1;/*IE6识别*/
-	          }
-
-		*  IE下,可以使用获取常规属性的方法来获取自定义属性,
-		   也可以使用getAttribute()获取自定义属性;
-           Firefox下,只能使用getAttribute()获取自定义属性.
-           解决方法:统一通过getAttribute()获取自定义属性.
-
-		* IE下,even对象有x,y属性,但是没有pageX,pageY属性;
-          Firefox下,event对象有pageX,pageY属性,但是没有x,y属性.
-
-		* 解决方法：（条件注释）缺点是在IE浏览器下可能会增加额外的HTTP请求数。
-
-		* Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示,
-		  可通过加入 CSS 属性 -webkit-text-size-adjust: none; 解决.
-
-		超链接访问过后hover样式就不出现了 被点击访问过的超链接样式不在具有hover和active了解决方法是改变CSS属性的排列顺序:
-	    L-V-H-A :  a:link {} a:visited {} a:hover {} a:active {}
+      详细文章：[浏览器内核的解析和对比 - 依水间 ](http://www.cnblogs.com/fullhouse/archive/2011/12/19/2293455.html)
 
 
 
@@ -169,66 +141,93 @@ HTML5？
 
 
 		* HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。
+			  绘画 canvas;
+			  用于媒介回放的 video 和 audio 元素;
+			  本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;
+	          sessionStorage 的数据在浏览器关闭后自动删除;
+			  语意化更好的内容元素，比如 article、footer、header、nav、section;
+			  表单控件，calendar、date、time、email、url、search;
+			  新的技术webworker, websockt, Geolocation;
 
-		* 绘画 canvas
-		  用于媒介回放的 video 和 audio 元素
-		  本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失；
-          sessionStorage 的数据在浏览器关闭后自动删除
+		  移除的元素：
 
-		  语意化更好的内容元素，比如 article、footer、header、nav、section
-		  表单控件，calendar、date、time、email、url、search
-		  新的技术webworker, websockt, Geolocation
+			  纯表现的元素：basefont，big，center，font, s，strike，tt，u;
+			  对可用性产生负面影响的元素：frame，frameset，noframes；
 
-		* 移除的元素
+	    * 支持HTML5新标签：
+			 IE8/IE7/IE6支持通过document.createElement方法产生的标签，
+		  	 可以利用这一特性让这些浏览器支持HTML5新标签，
+          	 浏览器支持新标签后，还需要添加标签默认的样式。
 
-		纯表现的元素：basefont，big，center，font, s，strike，tt，u；
+		     当然最好的方式是直接使用成熟的框架、使用最多的是html5shim框架
+			 <!--[if lt IE 9]>
+				<script> src="http://html5shim.googlecode.com/svn/trunk/html5.js"</script>
+			 <![endif]-->
 
-		对可用性产生负面影响的元素：frame，frameset，noframes；
-
-	    支持HTML5新标签：
-
-		* IE8/IE7/IE6支持通过document.createElement方法产生的标签，
-		  可以利用这一特性让这些浏览器支持HTML5新标签，
-
-          浏览器支持新标签后，还需要添加标签默认的样式：
-
-		* 当然最好的方式是直接使用成熟的框架、使用最多的是html5shim框架
-		   <!--[if lt IE 9]>
-		   <script> src="http://html5shim.googlecode.com/svn/trunk/html5.js"</script>
-		   <![endif]-->
-		如何区分： DOCTYPE声明\新增的结构元素\功能元素
+		* 如何区分： DOCTYPE声明\新增的结构元素\功能元素
 
 
-- 语义化的理解？
+- 简述一下你对HTML语义化的理解？
 
-		用正确的标签做正确的事情！
-	    html语义化就是让页面的内容结构化，便于对浏览器、搜索引擎解析；
-	    在没有样式CCS情况下也以一种文档格式显示，并且是容易阅读的。
-	    搜索引擎的爬虫依赖于标记来确定上下文和各个关键字的权重，利于 SEO。
+		用正确的标签做正确的事情。
+	    html语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;
+	    及时在没有样式CCS情况下也以一种文档格式显示，并且是容易阅读的;
+	    搜索引擎的爬虫也依赖于HTML标记来确定上下文和各个关键字的权重，利于SEO;
 	    使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。
 
-- HTML5的离线储存？
+
+
+- HTML5的离线储存怎么使用，工作原理能不能解释一下？
+
+		在用户没有与因特网连接时，可以正常访问站点或应用，在用户与因特网连接时，更新用户机器上的缓存文件。
+		原理：HTML5的离线存储是基于一个新建的.appcache文件的缓存机制(不是存储技术)，通过这个文件上的解析清单离线存储资源，这些资源就会像cookie一样被存储了下来。之后当网络在处于离线状态下时，浏览器会通过被离线存储的数据进行页面展示。
+
+
+		如何使用：
+		1、页面头部像下面一样加入一个manifest的属性；
+		2、在cache.manifest文件的编写离线存储的资源；
+			CACHE MANIFEST
+			#v0.11
+			CACHE:
+			js/app.js
+			css/style.css
+			NETWORK:
+			resourse/logo.png
+			FALLBACK:
+			/ /offline.html
+		3、在离线状态时，操作window.applicationCache进行需求实现。
+
+	详细的使用请参考：[有趣的HTML5：离线存储](http://segmentfault.com/a/1190000000732617)
+
+
+
+- 浏览器是怎么对HTML5的离线储存资源进行管理和加载的呢？
+
+		在线的情况下，浏览器发现html头部有manifest属性，它会请求manifest文件，如果是第一次访问app，那么浏览器就会根据manifest文件的内容下载相应的资源并且进行离线存储。如果已经访问过app并且资源已经离线存储了，那么浏览器就会使用离线的资源加载页面，然后浏览器会对比新的manifest文件与旧的manifest文件，如果文件没有发生改变，就不做任何操作，如果文件改变了，那么就会重新下载文件中的资源并进行离线存储。
+		离线的情况下，浏览器就直接使用离线存储的资源。
+	详细的使用请参考：[有趣的HTML5：离线存储](http://segmentfault.com/a/1190000000732617)
+
+- 请描述一下 cookies，sessionStorage 和 localStorage 的区别？
 
 	    localStorage    长期存储数据，浏览器关闭后数据不丢失；
         sessionStorage  数据在浏览器关闭后自动删除。
-
-- (写)描述一段语义的html代码吧。
-
-	    （HTML5中新增加的很多标签（如：<article>、<nav>、<header>和<footer>等）
-         就是基于语义化设计原则）
-			< div id="header">
-			< h1>标题< /h1>
-			< h2>专注Web前端技术< /h2>
-			< /div>
-
 
 - iframe有那些缺点？
 
 		*iframe会阻塞主页面的Onload事件；
 
 		*iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。
+
         使用iframe之前需要考虑这两个缺点。如果需要使用iframe，最好是通过javascript
         动态给iframe添加src属性值，这样可以可以绕开以上两个问题。
+
+- Label的作用是什么？是怎么用的？
+
+		label标签来定义表单控制间的关系,当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上。
+
+		<label for="Name">Number:</label> <input type=“text“name="Name" id="Name"/> 
+
+		<label>Date:<input type="text" name="B" /></label>
  
 - HTML5的form如何关闭自动完成功能？
 
@@ -357,7 +356,49 @@ HTML5？
 
 - 一个满屏 品 字布局 如何设计?
 
-- 经常遇到的CSS的兼容性有哪些？原因，解决方法是什么？
+
+- 常见兼容性问题？
+
+	    * png24位的图片在iE6浏览器上出现背景，解决方案是做成PNG8.
+
+		* 浏览器默认的margin和padding不同。解决方案是加一个全局的*{margin:0;padding:0;}来统一。
+
+		* IE6双边距bug:块属性标签float后，又有横行的margin情况下，在ie6显示margin比设置的大。
+
+		  浮动ie产生的双倍距离 #box{ float:left; width:10px; margin:0 0 0 100px;}
+
+	     这种情况之下IE会产生20px的距离，解决方案是在float的标签样式控制中加入 ——_display:inline;将其转化为行内属性。(_这个符号只有ie6会识别)
+
+		  渐进识别的方式，从总体中逐渐排除局部。
+
+		  首先，巧妙的使用“\9”这一标记，将IE游览器从所有情况中分离出来。
+		  接着，再次使用“+”将IE8和IE7、IE6分离开来，这样IE8已经独立识别。
+
+          css
+	          .bb{
+	           background-color:#f1ee18;/*所有识别*/
+	          .background-color:#00deff\9; /*IE6、7、8识别*/
+	          +background-color:#a200ff;/*IE6、7识别*/
+	          _background-color:#1e0bd1;/*IE6识别*/
+	          }
+
+		*  IE下,可以使用获取常规属性的方法来获取自定义属性,
+		   也可以使用getAttribute()获取自定义属性;
+           Firefox下,只能使用getAttribute()获取自定义属性.
+           解决方法:统一通过getAttribute()获取自定义属性.
+
+		* IE下,even对象有x,y属性,但是没有pageX,pageY属性;
+          Firefox下,event对象有pageX,pageY属性,但是没有x,y属性.
+
+		* 解决方法：（条件注释）缺点是在IE浏览器下可能会增加额外的HTTP请求数。
+
+		* Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示,
+		  可通过加入 CSS 属性 -webkit-text-size-adjust: none; 解决.
+
+		超链接访问过后hover样式就不出现了 被点击访问过的超链接样式不在具有hover和active了解决方法是改变CSS属性的排列顺序:
+	    L-V-H-A :  a:link {} a:visited {} a:hover {} a:active {}
+
+
 
 
 
