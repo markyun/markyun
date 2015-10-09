@@ -53,6 +53,8 @@ HTML5？
 
 - 页面可见性（Page Visibility）API 可以有哪些用途？
 
+- 如何在页面上实现一个圆形的可点击区域？
+
 ## <a name='css'>CSS</a>
 
 - 介绍一下标准的CSS的盒子模型？与低版本IE的盒子模型有什么不同的？
@@ -134,6 +136,8 @@ HTML5？
 - display:inline-block 什么时候会显示间隙？(携程)
 
 - overflow: scroll时不能平滑滚动的问题怎么处理？
+
+- 有一个高度自适应的div，里面有两个div，一个高度100px，希望另一个填满剩下的高度。
 
 ## <a name='js'>JavaScript</a>
 
@@ -268,6 +272,8 @@ HTML5？
 - 简述一下 Handlebars 的基本用法？
 
 - 简述一下 Handlerbars 的对模板的基本处理流程， 如何编译的？如何缓存的？
+
+- 用js实现千位分隔符?(来源：[前端农民工](http://div.io/topic/744)，提示：正则+replace)
 
 ## <a name='other'>其他问题</a>
 
