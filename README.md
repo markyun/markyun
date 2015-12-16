@@ -9,9 +9,10 @@
 
 [前端开发面试题 Front-end-Developer-Questions](https://github.com/markyun/My-blog/blob/master/Front-end-Developer-Questions "最新前端开发面试题")  (不定期更新) 欢迎Star和提交issues
 
-爱机车、爱骑行、爱旅行、爱摄影、爱阅读，前端开发攻城师。 
+爱骑行、爱摄影、爱阅读的理想青年。 
 
 
 ![Stated Clearly Image](http://i3.tietuku.com/8d1ffe7d2f1d6bfc.jpg)
+
 
 南京

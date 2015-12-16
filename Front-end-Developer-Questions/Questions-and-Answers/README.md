@@ -148,7 +148,6 @@ HTML5？
 			  新的技术webworker, websockt, Geolocation;
 
 		  移除的元素：
-
 			  纯表现的元素：basefont，big，center，font, s，strike，tt，u;
 			  对可用性产生负面影响的元素：frame，frameset，noframes；
 
@@ -157,12 +156,12 @@ HTML5？
 		  	 可以利用这一特性让这些浏览器支持HTML5新标签，
           	 浏览器支持新标签后，还需要添加标签默认的样式。
 
-		     当然最好的方式是直接使用成熟的框架、使用最多的是html5shim框架
+		     当然最好的方式是直接使用成熟的框架、比如html5shim;
 			 <!--[if lt IE 9]>
 				<script> src="http://html5shim.googlecode.com/svn/trunk/html5.js"</script>
 			 <![endif]-->
 
-		* 如何区分： DOCTYPE声明\新增的结构元素\功能元素
+		* 如何区分HTML5： DOCTYPE声明\新增的结构元素\功能元素
 
 
 - 简述一下你对HTML语义化的理解？
@@ -229,15 +228,16 @@ HTML5？
 		*iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。
 
         使用iframe之前需要考虑这两个缺点。如果需要使用iframe，最好是通过javascript
-        动态给iframe添加src属性值，这样可以可以绕开以上两个问题。
+        动态给iframe添加src属性值，这样可以绕开以上两个问题。
 
 - Label的作用是什么？是怎么用的？
 
 		label标签来定义表单控制间的关系,当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上。
 
-		<label for="Name">Number:</label> <input type=“text“name="Name" id="Name"/> 
+		<label for="Name">Number:</label> 
+		<input type=“text“name="Name" id="Name"/> 
 
-		<label>Date:<input type="text" name="B" /></label>
+		<label>Date:<input type="text" name="B"/></label>
  
 - HTML5的form如何关闭自动完成功能？
 
@@ -257,7 +257,10 @@ HTML5？
 
 - webSocket如何兼容低浏览器？(阿里)
 
-		Adobe Flash Socket 、 ActiveX HTMLFile (IE) 、 基于 multipart 编码发送 XHR 、 基于长轮询的 XHR
+		Adobe Flash Socket 、 
+		ActiveX HTMLFile (IE) 、 
+		基于 multipart 编码发送 XHR 、 
+		基于长轮询的 XHR
 
 
 ## <a name='css'>CSS</a>
@@ -303,11 +306,11 @@ HTML5？
         p:only-of-type	选择属于其父元素唯一的 <p> 元素的每个 <p> 元素。
 		p:only-child	选择属于其父元素的唯一子元素的每个 <p> 元素。
 		p:nth-child(2)	选择属于其父元素的第二个子元素的每个 <p> 元素。
- 	    :enabled  :disabled 控制表单控件的禁用状态。
+ 	    :enabled  		:disabled 控制表单控件的禁用状态。
 		:checked        单选框或复选框被选中。
 
 
-- 如何居中div？如何居中一个浮动元素？
+- 如何居中div？如何居中一个浮动元素？如何让绝对定位的div居中？
 
 
 	*  给div设置一个宽度，然后添加margin:0 auto属性
@@ -324,13 +327,24 @@ HTML5？
 			  设置层的外边距
 	
 		     .div {
-			  Width:500px ; height:300px;//高度可以不设
-			  Margin: -150px 0 0 -250px;
-			  position:relative;相对定位
-	          background-color:pink;//方便看效果
-			  left:50%;
-			  top:50%;
-			}
+				  width:500px ; height:300px;//高度可以不设
+				  margin: -150px 0 0 -250px;
+				  position:relative;		 //相对定位
+		          background-color:pink;	 //方便看效果
+				  left:50%;
+				  top:50%;
+			 }
+
+	*  让绝对定位的div居中
+	
+			  position: absolute;
+			  width: 1200px;
+			  background: none;
+			  margin: 0 auto;
+			  top: 0;
+			  left: 0;
+			  bottom: 0;
+			  right: 0;
 
 
 - 列出display的值，说明他们的作用。position的值， relative和absolute定位原点是？
@@ -343,28 +357,37 @@ HTML5？
 		  list-item 象块类型元素一样显示，并添加样式列表标记。
 
 	      2.
-		  *absolute
+		  absolute
 				生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。
 
-		  *fixed （老IE不支持）
+		  fixed （老IE不支持）
 				生成绝对定位的元素，相对于浏览器窗口进行定位。
 
-		  *relative
+		  relative
 				生成相对定位的元素，相对于其正常位置进行定位。
 
-		  * static	默认值。没有定位，元素出现在正常的流中
-		  *（忽略 top, bottom, left, right z-index 声明）。
+		  static	默认值。没有定位，元素出现在正常的流中
+		  （忽略 top, bottom, left, right z-index 声明）。
 
-		  * inherit	规定从父元素继承 position 属性的值。
+		  inherit	规定从父元素继承 position 属性的值。
 
 - CSS3有哪些新特性？
 
-  		  CSS3实现圆角（border-radius:8px），阴影（box-shadow:10px），
-		  对文字加特效（text-shadow、），线性渐变（gradient），旋转（transform）
+  		  CSS3实现圆角（border-radius:8px），
+		  阴影（box-shadow:10px），
+		  文字特效（text-shadow、），
+		  线性渐变（gradient），
+		  旋转（transform）
           transform:rotate(9deg) scale(0.85,0.90) translate(0px,-30px) skew(-9deg,0deg);//旋转,缩放,定位,倾斜
-          增加了更多的CSS选择器  多背景 rgba
+          增加了更多的CSS选择器  
+		  多背景 rgba
 
 - 一个满屏 品 字布局 如何设计?
+
+		简单的方式：
+			上面的div宽100%，
+			下面的两个div分别宽50%，
+			然后用float或者inline使其不换行即可
 
 
 - 常见兼容性问题？
@@ -377,7 +400,7 @@ HTML5？
 
 		  浮动ie产生的双倍距离 #box{ float:left; width:10px; margin:0 0 0 100px;}
 
-	     这种情况之下IE会产生20px的距离，解决方案是在float的标签样式控制中加入 ——_display:inline;将其转化为行内属性。(_这个符号只有ie6会识别)
+	      这种情况之下IE会产生20px的距离，解决方案是在float的标签样式控制中加入 ——_display:inline;将其转化为行内属性。(_这个符号只有ie6会识别)
 
 		  渐进识别的方式，从总体中逐渐排除局部。
 
@@ -386,24 +409,24 @@ HTML5？
 
           css
 	          .bb{
-	           background-color:#f1ee18;/*所有识别*/
-	          .background-color:#00deff\9; /*IE6、7、8识别*/
-	          +background-color:#a200ff;/*IE6、7识别*/
-	          _background-color:#1e0bd1;/*IE6识别*/
+		          background-color:#f1ee18;/*所有识别*/
+		          .background-color:#00deff\9; /*IE6、7、8识别*/
+		          +background-color:#a200ff;/*IE6、7识别*/
+		          _background-color:#1e0bd1;/*IE6识别*/
 	          }
 
 		*  IE下,可以使用获取常规属性的方法来获取自定义属性,
 		   也可以使用getAttribute()获取自定义属性;
-           Firefox下,只能使用getAttribute()获取自定义属性.
-           解决方法:统一通过getAttribute()获取自定义属性.
+           Firefox下,只能使用getAttribute()获取自定义属性。
+           解决方法:统一通过getAttribute()获取自定义属性。
 
-		* IE下,even对象有x,y属性,但是没有pageX,pageY属性;
-          Firefox下,event对象有pageX,pageY属性,但是没有x,y属性.
+		*  IE下,even对象有x,y属性,但是没有pageX,pageY属性;
+           Firefox下,event对象有pageX,pageY属性,但是没有x,y属性。
 
-		* 解决方法：（条件注释）缺点是在IE浏览器下可能会增加额外的HTTP请求数。
+		*  解决方法：（条件注释）缺点是在IE浏览器下可能会增加额外的HTTP请求数。
 
-		* Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示,
-		  可通过加入 CSS 属性 -webkit-text-size-adjust: none; 解决.
+		*  Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示,
+		   可通过加入 CSS 属性 -webkit-text-size-adjust: none; 解决。
 
 		超链接访问过后hover样式就不出现了 被点击访问过的超链接样式不在具有hover和active了解决方法是改变CSS属性的排列顺序:
 	    L-V-H-A :  a:link {} a:visited {} a:hover {} a:active {}
@@ -418,9 +441,9 @@ HTML5？
 
 		- 当然，初始化样式会对SEO有一定的影响，但鱼和熊掌不可兼得，但力求影响最小的情况下初始化。
 
-		*最简单的初始化方法就是： * {padding: 0; margin: 0;} （不建议）
+		最简单的初始化方法： * {padding: 0; margin: 0;} （强烈不建议）
 
-		淘宝的样式初始化：
+		淘宝的样式初始化代码：
 		body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
 		body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
 		h1, h2, h3, h4, h5, h6{ font-size:100%; }
@@ -439,13 +462,25 @@ HTML5？
 
 
 
-- absolute的containing block计算方式跟正常流有什么不同？
+- absolute的containing block(容器块)计算方式跟正常流有什么不同？
+	
+		无论属于哪种，都要先找到其祖先元素中最近的 position 值不为 static 的元素，然后再判断：
+		1、若此元素为 inline 元素，则 containing block 为能够包含这个元素生成的第一个和最后一个 inline box 的 padding box (除 margin, border 外的区域) 的最小矩形；
+		2、否则,则由这个祖先元素的 padding box 构成。
+		如果都找不到，则为 initial containing block。
+
+		补充：
+		1. static(默认的)/relative：简单说就是它的父元素的内容框（即去掉padding的部分）
+		2. absolute: 向上找最近的定位为absolute/relative的元素
+		3. fixed: 它的containing block一律为根元素(html/body)，根元素也是initial containing block
 
 - position跟display、margin collapse、overflow、float这些特性相互叠加后会怎么样？
 
-- 对BFC规范的理解？
+- 对BFC规范(块级格式化上下文：block formatting context)的理解？
 
-		（W3C CSS 2.1 规范中的一个概念,它决定了元素如何对其内容进行定位,以及与其他元素的关 系和相互作用。）
+		（W3C CSS 2.1 规范中的一个概念,它是一个独立容器，决定了元素如何对其内容进行定位,以及与其他元素的关系和相互作用。）
+		 一个页面是由很多个 Box 组成的,元素的类型和 display 属性,决定了这个 Box 的类型。 
+		 不同类型的 Box,会参与不同的 Formatting Context（决定如何渲染文档的容器）,因此Box内的元素会以不同的方式渲染,也就是说BFC内部的元素和外部的元素不会互相影响。
 - css定义的权重
 
 		以下是权重的规则：标签的权重为1，class的权重为10，id的权重为100，以下例子是演示各种定义的权重值：
@@ -478,7 +513,7 @@ HTML5？
 
 - 使用 CSS 预处理器吗？喜欢那个？
 
-		SASS
+		SASS (SASS、LESS没有本质区别，只因为团队前端都是用的SASS)
 
 - 如果需要手动写动画，你认为最小时间间隔是多久，为什么？（阿里）
 
@@ -651,7 +686,19 @@ HTML5？
 		 sayAlert()//执行结果应该弹出的667
 
 
--  "use strict";是什么意思 ? 使用它的好处和坏处分别是什么？
+-  javascript 代码中的"use strict";是什么意思 ? 使用它区别是什么？
+
+		use strict是一种严格模式,使JS编码更加规范化的模式；
+		消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为。
+
+		默认支持的糟糕特性都会被禁用，比如不能用with，也不能在意外的情况下给全局变量赋值;
+		全局变量的显示声明,函数必须声明在顶层，不允许在非函数代码块内声明函数,arguments.callee也不允许使用；
+		消除代码运行的一些不安全之处，保证代码运行的安全,限制函数中的arguments修改，严格模式下的eval函数的行为和非严格模式的也不相同;
+		提高编译器效率，增加运行速度；
+		为未来新版本的Javascript标准化做铺垫。
+
+
+
 
 -  如何判断一个对象是否属于某个类？
 
@@ -689,12 +736,23 @@ HTML5？
 
 -  ajax 是什么?
 
+		ajax的全称：Asynchronous Javascript And XML。
+		异步传输+js+xml。
+		所谓异步，在这里简单地解释就是：向服务器发送请求的时候，我们不必等待结果，而是可以同时做其他的事情，等到有了结果它自己会根据设定进行后续操作，与此同时，页面是不会发生整页刷新的，提高了用户体验。
+
 -  同步和异步的区别?
+
+	同步：浏览器访问服务器请求，用户看得到页面刷新，重新发请求,等请求完，页面刷新，新内容出现，用户看到新内容,j进行下一步操作。
+	
+	异步：浏览器访问服务器请求，用户正常操作，浏览器后端进行请求。等请求完，页面不刷新，新内容也会出现，用户看到新内容。
+
+	（待完善）
 
 -  如何解决跨域问题?
 
 		jsonp、 iframe、window.name、window.postMessage、服务器上设置代理页面
--  模块化怎么做？
+
+-  模块化开发怎么做？
 
 
 
@@ -713,6 +771,8 @@ HTML5？
 		    　　　　　　m2 : m2
 		    　　　　};
 		    　　})();
+
+	（待完善）
 
 -  AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规范区别？
 
