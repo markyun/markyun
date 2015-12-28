@@ -45,25 +45,27 @@ HTML5？
 
 - Label的作用是什么？是怎么用的？（加 for 或 包裹）
 
-- HTML5的form如何关闭自动完成功能？给不想要提示的input是设置autocomplete=off即可
+- HTML5的form如何关闭自动完成功能？
 
 - 如何实现浏览器内多个标签页之间的通信? (阿里)
 
-- 如何使用websocket？如何兼容低浏览器？(阿里)
+- webSocket如何兼容低浏览器？(阿里)
 
 - 页面可见性（Page Visibility）API 可以有哪些用途？
 
 - 如何在页面上实现一个圆形的可点击区域？
 
-- 是否了解公钥加密和私钥加密。如何确保表单提交里的密码字段不被泄露。验证码是干嘛的，是为了解决什么安全问题。
+- 实现不使用 border 画出1px高的线，在不同浏览器的Quirksmode和CSSCompat模式下都能保持同一效果。
+
+- 网页验证码是干嘛的，是为了解决什么安全问题？
 
 ## <a name='css'>CSS</a>
 
 - 介绍一下标准的CSS的盒子模型？与低版本IE的盒子模型有什么不同的？
 
 - CSS选择符有哪些？哪些属性可以继承？
- 
-- CSS优先级算法如何计算？ 
+
+- CSS优先级算法如何计算？
 
 - CSS3新增伪类有那些？
 
@@ -73,13 +75,15 @@ HTML5？
 
 - position的值relative和absolute定位原点是？
 
-- CSS3有哪些新特性（包含哪些模块）？
+- CSS3有哪些新特性？
 
 - 请解释一下CSS3的Flexbox（弹性盒布局模型）,以及适用场景？
 
 - 用纯CSS创建一个三角形的原理是什么？
 
 - 一个满屏 品 字布局 如何设计?
+
+- 常见兼容性问题？
 
 - li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？
 
@@ -97,11 +101,11 @@ HTML5？
 
 - CSS权重优先级是如何计算的？
 
-- 请解释一下为什么公出现浮动和什么时候需要清除浮动？清除浮动的方式
+- 请解释一下为什么会出现浮动和什么时候需要清除浮动？清除浮动的方式
 
 - 移动端的布局用过媒体查询吗？
 
-- 使用 CSS 预处理器吗？喜欢那个，Why？
+- 使用 CSS 预处理器吗？喜欢那个？
 
 - CSS优化、提高性能的方法有哪些？
 
@@ -147,17 +151,21 @@ HTML5？
 
 - png、jpg、gif 这些图片格式解释一下，分别什么时候用。有没有了解过webp？
 
+- 什么是Cookie 隔离？（或者说：请求资源的时候不要让它带cookie怎么做）
+
 ## <a name='js'>JavaScript</a>
 
 -  介绍JavaScript的基本数据类型。
 
 -  说说写JavaScript的基本规范？
 
--  请解释一下JavaScript原型(prototype)? 每个JS对象都有原型属性吗？
+-  JavaScript原型，原型链 ? 有什么特点？
 
 -  JavaScript有几种类型的值？（堆：原始数据类型和 栈：引用数据类型），你能画一下他们的内存图吗？
 
 -  Javascript如何实现继承？
+
+-  javascript对象的几种创建方式？
 
 -  如何创建一个对象? （画出此对象的内存图）
 
@@ -195,26 +203,31 @@ HTML5？
 
 -  js延迟加载的方式有哪些？
 
--  ajax是什么，解释一下它的工作原理?
+-  Ajax 是什么? 如何创建一个Ajax？
 
 -  同步和异步的区别?
 
--  如何解决ajax跨域问题?
+-  如何解决跨域问题?
 
 -  页面编码和被请求的资源编码如果不一致如何处理？
 
 -  模块化开发怎么做？
+
+-  AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规范区别？
+
 
 -  requireJS的核心原理是什么？（如何动态加载的？如何避免多次加载的？如何
 缓存的？）
 
 -  谈一谈你对ECMAScript6的了解？
 
--  ECMAScript6 怎么写class么，为什么会出现class这种东西? 
-
--  AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规范区别？
+-  ECMAScript6 怎么写class么，为什么会出现class这种东西?
 
 -  异步加载的方式有哪些？
+
+-  documen.write和 innerHTML的区别?
+
+-  DOM操作——怎样添加、移除、移动、复制、创建和查找节点?
 
 -  .call() 和 .apply() 的含义和区别？
 
@@ -234,7 +247,7 @@ HTML5？
 
 -  jquery中如何将数组转化为json字符串，然后再转化回来？
 
--  jQuery 的属性拷贝(extend)的实现原理是什么，如何实现深拷贝？ 
+-  jQuery 的属性拷贝(extend)的实现原理是什么，如何实现深拷贝？
 
 -  jquery.extend 与 jquery.fn.extend的区别？
 
@@ -252,7 +265,13 @@ HTML5？
 
 -  Jquery与jQuery UI有啥区别？
 
+-  JQuery的源码看过吗？能不能简单说一下它的实现原理？
+
+-  jquery 中如何将数组转化为json字符串，然后再转化回来？
+
 -  jQuery和Zepto的区别？各自的使用场景？
+
+-  针对 jQuery 的优化方法？
 
 -  Zepto的点透问题如何解决？
 
@@ -265,12 +284,20 @@ HTML5？
 -  移动端最小触控区域是多大？
 
 -  jQuery 的 slideUp动画 ，如果目标元素是被外部事件驱动, 当鼠标快速地连续触发外部元素事件, 动画会滞后的反复执行，该如何处理呢?
+
 -  把 Script 标签 放在页面的最底部的body封闭之前 和封闭之后有什么区别？浏览器会如何解析它们？
 
 -  移动端的点击事件的有延迟，时间是多久，为什么会有？ 怎么解决这个延时？（click 有 300ms 延迟,为了实现safari的双击事件的设计，浏览器要知道你是不是要双击操作。）
 
 -  知道各种JS框架(Angular, Backbone, Ember, React, Meteor, Knockout...)么? 能讲出他们各自的优点和缺点么?
 -  Underscore 对哪些 JS 原生对象进行了扩展以及提供了哪些好用的函数方法？
+
+
+-  解释JavaScript中的作用域与变量声明提升？
+
+-  那些操作会造成内存泄漏？
+
+-  JQuery一个对象可以同时绑定多个事件，这是如何实现的？
 
 -  Node.js的适用场景？
 
@@ -309,6 +336,8 @@ HTML5？
 
 - 什么叫优雅降级和渐进增强？
 
+- 是否了解公钥加密和私钥加密。
+
 - WEB应用从服务器主动推送Data到客户端有那些方式？
 
 - 对Node的优点和缺点提出了自己的看法？
@@ -318,6 +347,10 @@ HTML5？
 - http状态码有那些？分别代表是什么意思？
 
 - 一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）
+
+- 部分地区用户反应网站很卡，请问有哪些可能性的原因，以及解决方法？
+
+- 从打开app到刷新出内容，整个过程中都发生了什么，如果感觉慢，怎么定位问题，怎么解决?
 
 - 除了前端以外还了解什么其它技术么？你最最厉害的技能是什么？
 
@@ -332,6 +365,12 @@ HTML5？
 - 你对加班的看法？
 
 - 平时如何管理你的项目？
+
+- 说说最近最流行的一些东西吧？常去哪些网站？
+
+- 如何设计突发大规模并发架构？
+
+- 说说最近最流行的一些东西吧？常去哪些网站？
 
 - 是否了解开源的工具 bower、npm、yeoman、grunt、gulp，一个 npm 的包里的 package.json 具备的必要的字段都有哪些？（名称、版本号，依赖）
 
@@ -357,7 +396,7 @@ HTML5？
 
 - 介绍一个你最得意的作品吧？
 
-- 你有自己的技术博客吗，常去那些博客？
+- 你有自己的技术博客吗，用了哪些技术？
 
 - 对前端安全有什么看法？
 
@@ -367,7 +406,13 @@ HTML5？
 
 - 最近在学什么东西？
 
-- 能谈谈你未来3，5年给自己的规划吗？
+- 你的优点是什么？缺点是什么？
+
+- 如何管理前端团队?
+
+- 最近在学什么？能谈谈你未来3，5年给自己的规划吗？
+
+
 
 ## 有趣的问题
 
@@ -385,25 +430,25 @@ HTML5？
 
 
 ## <a name='web'>前端学习网站推荐</a>
-	
+
 	1. 极客标签：     http://www.gbtags.com/
 
 	2. 码农周刊：     http://weekly.manong.io/issues/
-	
+
 	3. 前端周刊：     http://www.feweekly.com/issues
-	
+
 	4. 慕课网：       http://www.imooc.com/
-	
-	5. div.io：		 http://div.io 
-	
+
+	5. div.io：		 http://div.io
+
 	6. Hacker News： https://news.ycombinator.com/news
-	
+
 	7. InfoQ：       http://www.infoq.com/
-	
+
 	8. w3cplus：     http://www.w3cplus.com/
-	
+
 	9. Stack Overflow： http://stackoverflow.com/
-	
+
 	10.w3school：    http://www.w3school.com.cn/
 
 	11.mozilla：     https://developer.mozilla.org/zh-CN/docs/Web/
@@ -412,19 +457,18 @@ HTML5？
 
 ## <a name='web'>文档推荐</a>
 
-	
-1. [jQuery 基本原理](http://docs.huihoo.com/jquery/jquery-fundamentals/zh-cn/index.html "jQuery 基本原理")
 
+1. [jQuery 基本原理](http://docs.huihoo.com/jquery/jquery-fundamentals/zh-cn/index.html "jQuery 基本原理")
 
 2. [JavaScript 秘密花园](http://bonsaiden.github.io/JavaScript-Garden/zh/)
 
-
 3. [CSS参考手册](http://css.doyoe.com/)
 
+4. [ECMAScript 6入门](http://es6.ruanyifeng.com/)
 
 
-###更新时间:  2015/7/24
+###更新时间: 2015-12-29
 
 
-	
+
 	资料答案不够正确和全面，欢迎欢迎Star和提交issues。我的微博：http://weibo.com/920802999

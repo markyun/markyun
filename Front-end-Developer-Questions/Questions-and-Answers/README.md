@@ -7,11 +7,11 @@
 
 [看全部问题和答案点这里](https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers "Questions-and-Answers")
 
-本文由我收集总结了一些优质的前端面试题，初学者阅后也要用心钻研其中的原理，重要知识需要系统学习、透彻学习，形成自己的知识链。万不可投机取巧，临时抱佛脚只求面试侥幸混过关是错误的！也是不可能的！不可能的！不可能的！
+本文由我收集总结了一些前端面试题，初学者阅后也要用心钻研其中的原理，重要知识需要系统学习、透彻学习，形成自己的知识链。万不可投机取巧，临时抱佛脚只求面试侥幸混过关是错误的！也是不可能的！不可能的！不可能的！
 
 前端还是一个年轻的行业，新的行业标准， 框架， 库都不断在更新和新增，正如赫门在2015深JS大会上的《前端服务化之路》主题演讲中说的一句话：“每18至24个月，前端都会难一倍”，这些变化使前端的能力更加丰富、创造的应用也会更加完美。所以关注各种前端技术，跟上快速变化的节奏，也是身为一个前端程序员必备的技能之一。
 
-最近也收到许多微博私信的鼓励和更正题目信息，后面会经常更新题目和答案到[github博客](http://markyun.github.io/)。希望更多的前端开发可以达到既能使用也会表达，对理论知识有自己的理解，也可根据下面的知识点一个一个去进阶学习,形成自己的职业技能链。
+最近也收到许多微博私信的鼓励和更正题目信息，后面会经常更新题目和答案到[github博客](http://markyun.github.io/)。希望前端er达到既能使用也会表达，对理论知识有自己的理解。可根据下面的知识点一个一个去进阶学习，形成自己的职业技能链。
 
 **面试有几点需注意：(来源[寒冬winter](http://weibo.com/wintercn "微博：寒冬winter") 老师，github:@wintercn)**
 
@@ -27,18 +27,20 @@
 
 
 
-**前端开发面试知识点大纲：**
+**前端开发知识点：**
 
 	HTML&CSS：
-		对Web标准的理解、浏览器内核差异、兼容性、hack、CSS基本功：布局、盒子模型、选择器优先级及使用、HTML5、CSS3、移动端页面开发
+		对Web标准的理解、浏览器内核差异、兼容性、hack、CSS基本功：布局、盒子模型、选择器优先级、
+		HTML5、CSS3、Flexbox
 
 	JavaScript：
-        数据类型、面向对象、继承、闭包、插件、作用域、跨域、原型链、模块化、自定义事件、内存泄漏、事件机制、异步装载回调、模板引擎、前端MVC、路由、Nodejs、JSON、ajax等。
+        数据类型、运算、对象、Function、继承、闭包、作用域、原型链、事件、RegExp、JSON、Ajax、
+		DOM、BOM、内存泄漏、跨域、异步装载、模板引擎、前端MVC、路由、模块化、Canvas、ECMAScript 6、Nodejs
 
 	其他：
-       HTTP、WEB安全、正则、优化、重构、响应式、团队协作、可维护、SEO、UED、架构、职业生涯、快速学习能力
+        移动端、响应式、自动化构建、HTTP、离线存储、WEB安全、优化、重构、团队协作、可维护、易用性、SEO、UED、架构、职业生涯、快速学习能力
 
-作为一名前端工程师，**无论工作年头长短都应该必须掌握的知识点**：
+作为一名前端工程师，**无论工作年头长短都应该掌握的知识点**：
 
 此条由 王子墨 发表在 [攻城师的实验室](http://lab.yuanwai.wang/)
 
@@ -124,13 +126,13 @@
 		最开始渲染引擎和JS引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。
 
 - 常见的浏览器内核有哪些？
-	  
+
         Trident内核：IE,MaxThon,TT,The World,360,搜狗浏览器等。[又称MSHTML]
 		Gecko内核：Netscape6及以上版本，FF,MozillaSuite/SeaMonkey等
 		Presto内核：Opera7及以上。      [Opera内核原为：Presto，现为：Blink;]
 		Webkit内核：Safari,Chrome等。   [ Chrome的：Blink（WebKit的分支）]
 
-      详细文章：[浏览器内核的解析和对比 - 依水间 ](http://www.cnblogs.com/fullhouse/archive/2011/12/19/2293455.html)
+      详细文章：[浏览器内核的解析和对比](http://www.cnblogs.com/fullhouse/archive/2011/12/19/2293455.html)
 
 
 
@@ -210,7 +212,6 @@ HTML5？
 		cookie数据始终在同源的http请求中携带（即使不需要），记会在浏览器和服务器间来回传递。
 		sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。
 
-
 		存储大小：
 			cookie数据大小不能超过4k。
 			sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。
@@ -234,22 +235,15 @@ HTML5？
 
 		label标签来定义表单控制间的关系,当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上。
 
-		<label for="Name">Number:</label> 
-		<input type=“text“name="Name" id="Name"/> 
+		<label for="Name">Number:</label>
+		<input type=“text“name="Name" id="Name"/>
 
 		<label>Date:<input type="text" name="B"/></label>
- 
+
 - HTML5的form如何关闭自动完成功能？
 
 		给不想要提示的 form 或下某个input 设置为 autocomplete=off。
 
-
-- 请描述一下 cookies，sessionStorage 和 localStorage 的区别？
-
- 		cookie在浏览器和服务器间来回传递。 sessionStorage和localStorage不会
-		sessionStorage和localStorage的存储空间更大；
-		sessionStorage和localStorage有更多丰富易用的接口；
-		sessionStorage和localStorage各自独立的存储空间；
 
 - 如何实现浏览器内多个标签页之间的通信? (阿里)
 
@@ -257,10 +251,30 @@ HTML5？
 
 - webSocket如何兼容低浏览器？(阿里)
 
-		Adobe Flash Socket 、 
-		ActiveX HTMLFile (IE) 、 
-		基于 multipart 编码发送 XHR 、 
+		Adobe Flash Socket 、
+		ActiveX HTMLFile (IE) 、
+		基于 multipart 编码发送 XHR 、
 		基于长轮询的 XHR
+
+- 页面可见性（Page Visibility）API 可以有哪些用途？
+
+		在页面被切换到其他后台进程的时候，自动暂停音乐或视频的播放；
+
+- 如何在页面上实现一个圆形的可点击区域？
+
+		1、map+area或者svg
+		2、border-radius
+		3、纯js实现 需要求一个点在不在圆上简单算法、获取鼠标坐标等等
+
+- 实现不使用 border 画出1px高的线，在不同浏览器的标准模式与怪异模式下都能保持一致的效果。
+
+		<div style="height:1px;overflow:hidden;background:#ccc"></div>
+
+
+- 网页验证码是干嘛的，是为了解决什么安全问题。
+
+		区分用户是计算机还是人的公共全自动程序。可以防止：恶意破解密码、刷票、论坛灌水；
+		有效防止黑客对某一个特定注册用户用特定程序暴力破解方式进行不断的登陆尝试；
 
 
 ## <a name='css'>CSS</a>
@@ -273,7 +287,7 @@ HTML5？
 
 
 
-- CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？ CSS3新增伪类有那些？
+- CSS选择符有哪些？哪些属性可以继承？
 
 		*   1.id选择器（ # myid）
 			2.类选择器（.myclassname）
@@ -289,26 +303,27 @@ HTML5？
 
 		*   不可继承的样式：border padding margin width height ;
 
+
+
+- CSS优先级算法如何计算？
 		*   优先级就近原则，同权重情况下样式定义最近者为准;
 
 		*   载入样式以最后载入的定位为准;
 
-	优先级为:
-
+		优先级为:
 		   !important >  id > class > tag
+		    important 比 内联优先级高
 
-		   important 比 内联优先级高
+- CSS3新增伪类有那些？
 
-	CSS3新增伪类举例：
-
-		p:first-of-type	选择属于其父元素的首个 <p> 元素的每个 <p> 元素。
-		p:last-of-type	选择属于其父元素的最后 <p> 元素的每个 <p> 元素。
-        p:only-of-type	选择属于其父元素唯一的 <p> 元素的每个 <p> 元素。
-		p:only-child	选择属于其父元素的唯一子元素的每个 <p> 元素。
-		p:nth-child(2)	选择属于其父元素的第二个子元素的每个 <p> 元素。
- 	    :enabled  		:disabled 控制表单控件的禁用状态。
-		:checked        单选框或复选框被选中。
-
+		CSS3新增伪类举例：
+			p:first-of-type	选择属于其父元素的首个 <p> 元素的每个 <p> 元素。
+			p:last-of-type	选择属于其父元素的最后 <p> 元素的每个 <p> 元素。
+	        p:only-of-type	选择属于其父元素唯一的 <p> 元素的每个 <p> 元素。
+			p:only-child	选择属于其父元素的唯一子元素的每个 <p> 元素。
+			p:nth-child(2)	选择属于其父元素的第二个子元素的每个 <p> 元素。
+	 	    :enabled  		:disabled 控制表单控件的禁用状态。
+			:checked        单选框或复选框被选中。
 
 - 如何居中div？如何居中一个浮动元素？如何让绝对定位的div居中？
 
@@ -325,7 +340,7 @@ HTML5？
 
 			  确定容器的宽高 宽500 高 300 的层
 			  设置层的外边距
-	
+
 		     .div {
 				  width:500px ; height:300px;//高度可以不设
 				  margin: -150px 0 0 -250px;
@@ -336,7 +351,7 @@ HTML5？
 			 }
 
 	*  让绝对定位的div居中
-	
+
 			  position: absolute;
 			  width: 1200px;
 			  background: none;
@@ -347,29 +362,32 @@ HTML5？
 			  right: 0;
 
 
-- 列出display的值，说明他们的作用。position的值， relative和absolute定位原点是？
+- display有哪些值？说明他们的作用。
 
 
-	      1.
 	      block 象块类型元素一样显示。
 		  none 缺省值。象行内元素类型一样显示。
 		  inline-block 象行内元素一样显示，但其内容象块类型元素一样显示。
 		  list-item 象块类型元素一样显示，并添加样式列表标记。
 
-	      2.
+
+- position的值relative和absolute定位原点是？
+
 		  absolute
-				生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。
+			生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。
 
 		  fixed （老IE不支持）
-				生成绝对定位的元素，相对于浏览器窗口进行定位。
+			生成绝对定位的元素，相对于浏览器窗口进行定位。
 
 		  relative
-				生成相对定位的元素，相对于其正常位置进行定位。
+			生成相对定位的元素，相对于其正常位置进行定位。
 
-		  static	默认值。没有定位，元素出现在正常的流中
-		  （忽略 top, bottom, left, right z-index 声明）。
+		  static
+			默认值。没有定位，元素出现在正常的流中
+		   （忽略 top, bottom, left, right z-index 声明）。
 
-		  inherit	规定从父元素继承 position 属性的值。
+		  inherit
+			规定从父元素继承 position 属性的值。
 
 - CSS3有哪些新特性？
 
@@ -379,8 +397,21 @@ HTML5？
 		  线性渐变（gradient），
 		  旋转（transform）
           transform:rotate(9deg) scale(0.85,0.90) translate(0px,-30px) skew(-9deg,0deg);//旋转,缩放,定位,倾斜
-          增加了更多的CSS选择器  
+          增加了更多的CSS选择器
 		  多背景 rgba
+
+- 请解释一下CSS3的Flexbox（弹性盒布局模型）,以及适用场景？
+
+- 用纯CSS创建一个三角形的原理是什么？
+
+		把上、左、右三条边隐藏掉（颜色设为 transparent）
+		#demo {
+		  width: 0;
+		  height: 0;
+		  border-width: 20px;
+		  border-style: solid;
+		  border-color: transparent transparent red transparent;
+		}
 
 - 一个满屏 品 字布局 如何设计?
 
@@ -432,8 +463,9 @@ HTML5？
 	    L-V-H-A :  a:link {} a:visited {} a:hover {} a:active {}
 
 
+- li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？
 
-
+- 经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧 ？
 
 - 为什么要初始化CSS样式。
 
@@ -463,7 +495,7 @@ HTML5？
 
 
 - absolute的containing block(容器块)计算方式跟正常流有什么不同？
-	
+
 		无论属于哪种，都要先找到其祖先元素中最近的 position 值不为 static 的元素，然后再判断：
 		1、若此元素为 inline 元素，则 containing block 为能够包含这个元素生成的第一个和最后一个 inline box 的 padding box (除 margin, border 外的区域) 的最小矩形；
 		2、否则,则由这个祖先元素的 padding box 构成。
@@ -474,12 +506,15 @@ HTML5？
 		2. absolute: 向上找最近的定位为absolute/relative的元素
 		3. fixed: 它的containing block一律为根元素(html/body)，根元素也是initial containing block
 
+- CSS里的visibility属性有个collapse属性值是干嘛用的？在不同浏览器下以后什么区别？
+
+
 - position跟display、margin collapse、overflow、float这些特性相互叠加后会怎么样？
 
 - 对BFC规范(块级格式化上下文：block formatting context)的理解？
 
 		（W3C CSS 2.1 规范中的一个概念,它是一个独立容器，决定了元素如何对其内容进行定位,以及与其他元素的关系和相互作用。）
-		 一个页面是由很多个 Box 组成的,元素的类型和 display 属性,决定了这个 Box 的类型。 
+		 一个页面是由很多个 Box 组成的,元素的类型和 display 属性,决定了这个 Box 的类型。
 		 不同类型的 Box,会参与不同的 Formatting Context（决定如何渲染文档的容器）,因此Box内的元素会以不同的方式渲染,也就是说BFC内部的元素和外部的元素不会互相影响。
 - css定义的权重
 
@@ -507,13 +542,50 @@ HTML5？
 		如果权重相同，则最后定义的样式会起作用，但是应该避免这种情况出现
 
 
-- 解释下浮动和它的工作原理？清除浮动的技巧
+- 请解释一下为什么会出现浮动和什么时候需要清除浮动？清除浮动的方式
 
-- 用过媒体查询，针对移动端的布局吗？
+
+- 移动端的布局用过媒体查询吗？
+
 
 - 使用 CSS 预处理器吗？喜欢那个？
 
 		SASS (SASS、LESS没有本质区别，只因为团队前端都是用的SASS)
+
+
+- CSS优化、提高性能的方法有哪些？
+
+- 浏览器是怎样解析CSS选择器的？
+
+- 在网页中的应该使用奇数还是偶数的字体？为什么呢？
+
+- margin和padding分别适合什么场景使用？
+
+- 抽离样式模块怎么写，说出思路，有无实践经验？[阿里航旅的面试题]
+
+- 元素竖向的百分比设定是相对于容器的高度吗？
+
+- 全屏滚动的原理是什么？用到了CSS的那些属性？
+
+- 什么是响应式设计？响应式设计的基本原理是什么？如何兼容低版本的IE？
+
+- 视差滚动效果，如何给每页做不同的动画？（回到顶部，向下滑动要再次出现，和只出现一次分别怎么做？）
+
+- ::before 和 :after中双冒号和单冒号 有什么区别？解释一下这2个伪元素的作用。
+
+- 如何修改chrome记住密码后自动填充表单的黄色背景 ？
+
+- 你对line-height是如何理解的？
+
+- 设置元素浮动后，该元素的display值是多少？（自动变成display:block）
+
+- 怎么让Chrome支持小于12px 的文字？
+
+- 让页面里的字体变清晰，变细用CSS怎么做？（-webkit-font-smoothing: antialiased;）
+
+- font-style属性可以让它赋值为“oblique” oblique是什么意思？
+
+- position:fixed;在android下无效怎么处理？
 
 - 如果需要手动写动画，你认为最小时间间隔是多久，为什么？（阿里）
 
@@ -524,11 +596,31 @@ HTML5？
 
 		移除空格、使用margin负值、使用font-size:0、letter-spacing、word-spacing
 
+- overflow: scroll时不能平滑滚动的问题怎么处理？
 
+- 有一个高度自适应的div，里面有两个div，一个高度100px，希望另一个填满剩下的高度。
+
+- png、jpg、gif 这些图片格式解释一下，分别什么时候用。有没有了解过webp？
+
+
+- 什么是Cookie 隔离？（或者说：请求资源的时候不要让它带cookie怎么做）
+
+		如果静态文件都放在主域名下，那静态文件请求的时候都带有的cookie的数据提交给server的，非常浪费流量，
+		所以不如隔离开。
+
+		因为cookie有域的限制，因此不能跨域提交请求，故使用非主要域名的时候，请求头中就不会带有cookie数据，
+		这样可以降低请求头的大小，降低请求时间，从而达到降低整体请求延时的目的。
+
+		同时这种方式不会将cookie传入Web Server，也减少了Web Server对cookie的处理分析环节，
+		提高了webserver的http请求的解析速度。
 
 ## <a name='js'>JavaScript</a>
 
--  JavaScript原型，原型链 ? 有什么特点？
+
+-  介绍js的基本数据类型。
+
+		number,string,boolean,object,undefined
+
 -  说几条写JavaScript的基本规范？
 
 		1.不要在同一行声明多个变量。
@@ -541,24 +633,76 @@ HTML5？
 		8.If语句必须使用大括号
 		9.for-in循环中的变量 应该使用var关键字明确限定作用域，从而避免作用域污染。
 
+-  JavaScript原型，原型链 ? 有什么特点？
+
+		原型对象也是普通的对象，是对象一个自带隐式的 __proto__ 属性，原型也有可能有自己的原型，如果一个原型对象的原型不为null的话，我们就称之为原型链。
+		原型链是由一些用来继承和共享属性的对象组成的（有限的）对象链。
+
+		JavaScript的数据对象有那些属性值？
+
+		　　writable：这个属性的值是否可以改。
+
+		　　configurable：这个属性的配置是否可以删除，修改。
+
+		　　enumerable：这个属性是否能在for…in循环中遍历出来或在Object.keys中列举出来。
+
+		　　value：属性值。
+
+		当我们需要一个属性的时，Javascript引擎会先看当前对象中是否有这个属性， 如果没有的话，就会查找他的Prototype对象是否有这个属性。
+
+		 function clone(proto) {
+
+		　　function Dummy() { }
+
+		　　Dummy.prototype = proto;
+
+		　　Dummy.prototype.constructor = Dummy;
+
+		　　return new Dummy(); //等价于Object.create(Person);
+
+		 }
+
+        function object(old) {
+	         function F() {};
+	         F.prototype = old;
+	         return new F();
+        }
+	    var newObj = object(oldObject);
+
+-  JavaScript有几种类型的值？，你能画一下他们的内存图吗？
+
+		（堆：原始数据类型和 栈：引用数据类型）
+
+-  Javascript如何实现继承？
+
+-  javascript对象的几种创建方式？
+
+-  如何创建一个对象? （画出此对象的内存图）
+
+-  谈谈This对象的理解。
+
 -  eval是做什么的？
 
 		它的功能是把对应的字符串解析成JS代码并运行；
 		应该避免使用eval，不安全，非常耗性能（2次，一次解析成js语句，一次执行）。
 
+-  什么是window对象? 什么是document对象?
+
+
 -  null，undefined 的区别？
--  	  undefined : 用来告诉你缺少某事物。
-	    
+
+		undefined : 用来告诉你缺少某事物。
+
 	    typeof undefined => "undefined"
-	    
+
 	    注意：
 	    应该只给Javascript使用undefined，而不应该将某值设为undefined，
 	    如果想要表示某变数值仍然无法使用，应该使用null。
-		
+
 -	  null :  给你知道目前仍然无法使用某《可能会出现的值》。
-		
+
 		typeof null => object
-		
+
 		注意：
 		在验证null时，一定要使用　=== ，因为 == 无法分别 null 和　undefined
 
@@ -643,56 +787,41 @@ HTML5？
 				}
 			};
 
-
-
--  Node.js的适用场景？
-
-		高并发、聊天、实时消息推送
-
--  介绍js的基本数据类型。
-
-		number,string,boolean,object,undefined
-
--  Javascript如何实现继承？
-
-		通过原型和构造器
-
 -  ["1", "2", "3"].map(parseInt) 答案是多少？
 
-		 [1, NaN, NaN] 因为 parseInt 需要两个参数 (val, radix)，其中 radix 表示解析时用的基数。map 传了 3 个 (element, index, array)，对应的 radix 不合法导致解析失败。
-
--  如何创建一个对象? （画出此对象的内存图）
-
-		  function Person(name, age) {
-		    this.name = name;
-		    this.age = age;
-		    this.sing = function() { alert(this.name) }
-		  }
-
-
--  谈谈This对象的理解。
-
-		this是js的一个关键字，随着函数使用场合不同，this的值会发生变化。
-
-	    但是有一个总原则，那就是this指的是调用函数的那个对象。
-
-	    this一般情况下：是全局对象Global。 作为方法调用，那么this就是指这个对象
+		 [1, NaN, NaN] 因为 parseInt 需要两个参数 (val, radix)，
+		 其中 radix 表示解析时用的基数。
+		 map 传了 3 个 (element, index, array)，对应的 radix 不合法导致解析失败。
 
 -  事件是？IE与火狐的事件机制有什么区别？ 如何阻止冒泡？
 
 		 1. 我们在网页中的某个操作（有的操作对应多个事件）。例如：当我们点击一个按钮就会产生一个事件。是可以被 JavaScript 侦测到的行为。
-		 2. 事件处理机制：IE是事件冒泡、火狐是 事件捕获；
-		 3. ev.stopPropagation();
+		 2. 事件处理机制：IE是事件冒泡、Firefox同时支持两种事件模型，也就是：捕获型事件和冒泡型事件；
+		 3. ev.stopPropagation();（旧ie的方法 ev.cancelBubble = true;）
+
 
 -  什么是闭包（closure），为什么要用它？
 
+		闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量
 
-		执行say667()后,say667()闭包内部变量会存在,而闭包内部函数的内部变量不会存在.使得Javascript的垃圾回收机制GC不会收回say667()所占用的资源，因为say667()的内部函数的执行需要依赖say667()中的变量。这是对闭包作用的非常直白的描述.
+		闭包的特性：
+
+		1.函数内再嵌套函数
+		2.内部函数可以引用外层的参数和变量
+		3.参数和变量不会被垃圾回收机制回收
+
+
+		执行say667()后,say667()闭包内部变量会存在,而闭包内部函数的内部变量不会存在
+		使得Javascript的垃圾回收机制GC不会收回say667()所占用的资源
+		因为say667()的内部函数的执行需要依赖say667()中的变量
+		这是对闭包作用的非常直白的描述
 
 		  function say667() {
 			// Local variable that ends up within closure
 			var num = 666;
-			var sayAlert = function() { alert(num); }
+			var sayAlert = function() {
+				alert(num);
+			}
 			num++;
 			return sayAlert;
 		}
@@ -703,27 +832,23 @@ HTML5？
 
 -  javascript 代码中的"use strict";是什么意思 ? 使用它区别是什么？
 
-		use strict是一种严格模式,使JS编码更加规范化的模式；
-		消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为。
-
+		use strict是一种ECMAscript 5 添加的（严格）运行模式,这种模式使得 Javascript 在更严格的条件下运行,
+		使JS编码更加规范化的模式,消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为。
 		默认支持的糟糕特性都会被禁用，比如不能用with，也不能在意外的情况下给全局变量赋值;
 		全局变量的显示声明,函数必须声明在顶层，不允许在非函数代码块内声明函数,arguments.callee也不允许使用；
 		消除代码运行的一些不安全之处，保证代码运行的安全,限制函数中的arguments修改，严格模式下的eval函数的行为和非严格模式的也不相同;
+
 		提高编译器效率，增加运行速度；
 		为未来新版本的Javascript标准化做铺垫。
 
 
-
-
 -  如何判断一个对象是否属于某个类？
 
-
-
  		  使用instanceof （待完善）
-
 	       if(a instanceof Person){
 	           alert('yes');
 	       }
+
 -  new操作符具体干了什么呢?
 
 			 1、创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。
@@ -734,31 +859,53 @@ HTML5？
 		obj.__proto__ = Base.prototype;
 		Base.call(obj);
 
+
+-  用原生JavaScript的实现过什么功能吗？
+
+
 -  Javascript中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？
 
 		hasOwnProperty
+
+		javaScript中hasOwnProperty函数方法是返回一个布尔值，指出一个对象是否具有指定名称的属性。此方法无法检查该对象的原型链中是否具有该属性；该属性必须是对象本身的一个成员。
+		使用方法：
+		object.hasOwnProperty(proName)
+		其中参数object是必选项。一个对象的实例。
+		proName是必选项。一个属性名称的字符串值。
+
+		如果 object 具有指定名称的属性，那么JavaScript中hasOwnProperty函数方法返回 true，反之则返回 false。
 
 -  JSON 的了解？
 
 		JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。
 		它是基于JavaScript的一个子集。数据格式简单, 易于读写, 占用带宽小
-        {"age":"12", "name":"back"}
+        如：{"age":"12", "name":"back"}
+
+-  `[].forEach.call($$("*"),function(a){a.style.outline="1px solid #"+(~~(Math.random()*(1<<24))).toString(16)})` 能解释一下这段代码的意思吗？
+
 
 -  js延迟加载的方式有哪些？
 
 		defer和async、动态创建DOM方式（用得最多）、按需异步载入js
 
 
--  ajax 是什么?
+-  Ajax 是什么? 如何创建一个Ajax？
 
 		ajax的全称：Asynchronous Javascript And XML。
 		异步传输+js+xml。
 		所谓异步，在这里简单地解释就是：向服务器发送请求的时候，我们不必等待结果，而是可以同时做其他的事情，等到有了结果它自己会根据设定进行后续操作，与此同时，页面是不会发生整页刷新的，提高了用户体验。
 
+		(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象
+		(2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息
+		(3)设置响应HTTP请求状态变化的函数
+		(4)发送HTTP请求
+		(5)获取异步调用返回的数据
+		(6)使用JavaScript和DOM实现局部刷新
+
 -  同步和异步的区别?
 
 	同步：浏览器访问服务器请求，用户看得到页面刷新，重新发请求,等请求完，页面刷新，新内容出现，用户看到新内容,j进行下一步操作。
-	
+
 	异步：浏览器访问服务器请求，用户正常操作，浏览器后端进行请求。等请求完，页面不刷新，新内容也会出现，用户看到新内容。
 
 	（待完善）
@@ -767,9 +914,9 @@ HTML5？
 
 		jsonp、 iframe、window.name、window.postMessage、服务器上设置代理页面
 
+-  页面编码和被请求的资源编码如果不一致如何处理？
+
 -  模块化开发怎么做？
-
-
 
 	 [ 立即执行函数](http://benalman.com/news/2010/11/immediately-invoked-function-expression/),不暴露私有成员
 
@@ -791,8 +938,44 @@ HTML5？
 
 -  AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规范区别？
 
--  异步加载的方式有哪些？
+	> AMD 规范在这里：https://github.com/amdjs/amdjs-api/wiki/AMD
 
+	> CMD 规范在这里：https://github.com/seajs/seajs/issues/242
+
+		Asynchronous Module Definition，异步模块定义，所有的模块将被异步加载，模块加载不影响后面语句运行。所有依赖某些模块的语句均放置在回调函数中。
+
+		 区别：
+
+		    1. 对于依赖的模块，AMD 是提前执行，CMD 是延迟执行。不过 RequireJS 从 2.0 开始，也改成可以延迟执行（根据写法不同，处理方式不同）。CMD 推崇 as lazy as possible.
+		    2. CMD 推崇依赖就近，AMD 推崇依赖前置。看代码：
+
+		// CMD
+		define(function(require, exports, module) {
+		    var a = require('./a')
+		    a.doSomething()
+		    // 此处略去 100 行
+		    var b = require('./b') // 依赖可以就近书写
+		    b.doSomething()
+		    // ...
+		})
+
+		// AMD 默认推荐
+		define(['./a', './b'], function(a, b) { // 依赖必须一开始就写好
+		    a.doSomething()
+		    // 此处略去 100 行
+		    b.doSomething()
+		    // ...
+		})
+
+
+-  requireJS的核心原理是什么？（如何动态加载的？如何避免多次加载的？如何
+缓存的？）
+
+-  谈一谈你对ECMAScript6的了解？
+
+-  ECMAScript6 怎么写class么，为什么会出现class这种东西? 
+
+-  异步加载JS的方式有哪些？
 
 	      (1) defer，只支持IE
 
@@ -802,10 +985,25 @@ HTML5？
 
 - documen.write和 innerHTML的区别
 
-document.write只能重绘整个页面
+		document.write只能重绘整个页面
 
-innerHTML可以重绘页面的一部分
+		innerHTML可以重绘页面的一部分
 
+- DOM操作——怎样添加、移除、移动、复制、创建和查找节点?
+
+		（1）创建新节点
+		  createDocumentFragment()    //创建一个DOM片段
+		  createElement()   //创建一个具体的元素
+		  createTextNode()   //创建一个文本节点
+		（2）添加、移除、替换、插入
+		  appendChild()
+		  removeChild()
+		  replaceChild()
+		  insertBefore() //在已有的子节点前插入一个新的子节点
+		（3）查找
+		  getElementsByTagName()    //通过标签名称
+		  getElementsByName()    //通过元素的Name属性的值(IE容错能力较强，会得到一个数组，其中包括id等于name值的)
+		  getElementById()    //通过元素Id，唯一性
 
 -  .call() 和 .apply() 的区别？
 
@@ -826,6 +1024,40 @@ innerHTML可以重绘页面的一部分
 
 			add.call(sub,3,1);
 
+
+
+-  数组和对象有哪些原生方法，列举一下？
+
+-  JS 怎么实现一个类。怎么实例化这个类
+
+-  JavaScript中的作用域与变量声明提升？
+
+-  如何编写高性能的Javascript？
+
+-  那些操作会造成内存泄漏？
+
+-  JQuery的源码看过吗？能不能简单概况一下它的实现原理？
+
+-  jQuery.fn的init方法返回的this指的是什么对象？为什么要返回this？
+
+-  jquery中如何将数组转化为json字符串，然后再转化回来？
+
+-  jQuery 的属性拷贝(extend)的实现原理是什么，如何实现深拷贝？ 
+
+-  jquery.extend 与 jquery.fn.extend的区别？
+
+-  jQuery 的队列是如何实现的？队列可以用在哪些地方？
+
+-  谈一下Jquery中的bind(),live(),delegate(),on()的区别？
+
+-  JQuery一个对象可以同时绑定多个事件，这是如何实现的？
+
+-  是否知道自定义事件。jQuery里的fire函数是什么意思，什么时候用？
+
+-  jQuery 是通过哪个方法和 Sizzle 选择器结合的？（jQuery.fn.find()进入Sizzle）
+
+-  针对 jQuery性能的优化方法？
+
 -  Jquery与jQuery UI 有啥区别？
 
 
@@ -838,7 +1070,6 @@ innerHTML可以重绘页面的一部分
 -  JQuery的源码看过吗？能不能简单说一下它的实现原理？
 
 -  jquery 中如何将数组转化为json字符串，然后再转化回来？
-
 
 jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩展：
 
@@ -853,6 +1084,7 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 		然后调用：
 		$("").stringifyArray(array)
 
+-  jQuery和Zepto的区别？各自的使用场景？
 
 -  针对 jQuery 的优化方法？
 
@@ -866,13 +1098,32 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
          for (var i = size, length = arr.length; i < length; i++) {}
 
 
--  JavaScript中的作用域与变量声明提升？
 
--  如何编写高性能的Javascript？
+-  Zepto的点透问题如何解决？
+
+-  jQueryUI如何自定义组件?
+
+-  需求：实现一个页面操作不会整页刷新的网站，并且能在浏览器前进、后退时正确响应。给出你的技术实现方案？
+
+- 如何判断当前脚本运行在浏览器还是node环境中？（阿里）
+
+		通过判断Global对象是否为window，如果不为window，当前脚本没有运行在浏览器中
+
+-  移动端最小触控区域是多大？
+
+-  jQuery 的 slideUp动画 ，如果目标元素是被外部事件驱动, 当鼠标快速地连续触发外部元素事件, 动画会滞后的反复执行，该如何处理呢?
+
+-  把 Script 标签 放在页面的最底部的body封闭之前 和封闭之后有什么区别？浏览器会如何解析它们？
+
+-  移动端的点击事件的有延迟，时间是多久，为什么会有？ 怎么解决这个延时？（click 有 300ms 延迟,为了实现safari的双击事件的设计，浏览器要知道你是不是要双击操作。）
+
+-  知道各种JS框架(Angular, Backbone, Ember, React, Meteor, Knockout...)么? 能讲出他们各自的优点和缺点么?
+
+-  Underscore 对哪些 JS 原生对象进行了扩展以及提供了哪些好用的函数方法？
+
+-  解释JavaScript中的作用域与变量声明提升？
 
 -  那些操作会造成内存泄漏？
-
-
 
 	    内存泄漏指任何对象在您不再拥有或需要它之后仍然存在。
         垃圾回收器定期扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为 0（没有其他对象引用过该对象），或对该对象的惟一引用是循环的，那么该对象的内存即可回收。
@@ -882,27 +1133,91 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 -  JQuery一个对象可以同时绑定多个事件，这是如何实现的？
 
-- 如何判断当前脚本运行在浏览器还是node环境中？（阿里）
+-  Node.js的适用场景？
 
-		通过判断Global对象是否为window，如果不为window，当前脚本没有运行在浏览器中
+-  (如果会用node)知道route, middleware, cluster, nodemon, pm2, server-side rendering么?
 
+-  解释一下 Backbone 的 MVC 实现方式？
+
+- 什么是“前端路由”?什么时候适合使用“前端路由”? “前端路由”有哪些优点和缺点?
+
+- 知道什么是webkit么? 知道怎么用浏览器的各种工具来调试和debug代码么?
+
+- 如何测试前端代码么? 知道BDD, TDD, Unit Test么? 知道怎么测试你的前端工程么(mocha, sinon, jasmin, qUnit..)?
+
+- 前端templating(Mustache, underscore, handlebars)是干嘛的, 怎么用?
+
+- 简述一下 Handlebars 的基本用法？
+
+- 简述一下 Handlerbars 的对模板的基本处理流程， 如何编译的？如何缓存的？
+
+- 用js实现千位分隔符?(来源：[前端农民工](http://div.io/topic/744)，提示：正则+replace)
 
 ## <a name='other'>其他问题</a>
 
+- 原来公司工作流程是怎么样的，如何与其他人协作的？如何夸部门合作的？
 
 - 你遇到过比较难的技术问题是？你是如何解决的？
+
+- 设计模式 知道什么是singleton, factory, strategy, decrator么?
 
 - 常使用的库有哪些？常用的前端开发工具？开发过什么应用或组件？
 
 - 页面重构怎么操作？
 
-- 列举IE 与其他浏览器不一样的特性？
+		网站重构：在不改变外部行为的前提下，简化结构、添加可读性，而在网站前端保持一致的行为。
+		也就是说是在不改变UI的情况下，对网站进行优化，在扩展的同时保持一致的UI。
+
+		对于传统的网站来说重构通常是：
+
+		表格(table)布局改为DIV+CSS
+		使网站前端兼容于现代浏览器(针对于不合规范的CSS、如对IE6有效的)
+		对于移动平台的优化
+		针对于SEO进行优化
+		深层次的网站重构应该考虑的方面
+
+		减少代码间的耦合
+		让代码保持弹性
+		严格按规范编写代码
+		设计可扩展的API
+		代替旧有的框架、语言(如VB)
+		增强用户体验
+		通常来说对于速度的优化也包含在重构中
+
+		压缩JS、CSS、image等前端资源(通常是由服务器来解决)
+		程序的性能优化(如数据读写)
+		采用CDN来加速资源加载
+		对于JS DOM的优化
+		HTTP服务器的文件缓存
+
+- 列举 IE 与其他浏览器不一样的特性？
 
 - 99%的网站都需要被重构是那本书上写的？
 
+		网站重构：应用web标准进行设计（第2版）
+
 - 什么叫优雅降级和渐进增强？
 
+		优雅降级：Web站点在所有新式浏览器中都能正常工作，如果用户使用的是老式浏览器，则代码会针对旧版本的IE进行降级处理了,使之在旧式浏览器上以某种形式降级体验却不至于完全不能用。
+		如：border-shadow
+
+		渐进增强：从被所有浏览器支持的基本功能开始，逐步地添加那些只有新版本浏览器才支持的功能,向页面增加不影响基础浏览器的额外样式和功能的。当浏览器支持时，它们会自动地呈现出来并发挥作用。
+		如：默认使用flash上传，但如果浏览器支持 HTML5 的文件上传功能，则使用HTML5实现更好的体验；
+
+- 是否了解公钥加密和私钥加密。
+
+		一般情况下是指私钥用于对数据进行签名，公钥用于对签名进行验证;
+		HTTP网站在浏览器端用公钥加密敏感数据，然后在服务器端再用私钥解密。
+
+
 - WEB应用从服务器主动推送Data到客户端有那些方式？
+
+		html5提供的Websocket
+		不可见的iframe
+	    WebSocket通过Flash
+	    XHR长时间连接
+	    XHR Multipart Streaming
+	    <script>标签的长时间连接(可跨域)
 
 - 对Node的优点和缺点提出了自己的看法？
 
@@ -916,10 +1231,7 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
           而且缺少足够多的第三方库支持。看起来，就像是Ruby/Rails当年的样子。
 
 
-- 你有哪些性能优化的方法？
-
-
-		 （看雅虎14条性能优化原则）。
+- 你有用过哪些前端性能优化的方法？
 
 		  （1） 减少http请求次数：CSS Sprites, JS、CSS源码压缩、图片大小控制合适；网页Gzip，CDN托管，data缓存 ，图片服务器。
 
@@ -940,54 +1252,165 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 - http状态码有那些？分别代表是什么意思？
 
-		100-199 用于指定客户端应相应的某些动作。
-		200-299 用于表示请求成功。
-		300-399 用于已经移动的文件并且常被包含在定位头信息中指定新的地址信息。
-		400-499 用于指出客户端的错误。400	1、语义有误，当前请求无法被服务器理解。401	当前请求需要用户验证 403	服务器已经理解请求，但是拒绝执行它。
-		500-599 用于支持服务器错误。 503 – 服务不可用
+			简单版
+			[
+				100  Continue	继续，一般在发送post请求时，已发送了http header之后服务端将返回此信息，表示确认，之后发送具体参数信息
+				200  OK 		正常返回信息
+				201  Created  	请求成功并且服务器创建了新的资源
+				202  Accepted 	服务器已接受请求，但尚未处理
+				301  Moved Permanently  请求的网页已永久移动到新位置。
+				302 Found  		临时性重定向。
+				303 See Other  	临时性重定向，且总是使用 GET 请求新的 URI。
+				304  Not Modified 自从上次请求后，请求的网页未修改过。
+
+				400 Bad Request  服务器无法理解请求的格式，客户端不应当尝试再次使用相同的内容发起请求。
+				401 Unauthorized 请求未授权。
+				403 Forbidden  	禁止访问。
+				404 Not Found  	找不到如何与 URI 相匹配的资源。
+
+				500 Internal Server Error  最常见的服务器端错误。
+				503 Service Unavailable 服务器端暂时无法处理请求（可能是过载或维护）。
+			]
+
+		  完整版
+		  1**(信息类)：表示接收到请求并且继续处理
+			100——客户必须继续发出请求
+			101——客户要求服务器根据请求转换HTTP协议版本
+
+		  2**(响应成功)：表示动作被成功接收、理解和接受
+			200——表明该请求被成功地完成，所请求的资源发送回客户端
+			201——提示知道新文件的URL
+			202——接受和处理、但处理未完成
+			203——返回信息不确定或不完整
+			204——请求收到，但返回信息为空
+			205——服务器完成了请求，用户代理必须复位当前已经浏览过的文件
+			206——服务器已经完成了部分用户的GET请求
+
+		  3**(重定向类)：为了完成指定的动作，必须接受进一步处理
+			300——请求的资源可在多处得到
+			301——本网页被永久性转移到另一个URL
+			302——请求的网页被转移到一个新的地址，但客户访问仍继续通过原始URL地址，重定向，新的URL会在response中的Location中返回，浏览器将会使用新的URL发出新的Request。
+			303——建议客户访问其他URL或访问方式
+			304——自从上次请求后，请求的网页未修改过，服务器返回此响应时，不会返回网页内容，代表上次的文档已经被缓存了，还可以继续使用
+			305——请求的资源必须从服务器指定的地址得到
+			306——前一版本HTTP中使用的代码，现行版本中不再使用
+			307——申明请求的资源临时性删除
+
+		  4**(客户端错误类)：请求包含错误语法或不能正确执行
+			400——客户端请求有语法错误，不能被服务器所理解
+			401——请求未经授权，这个状态代码必须和WWW-Authenticate报头域一起使用
+			HTTP 401.1 - 未授权：登录失败
+			　　HTTP 401.2 - 未授权：服务器配置问题导致登录失败
+			　　HTTP 401.3 - ACL 禁止访问资源
+			　　HTTP 401.4 - 未授权：授权被筛选器拒绝
+			HTTP 401.5 - 未授权：ISAPI 或 CGI 授权失败
+			402——保留有效ChargeTo头响应
+			403——禁止访问，服务器收到请求，但是拒绝提供服务
+			HTTP 403.1 禁止访问：禁止可执行访问
+			　　HTTP 403.2 - 禁止访问：禁止读访问
+			　　HTTP 403.3 - 禁止访问：禁止写访问
+			　　HTTP 403.4 - 禁止访问：要求 SSL
+			　　HTTP 403.5 - 禁止访问：要求 SSL 128
+			　　HTTP 403.6 - 禁止访问：IP 地址被拒绝
+			　　HTTP 403.7 - 禁止访问：要求客户证书
+			　　HTTP 403.8 - 禁止访问：禁止站点访问
+			　　HTTP 403.9 - 禁止访问：连接的用户过多
+			　　HTTP 403.10 - 禁止访问：配置无效
+			　　HTTP 403.11 - 禁止访问：密码更改
+			　　HTTP 403.12 - 禁止访问：映射器拒绝访问
+			　　HTTP 403.13 - 禁止访问：客户证书已被吊销
+			　　HTTP 403.15 - 禁止访问：客户访问许可过多
+			　　HTTP 403.16 - 禁止访问：客户证书不可信或者无效
+			HTTP 403.17 - 禁止访问：客户证书已经到期或者尚未生效
+			404——一个404错误表明可连接服务器，但服务器无法取得所请求的网页，请求资源不存在。eg：输入了错误的URL
+			405——用户在Request-Line字段定义的方法不允许
+			406——根据用户发送的Accept拖，请求资源不可访问
+			407——类似401，用户必须首先在代理服务器上得到授权
+			408——客户端没有在用户指定的饿时间内完成请求
+			409——对当前资源状态，请求不能完成
+			410——服务器上不再有此资源且无进一步的参考地址
+			411——服务器拒绝用户定义的Content-Length属性请求
+			412——一个或多个请求头字段在当前请求中错误
+			413——请求的资源大于服务器允许的大小
+			414——请求的资源URL长于服务器允许的长度
+			415——请求资源不支持请求项目格式
+			416——请求中包含Range请求头字段，在当前请求资源范围内没有range指示值，请求也不包含If-Range请求头字段
+			417——服务器不满足请求Expect头字段指定的期望值，如果是代理服务器，可能是下一级服务器不能满足请求长。
+
+		  5**(服务端错误类)：服务器不能正确执行一个正确的请求
+			HTTP 500 - 服务器遇到错误，无法完成请求
+			　　HTTP 500.100 - 内部服务器错误 - ASP 错误
+			　　HTTP 500-11 服务器关闭
+			　　HTTP 500-12 应用程序重新启动
+			　　HTTP 500-13 - 服务器太忙
+			　　HTTP 500-14 - 应用程序无效
+			　　HTTP 500-15 - 不允许请求 global.asa
+			　　Error 501 - 未实现
+		  HTTP 502 - 网关错误
+		  HTTP 503：由于超载或停机维护，服务器目前无法使用，一段时间后可能恢复正常
 
 - 一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）
 
+		  注：这题胜在区分度高，知识点覆盖广，再不懂的人，也能答出几句，
+		  而高手可以根据自己擅长的领域自由发挥，从URL规范、HTTP协议、DNS、CDN、数据库查询、
+		  到浏览器流式解析、CSS规则构建、layout、paint、onload/domready、JS执行、JS API绑定等等；
 
-			查找浏览器缓存
-		    DNS解析、查找该域名对应的IP地址、重定向（301）、发出第二个GET请求
-		    进行HTTP协议会话
-		    客户端发送报头(请求报头)
-		    服务器回馈报头(响应报头)
-		    html文档开始下载
-		    文档树建立，根据标记请求所需指定MIME类型的文件
-		    文件显示
-			[
-			浏览器这边做的工作大致分为以下几步：
+		  详细版：
+			1、浏览器会开启一个线程来处理这个请求，对 URL 分析判断如果是 http 协议就按照 Web 方式来处理;
+			2、调用浏览器内核中的对应方法，比如 WebView 中的 loadUrl 方法;
+		    3、通过DNS解析获取网址的IP地址，设置 UA 等信息发出第二个GET请求;
+			4、进行HTTP协议会话，客户端发送报头(请求报头);
+		    5、进入到web服务器上的 Web Server，如 Apache、Tomcat、Node.JS 等服务器;
+		    6、进入部署好的后端应用，如 PHP、Java、JavaScript、Python 等，找到对应的请求处理;
+			7、处理结束回馈报头，此处如果浏览器访问过，缓存上有对应资源，会与服务器最后修改时间对比，一致则返回304;
+		    8、浏览器开始下载html文档(响应报头，状态码200)，同时使用缓存;
+		    9、文档树建立，根据标记请求所需指定MIME类型的文件（比如css、js）,同时设置了cookie;
+		    10、页面开始渲染DOM，JS根据DOM API操作DOM,执行事件绑定等，页面显示完成。
 
-			加载：根据请求的URL进行域名解析，向服务器发起请求，接收文件（HTML、JS、CSS、图象等）。
+		  简洁版：
+			浏览器根据请求的URL交给DNS域名解析，找到真实IP，向服务器发起请求；
+			服务器交给后台处理完成后返回数据，浏览器接收文件（HTML、JS、CSS、图象等）；
+			浏览器对加载到的资源（HTML、JS、CSS等）进行语法解析，建立相应的内部数据结构（如HTML的DOM）；
+			载入解析到的资源文件，渲染页面，完成。
 
-			解析：对加载到的资源（HTML、JS、CSS等）进行语法解析，建议相应的内部数据结构（比如HTML的DOM树，JS的（对象）属性表，CSS的样式规则等等）
-			}
+- 部分地区用户反应网站很卡，请问有哪些可能性的原因，以及解决方法？
+
+- 从打开app到刷新出内容，整个过程中都发生了什么，如果感觉慢，怎么定位问题，怎么解决?
+
 - 除了前端以外还了解什么其它技术么？你最最厉害的技能是什么？
 
-- 你常用的开发工具是什么，为什么？
+- 你用的得心应手用的熟练地编辑器&开发环境是什么样子？
 
-- 对前端界面工程师这个职位是怎么样理解的？它的前景会怎么样？
+		Sublime Text 3 + 相关插件编写前端代码
+		Google chrome 、Mozilla Firefox浏览器 +firebug 兼容测试和预览页面UI、动画效果和交互功能
+		Node.js+Gulp
+		git 用于版本控制和Code Review
 
-		     前端是最贴近用户的程序员，比后端、数据库、产品经理、运营、安全都近。
-			1、实现界面交互
-			2、提升用户体验
-			3、有了Node.js，前端可以实现服务端的一些事情
+- 对前端工程师这个职位是怎么样理解的？它的前景会怎么样？
+
+	    前端是最贴近用户的程序员，比后端、数据库、产品经理、运营、安全都近。
+		1、实现界面交互
+		2、提升用户体验
+		3、有了Node.js，前端可以实现服务端的一些事情
 
 
 		前端是最贴近用户的程序员，前端的能力就是能让产品从 90分进化到 100 分，甚至更好，
 
-         参与项目，快速高质量完成实现效果图，精确到1px；
+		参与项目，快速高质量完成实现效果图，精确到1px；
 
-         与团队成员，UI设计，产品经理的沟通；
+		与团队成员，UI设计，产品经理的沟通；
 
-         做好的页面结构，页面重构和用户体验；
+		做好的页面结构，页面重构和用户体验；
 
-         处理hack，兼容、写出优美的代码格式；
+		处理hack，兼容、写出优美的代码格式；
 
-         针对服务器的优化、拥抱最新前端技术。
-- 加班的看法？
+		针对服务器的优化、拥抱最新前端技术。
+
+- 你怎么看待Web App 、hybrid App、Native App？
+
+- 你移动端前端开发的理解？（和 Web 前端开发的主要区别是什么？）
+
+- 你对加班的看法？
 
 
    		加班就像借钱，原则应当是------救急不救穷
@@ -996,25 +1419,31 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 - 平时如何管理你的项目？
 
-				先期团队必须确定好全局样式（globe.css），编码模式(utf-8) 等；
+			先期团队必须确定好全局样式（globe.css），编码模式(utf-8) 等；
 
-				编写习惯必须一致（例如都是采用继承式的写法，单样式都写成一行）；
+			编写习惯必须一致（例如都是采用继承式的写法，单样式都写成一行）；
 
-				标注样式编写人，各模块都及时标注（标注关键样式调用的地方）；
+			标注样式编写人，各模块都及时标注（标注关键样式调用的地方）；
 
-				页面进行标注（例如 页面 模块 开始和结束）；
+			页面进行标注（例如 页面 模块 开始和结束）；
 
-				CSS跟HTML 分文件夹并行存放，命名都得统一（例如style.css）；
+			CSS跟HTML 分文件夹并行存放，命名都得统一（例如style.css）；
 
-				JS 分文件夹存放 命名以该JS功能为准的英文翻译。
+			JS 分文件夹存放 命名以该JS功能为准的英文翻译。
 
-				图片采用整合的 images.png png8 格式文件使用 尽量整合在一起使用方便将来的管理
+			图片采用整合的 images.png png8 格式文件使用 尽量整合在一起使用方便将来的管理
+
 - 如何设计突发大规模并发架构？
 
 
+- 当团队人手不足，把功能代码写完已经需要加班的情况下，你会做前端代码的测试吗？
+
 - 说说最近最流行的一些东西吧？常去哪些网站？
 
-			Node.js、Mongodb、npm、MVVM、MEAN、three.js
+			ES6\WebAssembly\Node\MVVM\Web Components\React\React Native\Webpack 组件化
+
+- 知道什么是SEO并且怎么优化么? 知道各种meta data的含义么?
+
 
 - 移动端（Android IOS）怎么做好用户体验?
 
@@ -1022,50 +1451,51 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 			利用选择代替输入、标签及文字的排布方式、
 			依靠明文确认密码、合理的键盘利用、
 
+- 简单描述一下你做过的移动APP项目研发流程？
+
 - 你在现在的团队处于什么样的角色，起到了什么明显的作用？
 
 - 你认为怎样才是全端工程师（Full Stack developer）？
 
-
 - 介绍一个你最得意的作品吧？
+
+- 你有自己的技术博客吗，用了哪些技术？
+
+- 对前端安全有什么看法？
+
+- 是否了解Web注入攻击，说下原理，最常见的两种攻击（XSS 和 CSRF）了解到什么程度？
+
+- 项目中遇到国哪些印象深刻的技术难题，具体是什么问题，怎么解决？。
+
+- 最近在学什么东西？
 
 - 你的优点是什么？缺点是什么？
 
 - 如何管理前端团队?
 
-
 - 最近在学什么？能谈谈你未来3，5年给自己的规划吗？
-
-- 想问公司的问题？
-
-			问公司问题：
-			目前关注哪些最新的Web前端技术（未来的发展方向）？
-			前端团队如何工作的（实现一个产品的流程）？
-			公司的薪资结构是什么样子的？
-
-
 
 
 ## <a name='web'>前端学习网站推荐</a>
-	
+
 	1. 极客标签：     http://www.gbtags.com/
 
 	2. 码农周刊：     http://weekly.manong.io/issues/
-	
+
 	3. 前端周刊：     http://www.feweekly.com/issues
-	
+
 	4. 慕课网：       http://www.imooc.com/
-	
-	5. div.io：		 http://div.io 
-	
+
+	5. div.io：		 http://div.io
+
 	6. Hacker News： https://news.ycombinator.com/news
-	
+
 	7. InfoQ：       http://www.infoq.com/
-	
+
 	8. w3cplus：     http://www.w3cplus.com/
-	
+
 	9. Stack Overflow： http://stackoverflow.com/
-	
+
 	10.w3school：    http://www.w3school.com.cn/
 
 	11.mozilla：     https://developer.mozilla.org/zh-CN/docs/Web/JavaScript
@@ -1074,20 +1504,19 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 ## <a name='web'>文档推荐</a>
 
-	
-1. [jQuery 基本原理](http://docs.huihoo.com/jquery/jquery-fundamentals/zh-cn/index.html "jQuery 基本原理")
 
+1. [jQuery 基本原理](http://docs.huihoo.com/jquery/jquery-fundamentals/zh-cn/index.html "jQuery 基本原理")
 
 2. [JavaScript 秘密花园](http://bonsaiden.github.io/JavaScript-Garden/zh/)
 
-
 3. [CSS参考手册](http://css.doyoe.com/)
 
+4. [ECMAScript 6入门](http://es6.ruanyifeng.com/)
 
 
 
-###更新时间:  2015/7/24
+###更新时间: 2015-12-29
 
 	爱机车、爱骑行、爱旅行、爱摄影、爱阅读的前端开发攻城师。
-	
+
 	我的微博：http://weibo.com/920802999
