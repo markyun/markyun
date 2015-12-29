@@ -165,9 +165,7 @@ HTML5？
 
 -  Javascript如何实现继承？
 
--  javascript对象的几种创建方式？
-
--  如何创建一个对象? （画出此对象的内存图）
+-  javascript创建对象的几种方式？
 
 -  谈谈This对象的理解。
 
@@ -214,7 +212,6 @@ HTML5？
 -  模块化开发怎么做？
 
 -  AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规范区别？
-
 
 -  requireJS的核心原理是什么？（如何动态加载的？如何避免多次加载的？如何
 缓存的？）
@@ -292,7 +289,6 @@ HTML5？
 -  知道各种JS框架(Angular, Backbone, Ember, React, Meteor, Knockout...)么? 能讲出他们各自的优点和缺点么?
 -  Underscore 对哪些 JS 原生对象进行了扩展以及提供了哪些好用的函数方法？
 
-
 -  解释JavaScript中的作用域与变量声明提升？
 
 -  那些操作会造成内存泄漏？
@@ -317,6 +313,8 @@ HTML5？
 - 简述一下 Handlerbars 的对模板的基本处理流程， 如何编译的？如何缓存的？
 
 - 用js实现千位分隔符?(来源：[前端农民工](http://div.io/topic/744)，提示：正则+replace)
+
+- 检测浏览器版本版本有哪些方式？
 
 ## <a name='other'>其他问题</a>
 

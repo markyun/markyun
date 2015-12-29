@@ -619,7 +619,14 @@ HTML5？
 
 -  介绍js的基本数据类型。
 
-		number,string,boolean,object,undefined
+		 Undefined、Null、Boolean、Number、String
+
+-  介绍js有哪些内置对象？
+
+		Object 是 JavaScript 中所有对象的父对象
+
+		数据封装类对象：Object、Array、Boolean、Number 和 String
+		其他对象：Function、Arguments、Math、Date、RegExp、Error
 
 -  说几条写JavaScript的基本规范？
 
@@ -671,13 +678,89 @@ HTML5？
 
 -  JavaScript有几种类型的值？，你能画一下他们的内存图吗？
 
-		（堆：原始数据类型和 栈：引用数据类型）
+		堆：原始数据类型（Undefined，Null，Boolean，Number、String） 
+		栈：引用数据类型（对象、数组和函数）
+
+		两种类型的区别是：存储位置不同；
+		原始数据类型直接存储在栈(stack)中的简单数据段，占据空间小、大小固定，属于被频繁使用数据，所以放入栈中存储；
+		引用数据类型存储在堆(heap)中的对象,占据空间大、大小不固定,如果存储在栈中，将会影响程序运行的性能；引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其
+		在栈中的地址，取得地址后从堆中获得实体
+		
+	![Stated Clearly Image](http://www.w3school.com.cn/i/ct_js_value.gif)
+
+
 
 -  Javascript如何实现继承？
 
--  javascript对象的几种创建方式？
+-  javascript创建对象的几种方式？
 
--  如何创建一个对象? （画出此对象的内存图）
+		javascript创建对象简单的说,无非就是使用内置对象或各种自定义对象，当然还可以用JSON；但写法有很多种，也能混合使用。
+
+
+		1、对象字面量的方式   
+
+			person={firstname:"Mark",lastname:"Yun",age:25,eyecolor:"black"};
+
+		2、用function来模拟无参的构造函数
+
+			function Person(){}
+			var person=new Person();//定义一个function，如果使用new"实例化",该function可以看作是一个Class
+			person.name="Mark";
+			person.age="25";
+			person.work=function(){
+			alert(person.name+" hello...");
+			}
+			person.work();
+
+		3、用function来模拟参构造函数来实现（用this关键字定义构造的上下文属性）
+
+			function Pet(name,age,hobby){
+			   this.name=name;//this作用域：当前对象
+			   this.age=age;
+			   this.hobby=hobby;
+			   this.eat=function(){
+			      alert("我叫"+this.name+",我喜欢"+this.hobby+",是个程序员");
+			   }
+			}
+			var maidou =new Pet("麦兜",25,"coding");//实例化、创建对象
+			maidou.eat();//调用eat方法
+
+
+		4、用工厂方式来创建（内置对象）
+	
+			 var wcDog =new Object();
+			 wcDog.name="旺财";
+			 wcDog.age=3;
+			 wcDog.work=function(){
+			   alert("我是"+wcDog.name+",汪汪汪......");
+			 }
+			 wcDog.work();
+
+
+		5、用原型方式来创建
+
+			function Dog(){
+			
+			 }
+			 Dog.prototype.name="旺财";
+			 Dog.prototype.eat=function(){
+			 alert(this.name+"是个吃货");
+			 }
+			 var wangcai =new Dog();
+			 wangcai.eat();
+
+
+		5、用混合方式来创建
+
+			function Car(name,price){
+			  this.name=name;
+			  this.price=price; 
+			}
+			 Car.prototype.sell=function(){
+			   alert("我是"+this.name+"，我现在卖"+this.price+"万元");
+			  }
+			var camry =new Car("凯美瑞",27);
+			camry.sell(); 
 
 -  谈谈This对象的理解。
 
@@ -691,17 +774,14 @@ HTML5？
 
 -  null，undefined 的区别？
 
-		undefined : 用来告诉你缺少某事物。
+	    typeof undefined
+			//"undefined"
+		undefined : undefined是一个表示"无"的原始值， 当尝试读取不存在的对象属性时也会返回 undefined；
 
-	    typeof undefined => "undefined"
 
-	    注意：
-	    应该只给Javascript使用undefined，而不应该将某值设为undefined，
-	    如果想要表示某变数值仍然无法使用，应该使用null。
-
--	  null :  给你知道目前仍然无法使用某《可能会出现的值》。
-
-		typeof null => object
+		null : 是对象(空对象, 没有任何属性和方法)；
+		typeof null
+			//"object"
 
 		注意：
 		在验证null时，一定要使用　=== ，因为 == 无法分别 null 和　undefined
@@ -1153,6 +1233,25 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 - 用js实现千位分隔符?(来源：[前端农民工](http://div.io/topic/744)，提示：正则+replace)
 
+		function commafy(num) {
+			 num = num + '';
+			 var reg = /(-?d+)(d{3})/;
+			
+			if(reg.test(num)){
+			 num = num.replace(reg, '$1,$2');
+			}
+			return num;
+		}
+
+	
+- 检测浏览器版本版本有哪些方式？
+
+		功能检测、userAgent特征检测
+
+		比如：navigator.userAgent
+		//"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36"
+
+
 ## <a name='other'>其他问题</a>
 
 - 原来公司工作流程是怎么样的，如何与其他人协作的？如何夸部门合作的？
@@ -1190,7 +1289,19 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 		对于JS DOM的优化
 		HTTP服务器的文件缓存
 
-- 列举 IE 与其他浏览器不一样的特性？
+- 列举IE与其他浏览器不一样的特性？
+		
+
+		1、事件不同之处：
+
+		   	触发事件的元素被认为是目标（target）。而在 IE 中，目标包含在 event 对象的 srcElement 属性；
+			
+			获取字符代码、如果按键代表一个字符（shift、ctrl、alt除外），IE 的 keyCode 会返回字符代码（Unicode），DOM 中按键的代码和字符是分离的，要获取字符代码，需要使用 charCode 属性；
+
+			阻止某个事件的默认行为，IE 中阻止某个事件的默认行为，必须将 returnValue 属性设置为 false，Mozilla 中，需要调用 preventDefault() 方法；
+
+			停止事件冒泡，IE 中阻止事件进一步冒泡，需要设置 cancelBubble 为 true，Mozzilla 中，需要调用 stopPropagation()；
+		
 
 - 99%的网站都需要被重构是那本书上写的？
 
