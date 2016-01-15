@@ -642,39 +642,30 @@ HTML5？
 
 -  JavaScript原型，原型链 ? 有什么特点？
 
-		原型对象也是普通的对象，是对象一个自带隐式的 __proto__ 属性，原型也有可能有自己的原型，如果一个原型对象的原型不为null的话，我们就称之为原型链。
-		原型链是由一些用来继承和共享属性的对象组成的（有限的）对象链。
+		每个对象都会在其内部初始化一个属性，就是prototype(原型)，当我们访问一个对象的属性时，
+		如果这个对象内部不存在这个属性，那么他就会去prototype里找这个属性，这个prototype又会有自己的prototype，
+		于是就这样一直找下去，也就是我们平时所说的原型链的概念。
+		关系：instance.constructor.prototype = instance.__proto__
 
-		JavaScript的数据对象有那些属性值？
+		特点：
+		JavaScript对象是通过引用来传递的，我们创建的每个新对象实体中并没有一份属于自己的原型副本。当我们修改原型时，与之相关的对象也会继承这一改变。
 
-		　　writable：这个属性的值是否可以改。
 
-		　　configurable：这个属性的配置是否可以删除，修改。
+		 当我们需要一个属性的时，Javascript引擎会先看当前对象中是否有这个属性， 如果没有的话，
+		 就会查找他的Prototype对象是否有这个属性，如此递推下去，一直检索到 Object 内建对象。
+			function Func(){}
+			Func.prototype.name = "Sean";
+			Func.prototype.getInfo = function() {
+			  return this.name;
+			}
+			var person = new Func();//现在可以参考var person = Object.create(oldObject);
+			console.log(person.getInfo());//它拥有了Func的属性和方法
+			//"Sean"
+			console.log(Func.prototype);
+			// Func { name="Sean", getInfo=function()}
 
-		　　enumerable：这个属性是否能在for…in循环中遍历出来或在Object.keys中列举出来。
 
-		　　value：属性值。
-
-		当我们需要一个属性的时，Javascript引擎会先看当前对象中是否有这个属性， 如果没有的话，就会查找他的Prototype对象是否有这个属性。
-
-		 function clone(proto) {
-
-		　　function Dummy() { }
-
-		　　Dummy.prototype = proto;
-
-		　　Dummy.prototype.constructor = Dummy;
-
-		　　return new Dummy(); //等价于Object.create(Person);
-
-		 }
-
-        function object(old) {
-	         function F() {};
-	         F.prototype = old;
-	         return new F();
-        }
-	    var newObj = object(oldObject);
+			
 
 -  JavaScript有几种类型的值？，你能画一下他们的内存图吗？
 
@@ -691,6 +682,27 @@ HTML5？
 
 
 -  Javascript如何实现继承？
+
+		1、构造继承
+		2、原型继承
+		3、实例继承
+		4、拷贝继承
+
+		原型prototype机制或apply和call方法去实现较简单，建议使用构造函数与原型混合方式。
+			
+		 function Parent(){
+		        this.name = 'wang';
+		    }
+		
+		    function Child(){
+		        this.age = 28;
+		    }
+		    Child.prototype = new Parent();//继承了Parent，通过原型
+		
+		    var demo = new Child();
+		    alert(demo.age);
+		    alert(demo.name);//得到被继承的属性
+		  }
 
 -  javascript创建对象的几种方式？
 
@@ -762,6 +774,12 @@ HTML5？
 			var camry =new Car("凯美瑞",27);
 			camry.sell(); 
 
+-  Javascript作用链域?
+
+		全局函数无法查看局部函数的内部细节，但局部函数可以查看其上层的函数细节，直至全局细节。
+		当需要从局部函数查找某一属性或方法时，如果当前作用域没有找到，就会上溯到上层作用域查找，
+		直至全局函数，这种组织形式就是作用域链。
+
 -  谈谈This对象的理解。
 
 -  eval是做什么的？
@@ -774,17 +792,35 @@ HTML5？
 
 -  null，undefined 的区别？
 
+		null 		表示一个对象被定义了，值为“空值”；
+		undefined 	表示不存在这个值。
+
+
 	    typeof undefined
 			//"undefined"
-		undefined : undefined是一个表示"无"的原始值， 当尝试读取不存在的对象属性时也会返回 undefined；
+			undefined :是一个表示"无"的原始值或者说表示"缺少值"，就是此处应该有一个值，但是还没有定义。当尝试读取时会返回 undefined； 
+			例如变量被声明了，但没有赋值时，就等于undefined
 
-
-		null : 是对象(空对象, 没有任何属性和方法)；
 		typeof null
 			//"object"
-
+			null : 是一个对象(空对象, 没有任何属性和方法)；
+			例如作为函数的参数，表示该函数的参数不是对象；
+	
 		注意：
-		在验证null时，一定要使用　=== ，因为 == 无法分别 null 和　undefined
+			在验证null时，一定要使用　=== ，因为 == 无法分别 null 和　undefined
+
+		
+		再来一个例子：
+
+			null
+			Q：有张三这个人么？
+			A：有！
+			Q：张三有房子么？
+			A：没有！
+	
+			undefined
+			Q：有张三这个人么？
+			A：没有！
 
 
 -  写一个通用的事件侦听器函数。
@@ -882,13 +918,30 @@ HTML5？
 
 -  什么是闭包（closure），为什么要用它？
 
-		闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量
+		闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量,利用闭包可以突破作用链域，将函数内部的变量和方法传递到外部。
 
 		闭包的特性：
 
 		1.函数内再嵌套函数
 		2.内部函数可以引用外层的参数和变量
 		3.参数和变量不会被垃圾回收机制回收
+
+		//li节点的onclick事件都能正确的弹出当前被点击的li索引
+		 <ul id="testUL">
+	        <li> index = 0</li>
+	        <li> index = 1</li>
+	        <li> index = 2</li>
+	        <li> index = 3</li>
+	    </ul>
+		<script type="text/javascript">
+		    var nodes = document.getElementsByTagName("li");
+		    for(i = 0;i<nodes.length;i+= 1){
+		        nodes[i].onclick = function(){
+		            console.log(i+1);//不用闭包的话，值每次都是4
+		        }(i);
+		    }
+		</script>
+
 
 
 		执行say667()后,say667()闭包内部变量会存在,而闭包内部函数的内部变量不会存在
@@ -913,6 +966,7 @@ HTML5？
 -  javascript 代码中的"use strict";是什么意思 ? 使用它区别是什么？
 
 		use strict是一种ECMAscript 5 添加的（严格）运行模式,这种模式使得 Javascript 在更严格的条件下运行,
+
 		使JS编码更加规范化的模式,消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为。
 		默认支持的糟糕特性都会被禁用，比如不能用with，也不能在意外的情况下给全局变量赋值;
 		全局变量的显示声明,函数必须声明在顶层，不允许在非函数代码块内声明函数,arguments.callee也不允许使用；
@@ -1530,19 +1584,19 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 - 平时如何管理你的项目？
 
-			先期团队必须确定好全局样式（globe.css），编码模式(utf-8) 等；
+		先期团队必须确定好全局样式（globe.css），编码模式(utf-8) 等；
 
-			编写习惯必须一致（例如都是采用继承式的写法，单样式都写成一行）；
+		编写习惯必须一致（例如都是采用继承式的写法，单样式都写成一行）；
 
-			标注样式编写人，各模块都及时标注（标注关键样式调用的地方）；
+		标注样式编写人，各模块都及时标注（标注关键样式调用的地方）；
 
-			页面进行标注（例如 页面 模块 开始和结束）；
+		页面进行标注（例如 页面 模块 开始和结束）；
 
-			CSS跟HTML 分文件夹并行存放，命名都得统一（例如style.css）；
+		CSS跟HTML 分文件夹并行存放，命名都得统一（例如style.css）；
 
-			JS 分文件夹存放 命名以该JS功能为准的英文翻译。
+		JS 分文件夹存放 命名以该JS功能为准的英文翻译。
 
-			图片采用整合的 images.png png8 格式文件使用 尽量整合在一起使用方便将来的管理
+		图片采用整合的 images.png png8 格式文件使用 尽量整合在一起使用方便将来的管理
 
 - 如何设计突发大规模并发架构？
 
@@ -1558,9 +1612,12 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 - 移动端（Android IOS）怎么做好用户体验?
 
-			清晰的视觉纵线、信息的分组、极致的减法、
-			利用选择代替输入、标签及文字的排布方式、
-			依靠明文确认密码、合理的键盘利用、
+		清晰的视觉纵线、
+		信息的分组、极致的减法、
+		利用选择代替输入、
+		标签及文字的排布方式、
+		依靠明文确认密码、
+		合理的键盘利用、
 
 - 简单描述一下你做过的移动APP项目研发流程？
 
@@ -1622,7 +1679,11 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 3. [CSS参考手册](http://css.doyoe.com/)
 
-4. [ECMAScript 6入门](http://es6.ruanyifeng.com/)
+4. [JavaScript 标准参考教程](http://javascript.ruanyifeng.com/)
+
+5. [ECMAScript 6入门](http://es6.ruanyifeng.com/)
+
+
 
 
 

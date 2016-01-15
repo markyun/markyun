@@ -58,6 +58,8 @@ HTML5？
 - 实现不使用 border 画出1px高的线，在不同浏览器的Quirksmode和CSSCompat模式下都能保持同一效果。
 
 - 网页验证码是干嘛的，是为了解决什么安全问题？
+- tite与h1的区别、b与strong的区别、i与em的区别？
+
 
 ## <a name='css'>CSS</a>
 
@@ -152,6 +154,7 @@ HTML5？
 - png、jpg、gif 这些图片格式解释一下，分别什么时候用。有没有了解过webp？
 
 - 什么是Cookie 隔离？（或者说：请求资源的时候不要让它带cookie怎么做）
+- style标签写在body后与body前有什么区别？
 
 ## <a name='js'>JavaScript</a>
 
@@ -165,7 +168,9 @@ HTML5？
 
 -  Javascript如何实现继承？
 
--  javascript创建对象的几种方式？
+-  Javascript创建对象的几种方式？
+
+-  Javascript作用链域?
 
 -  谈谈This对象的理解。
 
@@ -316,6 +321,8 @@ HTML5？
 
 - 检测浏览器版本版本有哪些方式？
 
+- 我们给一个dom同时绑定两个点击事件，一个用捕获，一个用冒泡，你来说下会执行几次事件，然后会先执行冒泡还是捕获
+
 ## <a name='other'>其他问题</a>
 
 - 原来公司工作流程是怎么样的，如何与其他人协作的？如何夸部门合作的？
@@ -462,7 +469,9 @@ HTML5？
 
 3. [CSS参考手册](http://css.doyoe.com/)
 
-4. [ECMAScript 6入门](http://es6.ruanyifeng.com/)
+4. [JavaScript 标准参考教程](http://javascript.ruanyifeng.com/)
+
+5. [ECMAScript 6入门](http://es6.ruanyifeng.com/)
 
 
 ###更新时间: 2015-12-29
