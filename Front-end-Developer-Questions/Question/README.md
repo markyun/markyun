@@ -223,7 +223,7 @@ HTML5？
 
 -  谈一谈你对ECMAScript6的了解？
 
--  ECMAScript6 怎么写class么，为什么会出现class这种东西?
+-  ECMAScript6 怎么写class，为什么会出现class这种东西?
 
 -  异步加载的方式有哪些？
 
