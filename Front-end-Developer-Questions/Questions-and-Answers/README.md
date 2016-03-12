@@ -821,6 +821,8 @@ HTML5？
 			undefined
 			Q：有张三这个人么？
 			A：没有！
+	
+	参考阅读：[undefined与null的区别](http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html)
 
 
 -  写一个通用的事件侦听器函数。
