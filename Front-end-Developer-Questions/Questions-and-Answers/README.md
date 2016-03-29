@@ -74,8 +74,11 @@
 
 	格式不断修改更新中。
 
+	更新记录：
+	2016年3月25日：新增ECMAScript6 相关问题
 
-###更新时间:  2015-10-9
+
+###更新时间:  2016-3-25
 
 
 
@@ -158,7 +161,7 @@ HTML5？
 		  	 可以利用这一特性让这些浏览器支持HTML5新标签，
           	 浏览器支持新标签后，还需要添加标签默认的样式。
 
-		     当然最好的方式是直接使用成熟的框架、比如html5shim;
+		     当然也可以直接使用成熟的框架、比如html5shim;
 			 <!--[if lt IE 9]>
 				<script> src="http://html5shim.googlecode.com/svn/trunk/html5.js"</script>
 			 <![endif]-->
@@ -242,12 +245,17 @@ HTML5？
 
 - HTML5的form如何关闭自动完成功能？
 
-		给不想要提示的 form 或下某个input 设置为 autocomplete=off。
+		给不想要提示的 form 或某个 input 设置为 autocomplete=off。
 
 
 - 如何实现浏览器内多个标签页之间的通信? (阿里)
 
-		调用localstorge、cookies等本地存储方式
+		WebSocket、SharedWorker；
+		也可以调用localstorge、cookies等本地存储方式；
+
+		localstorge另一个浏览上下文里被添加、修改或删除时，它都会触发一个事件，
+		我们通过监听事件，控制它的值来进行页面信息通信；
+		注意quirks：Safari 在无痕模式下设置localstorge值时会抛出 QuotaExceededError 的异常；
 
 - webSocket如何兼容低浏览器？(阿里)
 
@@ -256,9 +264,11 @@ HTML5？
 		基于 multipart 编码发送 XHR 、
 		基于长轮询的 XHR
 
-- 页面可见性（Page Visibility）API 可以有哪些用途？
+- 页面可见性（Page Visibility API） 可以有哪些用途？
 
+		通过 visibilityState 的值检测页面当前是否可见，以及打开网页的时间等;
 		在页面被切换到其他后台进程的时候，自动暂停音乐或视频的播放；
+		
 
 - 如何在页面上实现一个圆形的可点击区域？
 
@@ -268,22 +278,36 @@ HTML5？
 
 - 实现不使用 border 画出1px高的线，在不同浏览器的标准模式与怪异模式下都能保持一致的效果。
 
-		<div style="height:1px;overflow:hidden;background:#ccc"></div>
+		<div style="height:1px;overflow:hidden;background:red"></div>
 
 
 - 网页验证码是干嘛的，是为了解决什么安全问题。
 
-		区分用户是计算机还是人的公共全自动程序。可以防止：恶意破解密码、刷票、论坛灌水；
-		有效防止黑客对某一个特定注册用户用特定程序暴力破解方式进行不断的登陆尝试；
+		区分用户是计算机还是人的公共全自动程序。可以防止恶意破解密码、刷票、论坛灌水；
+		有效防止黑客对某一个特定注册用户用特定程序暴力破解方式进行不断的登陆尝试。
 
+- title与h1的区别、b与strong的区别、i与em的区别？
+
+		title属性没有明确意义只表示是个标题，H1则表示层次明确的标题，对页面信息的抓取也有很大的影响；
+
+		strong是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：<strong>会重读，而<B>是展示强调内容。
+
+		i内容展示为斜体，em表示强调的文本；
+		
+		Physical Style Elements -- 自然样式标签
+		b, i, u, s, pre
+		Semantic Style Elements -- 语义样式标签
+		strong, em, ins, del, code
+		应该准确使用语义样式标签, 但不能滥用, 如果不能确定时首选使用自然样式标签。
+		
 
 ## <a name='css'>CSS</a>
 
-- 介绍一下CSS的盒子模型？
+- 介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？
 
-		（1）有两种， IE 盒子模型、标准 W3C 盒子模型；IE的content部分包含了 border 和 pading;
-
-		（2）盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border).
+		（1）有两种， IE 盒子模型、W3C 盒子模型；
+		（2）盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)；
+		（3）区  别： IE的content部分把 border 和 pading计算了进去;
 
 
 
@@ -297,7 +321,7 @@ HTML5？
 			6.后代选择器（li a）
 			7.通配符选择器（ * ）
 			8.属性选择器（a[rel = "external"]）
-			9.伪类选择器（a: hover, li: nth - child）
+			9.伪类选择器（a:hover, li:nth-child）
 
 		*   可继承的样式： font-size font-family color, UL LI DL DD DT;
 
@@ -306,23 +330,28 @@ HTML5？
 
 
 - CSS优先级算法如何计算？
+
 		*   优先级就近原则，同权重情况下样式定义最近者为准;
 
 		*   载入样式以最后载入的定位为准;
 
 		优先级为:
 		   !important >  id > class > tag
-		    important 比 内联优先级高
+		   	important 比 内联优先级高
 
 - CSS3新增伪类有那些？
 
-		CSS3新增伪类举例：
+			举例：
 			p:first-of-type	选择属于其父元素的首个 <p> 元素的每个 <p> 元素。
 			p:last-of-type	选择属于其父元素的最后 <p> 元素的每个 <p> 元素。
 	        p:only-of-type	选择属于其父元素唯一的 <p> 元素的每个 <p> 元素。
-			p:only-child	选择属于其父元素的唯一子元素的每个 <p> 元素。
+			p:only-child		选择属于其父元素的唯一子元素的每个 <p> 元素。
 			p:nth-child(2)	选择属于其父元素的第二个子元素的每个 <p> 元素。
-	 	    :enabled  		:disabled 控制表单控件的禁用状态。
+
+			:after			在元素之前添加内容,也可以用来做清除浮动。
+			:before			在元素之后添加内容
+	 	    :enabled  		
+			:disabled 		控制表单控件的禁用状态。
 			:checked        单选框或复选框被选中。
 
 - 如何居中div？如何居中一个浮动元素？如何让绝对定位的div居中？
@@ -364,43 +393,43 @@ HTML5？
 
 - display有哪些值？说明他们的作用。
 
-
-	      block 象块类型元素一样显示。
-		  none 缺省值。象行内元素类型一样显示。
-		  inline-block 象行内元素一样显示，但其内容象块类型元素一样显示。
-		  list-item 象块类型元素一样显示，并添加样式列表标记。
+	      block 		象块类型元素一样显示。
+		  none 			缺省值。象行内元素类型一样显示。
+		  inline-block 	象行内元素一样显示，但其内容象块类型元素一样显示。
+		  list-item		象块类型元素一样显示，并添加样式列表标记。
+		  table			此元素会作为块级表格来显示
+		  inherit		规定应该从父元素继承 display 属性的值
 
 
 - position的值relative和absolute定位原点是？
 
 		  absolute
-			生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。
-
+			生成绝对定位的元素，相对于值不为 static的第一个父元素进行定位。
 		  fixed （老IE不支持）
 			生成绝对定位的元素，相对于浏览器窗口进行定位。
-
 		  relative
 			生成相对定位的元素，相对于其正常位置进行定位。
-
 		  static
-			默认值。没有定位，元素出现在正常的流中
-		   （忽略 top, bottom, left, right z-index 声明）。
-
+			默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。
 		  inherit
 			规定从父元素继承 position 属性的值。
 
 - CSS3有哪些新特性？
 
-  		  CSS3实现圆角（border-radius:8px），
-		  阴影（box-shadow:10px），
-		  文字特效（text-shadow、），
-		  线性渐变（gradient），
-		  旋转（transform）
-          transform:rotate(9deg) scale(0.85,0.90) translate(0px,-30px) skew(-9deg,0deg);//旋转,缩放,定位,倾斜
-          增加了更多的CSS选择器
-		  多背景 rgba
+		  新增各种CSS选择器	（: not(.input)：所有 class 不是“input”的节点）
+  		  圆角		   （border-radius:8px）
+		  多列布局	   	  （multi-column layout）
+		  阴影和反射		 （Shadow\Reflect）
+		  文字特效		（text-shadow、）
+		  文字渲染		（Text-decoration）
+		  线性渐变		（gradient）
+		  旋转		  （transform）
+          增加了旋转,缩放,定位,倾斜,动画，多背景
+		  transform:\scale(0.85,0.90)\ translate(0px,-30px)\ skew(-9deg,0deg)\Animation:
 
 - 请解释一下CSS3的Flexbox（弹性盒布局模型）,以及适用场景？
+
+		 .
 
 - 用纯CSS创建一个三角形的原理是什么？
 
@@ -421,7 +450,7 @@ HTML5？
 			然后用float或者inline使其不换行即可
 
 
-- 常见兼容性问题？
+- 经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧 ？
 
 	    * png24位的图片在iE6浏览器上出现背景，解决方案是做成PNG8.
 
@@ -464,8 +493,9 @@ HTML5？
 
 
 - li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？
+		
+		行框的排列会受到中间空白（回车\空格）等的影响，因为空格也属于字符,这些空白也会被应用样式，占据空间，所以会有间隔，把字符大小设为0，就没有空格了。
 
-- 经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧 ？
 
 - 为什么要初始化CSS样式。
 
@@ -493,7 +523,6 @@ HTML5？
 		table { border-collapse:collapse; border-spacing:0; }
 
 
-
 - absolute的containing block(容器块)计算方式跟正常流有什么不同？
 
 		无论属于哪种，都要先找到其祖先元素中最近的 position 值不为 static 的元素，然后再判断：
@@ -507,7 +536,6 @@ HTML5？
 		3. fixed: 它的containing block一律为根元素(html/body)，根元素也是initial containing block
 
 - CSS里的visibility属性有个collapse属性值是干嘛用的？在不同浏览器下以后什么区别？
-
 
 - position跟display、margin collapse、overflow、float这些特性相互叠加后会怎么样？
 
@@ -613,6 +641,19 @@ HTML5？
 
 		同时这种方式不会将cookie传入Web Server，也减少了Web Server对cookie的处理分析环节，
 		提高了webserver的http请求的解析速度。
+
+
+- style标签写在body后与body前有什么区别？
+
+- 什么是CSS 预处理器 / 后处理器？
+
+		- 预处理器例如：LESS、Sass、Stylus，用来预编译Sass或less，增强了css代码的复用性，
+		  还有层级、mixin、变量、循环、函数等，具有很方便的UI组件模块化开发能力，极大的提高工作效率。
+
+		- 后处理器例如：PostCSS，通常被视为在完成的样式表中根据CSS规范处理CSS，让其更有效；目前最常做的
+		  是给CSS属性添加浏览器私有前缀，实现跨浏览器兼容性的问题。
+
+
 
 ## <a name='js'>JavaScript</a>
 
@@ -1311,7 +1352,44 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 		功能检测、userAgent特征检测
 
 		比如：navigator.userAgent
-		//"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36"
+		//"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36
+		  (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36"
+
+
+- What is a Polyfill? 
+
+		polyfill 是“在旧版浏览器上复制标准 API 的 JavaScript 补充”,可以动态地加载 JavaScript 代码或库，在不支持这些标准 API 的浏览器中模拟它们。
+		例如，geolocation（地理位置）polyfill 可以在 navigator 对象上添加全局的 geolocation 对象，还能添加 getCurrentPosition 函数以及“坐标”回调对象，
+		所有这些都是 W3C 地理位置 API 定义的对象和函数。因为 polyfill 模拟标准 API，所以能够以一种面向所有浏览器未来的方式针对这些 API 进行开发，
+		一旦对这些 API 的支持变成绝对大多数，则可以方便地去掉 polyfill，无需做任何额外工作。
+
+- 做的项目中，有没有用过或自己实现一些 polyfill 方案（兼容性处理方案）？
+
+		比如： html5shiv、Geolocation、Placeholder 
+
+- 我们给一个dom同时绑定两个点击事件，一个用捕获，一个用冒泡。会执行几次事件，会先执行冒泡还是捕获？
+
+
+#### <a name='other'>ECMAScript6 相关</a>
+
+- Object.is() 与原来的比较操作符“ ===”、“ ==”的区别？ 
+		
+		两等号判等，会在比较时进行类型转换；
+		三等号判等(判断严格)，比较时不进行隐式类型转换,（类型不同则会返回false）； 
+
+		Object.is 在三等号判等的基础上特别处理了 NaN 、-0 和 +0 ，保证 -0 和 +0 不再相同，
+		但 Object.is(NaN, NaN) 会返回 true.
+
+ 		Object.is 应被认为有其特殊的用途，而不能用它认为它比其它的相等对比更宽松或严格。
+
+
+
+
+#### <a name='other'>前端框架相关</a>
+
+- react-router 路由系统的实现原理？
+
+- React中如何解决第三方类库的问题?
 
 
 ## <a name='other'>其他问题</a>
@@ -1695,7 +1773,7 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 
 
-###更新时间: 2015-12-29
+###更新时间:  2016-3-25
 
 	爱机车、爱骑行、爱旅行、爱摄影、爱阅读的前端开发攻城师。
 
