@@ -150,7 +150,7 @@ HTML5？
 	          sessionStorage 的数据在浏览器关闭后自动删除;
 			  语意化更好的内容元素，比如 article、footer、header、nav、section;
 			  表单控件，calendar、date、time、email、url、search;
-			  新的技术webworker, websockt, Geolocation;
+			  新的技术webworker, websocket, Geolocation;
 
 		  移除的元素：
 			  纯表现的元素：basefont，big，center，font, s，strike，tt，u;
