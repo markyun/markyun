@@ -745,6 +745,10 @@ HTML5？
 		    alert(demo.name);//得到被继承的属性
 		  }
 
+- JavaScript继承的几种实现方式？
+  - 参考：[构造函数的继承](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html)，[非构造函数的继承](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance_continued.html)；
+
+
 -  javascript创建对象的几种方式？
 
 		javascript创建对象简单的说,无非就是使用内置对象或各种自定义对象，当然还可以用JSON；但写法有很多种，也能混合使用。
@@ -822,11 +826,15 @@ HTML5？
 		直至全局函数，这种组织形式就是作用域链。
 
 -  谈谈This对象的理解。
+  - this总是指向函数的直接调用者（而非间接调用者）；
+  - 如果有new关键字，this指向new出来的那个对象；
+  - 在事件中，this指向触发这个事件的对象，特殊的是，IE中的attachEvent中的this总是指向全局对象Window；
 
 -  eval是做什么的？
 
 		它的功能是把对应的字符串解析成JS代码并运行；
 		应该避免使用eval，不安全，非常耗性能（2次，一次解析成js语句，一次执行）。
+		由JSON字符串转换为JSON对象的时候可以用eval，var obj =eval('('+ str +')');
 
 -  什么是window对象? 什么是document对象?
 
@@ -1057,6 +1065,15 @@ HTML5？
 		JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。
 		它是基于JavaScript的一个子集。数据格式简单, 易于读写, 占用带宽小
         如：{"age":"12", "name":"back"}
+        
+        JSON字符串转换为JSON对象:
+		var obj =eval('('+ str +')');
+		var obj = str.parseJSON();
+		var obj = JSON.parse(str);
+		
+		JSON对象转换为JSON字符串：
+		var last=obj.toJSONString();
+		var last=JSON.stringify(obj);
 
 -  `[].forEach.call($$("*"),function(a){a.style.outline="1px solid #"+(~~(Math.random()*(1<<24))).toString(16)})` 能解释一下这段代码的意思吗？
 
