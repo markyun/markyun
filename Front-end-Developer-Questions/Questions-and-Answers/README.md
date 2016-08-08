@@ -730,21 +730,21 @@ HTML5？
 		4、拷贝继承
 
 		原型prototype机制或apply和call方法去实现较简单，建议使用构造函数与原型混合方式。
-			
-		 function Parent(){
-		        this.name = 'wang';
-		    }
+```javascript
+		function Parent(){
+        	this.name = 'wang';
+		}
 		
-		    function Child(){
-		        this.age = 28;
-		    }
-		    Child.prototype = new Parent();//继承了Parent，通过原型
+		function Child(){
+			this.age = 28;
+		}
+		Child.prototype = new Parent();//继承了Parent，通过原型
 		
-		    var demo = new Child();
-		    alert(demo.age);
-		    alert(demo.name);//得到被继承的属性
-		  }
+		var demo = new Child();
+		alert(demo.age);
+		alert(demo.name);//得到被继承的属性
 
+```
 - JavaScript继承的几种实现方式？
   - 参考：[构造函数的继承](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html)，[非构造函数的继承](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance_continued.html)；
 
