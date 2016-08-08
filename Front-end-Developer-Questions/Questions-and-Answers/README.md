@@ -660,7 +660,7 @@ HTML5？
 
 -  介绍js的基本数据类型。
 
-		 Undefined、Null、Boolean、Number、String
+		 Undefined、Null、Boolean、Number、String、Symbol(new in ECMAScript 2015)
 
 -  介绍js有哪些内置对象？
 
