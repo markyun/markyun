@@ -393,12 +393,13 @@ HTML5？
 
 - display有哪些值？说明他们的作用。
 
-	      block 		象块类型元素一样显示。
-		  none 			缺省值。象行内元素类型一样显示。
-		  inline-block 	象行内元素一样显示，但其内容象块类型元素一样显示。
-		  list-item		象块类型元素一样显示，并添加样式列表标记。
-		  table			此元素会作为块级表格来显示
-		  inherit		规定应该从父元素继承 display 属性的值
+		  block       	块类型。默认宽度为父元素宽度，可设置宽高，换行显示。
+		  none        	缺省值。象行内元素类型一样显示。
+		  inline      	行内元素类型。默认宽度为内容宽度，不可设置宽高，同行显示。
+		  inline-block  默认宽度为内容宽度，可以设置宽高，同行显示。
+		  list-item   	象块类型元素一样显示，并添加样式列表标记。
+		  table       	此元素会作为块级表格来显示。
+		  inherit     	规定应该从父元素继承 display 属性的值。
 
 
 - position的值relative和absolute定位原点是？
