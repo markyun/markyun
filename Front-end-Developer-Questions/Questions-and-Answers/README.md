@@ -364,7 +364,19 @@ HTML5？
 				margin:0 auto;
 			 }
 
-
+	*  让绝对定位的div居中
+			div {
+				position: absolute;
+				width: 300px;
+				height: 300px
+				margin: auto;
+			  	top: 0;
+			  	left: 0;
+			  	bottom: 0;
+			  	right: 0;
+				background-color: pink;	 	/* 方便看效果 */
+			}
+			
 	*  水平垂直居中一
 
 			确定容器的宽高 宽500 高 300 的层
