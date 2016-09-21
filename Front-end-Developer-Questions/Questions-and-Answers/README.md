@@ -354,41 +354,76 @@ HTML5？
 			:disabled 		控制表单控件的禁用状态。
 			:checked        单选框或复选框被选中。
 
-- 如何居中div？如何居中一个浮动元素？如何让绝对定位的div居中？
+- 如何居中div？
 
 
-	*  给div设置一个宽度，然后添加margin:0 auto属性
+	*  水平居中：给div设置一个宽度，然后添加margin:0 auto属性
 
 			div{
 				width:200px;
 				margin:0 auto;
 			 }
 
+	*  让绝对定位的div居中
+			div {
+				position: absolute;
+				width: 300px;
+				height: 300px
+				margin: auto;
+			  	top: 0;
+			  	left: 0;
+			  	bottom: 0;
+			  	right: 0;
+				background-color: pink;	 	/* 方便看效果 */
+			}
+			
+	*  水平垂直居中一
 
-	*  居中一个浮动元素
+			确定容器的宽高 宽500 高 300 的层
+			设置层的外边距
 
-			  确定容器的宽高 宽500 高 300 的层
-			  设置层的外边距
-
-		     .div {
-				  width:500px ; height:300px;//高度可以不设
-				  margin: -150px 0 0 -250px;
-				  position:relative;		 //相对定位
-		          background-color:pink;	 //方便看效果
-				  left:50%;
-				  top:50%;
+			div {
+				position: relative;		/* 相对定位或绝对定位均可 */
+				width:500px; 
+				height:300px;
+				top: 50%;
+				left: 50%;
+				margin: -150px 0 0 -250px;     	/* 外边距为自身宽高的一半 */
+				background-color: pink;	 	/* 方便看效果 */
+				  
 			 }
 
-	*  让绝对定位的div居中
+	*  水平垂直居中二
+				
+			未知容器的宽高，利用 `transform` 属性
+			
+			div {
+				position: absolute;		/* 相对定位或绝对定位均可 */
+				width:500px; 
+				height:300px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background-color: pink;	 	/* 方便看效果 */
+				  
+			}
 
-			  position: absolute;
-			  width: 1200px;
-			  background: none;
-			  margin: 0 auto;
-			  top: 0;
-			  left: 0;
-			  bottom: 0;
-			  right: 0;
+	*  水平垂直居中三
+	
+			利用 flex 布局
+			实际使用时应考虑兼容性
+			
+			.container {
+				display: flex; 
+				align-items: center; 		/* 垂直居中 */
+				justify-content: center;	/* 水平居中 */
+				
+			}
+			.container div {
+				width: 100px;
+				height: 100px;
+				background-color: pink;		/* 方便看效果 */
+			}  
 
 
 - display有哪些值？说明他们的作用。
