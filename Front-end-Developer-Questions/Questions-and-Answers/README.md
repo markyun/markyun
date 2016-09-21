@@ -485,6 +485,11 @@ HTML5？
 			下面的两个div分别宽50%，
 			然后用float或者inline使其不换行即可
 
+- css多列等高如何实现？
+
+		利用padding-bottom|margin-bottom正负值相抵；
+		设置父容器设置超出隐藏（overflow:hidden），这样子父容器的高度就还是它里面的列没有设定padding-bottom时的高度，当它里面的任 一列高度增加了，则父容器的高度被撑到里面最高那列的高度，其他比这列矮的列会用它们的padding-bottom补偿这部分高度差。
+
 
 - 经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧 ？
 
@@ -877,9 +882,16 @@ HTML5？
 
 -  null，undefined 的区别？
 
-		null 		表示一个对象被定义了，值为“空值”；
-		undefined 	表示不存在这个值。
+		null 		表示一个对象是“没有值”的值，也就是值为“空”；
+		undefined 	表示一个变量没有被声明，不存在这个值，或者被声明了但没有被赋值；
 
+		undefined不是一个有效的JSON，而null是；
+		undefined的类型(typeof)是undefined；
+		null的类型(typeof)是object；
+
+
+		Javascript将未赋值的变量默认值设为undefined；
+		Javascript从来不会将变量设为null。它是用来让程序员表明某个用var声明的变量时没有值的。
 
 	    typeof undefined
 			//"undefined"
@@ -893,7 +905,8 @@ HTML5？
 	
 		注意：
 			在验证null时，一定要使用　=== ，因为 == 无法分别 null 和　undefined
-
+ 			null == undefined // true
+  			null === undefined // false
 		
 		再来一个例子：
 
@@ -1206,6 +1219,10 @@ HTML5？
 
 -  requireJS的核心原理是什么？（如何动态加载的？如何避免多次加载的？如何
 缓存的？）
+	
+		参考：http://annn.me/how-to-realize-cmd-loader/
+
+-  JS模块加载器的轮子怎么造，也就是如何实现一个模块加载器？
 
 -  谈一谈你对ECMAScript6的了解？
 
@@ -1422,6 +1439,17 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 - 我们给一个dom同时绑定两个点击事件，一个用捕获，一个用冒泡。会执行几次事件，会先执行冒泡还是捕获？
 
+
+- 使用JS实现获取文件扩展名？
+
+		function getFileExtension(filename) {
+		  return filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
+		}	
+
+		String.lastIndexOf() 方法返回指定值（本例中的'.'）在调用该方法的字符串中最后出现的位置，如果没找到则返回 -1。
+		对于'filename'和'.hiddenfile'，lastIndexOf的返回值分别为0和-1无符号右移操作符(»>) 将-1转换为4294967295，将-2转换为4294967294，这个方法可以保证边缘情况时文件名不变。
+		String.prototype.slice() 从上面计算的索引处提取文件的扩展名。如果索引比文件名的长度大，结果为""。
+				
 
 #### <a name='other'>ECMAScript6 相关</a>
 
