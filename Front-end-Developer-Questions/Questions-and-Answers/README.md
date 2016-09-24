@@ -365,6 +365,7 @@ HTML5？
 			 }
 
 	*  让绝对定位的div居中
+
 			div {
 				position: absolute;
 				width: 300px;
