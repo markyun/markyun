@@ -205,9 +205,9 @@ HTML5？
 
 	详细的使用请参考：
 	
-		[HTML5 离线缓存-manifest简介](http://yanhaijing.com/html/2014/12/28/html5-manifest/)
+	[HTML5 离线缓存-manifest简介](http://yanhaijing.com/html/2014/12/28/html5-manifest/)
 
-		[有趣的HTML5：离线存储](http://segmentfault.com/a/1190000000732617)
+	[有趣的HTML5：离线存储](http://segmentfault.com/a/1190000000732617)
 
 
 
@@ -215,7 +215,7 @@ HTML5？
 
 		在线的情况下，浏览器发现html头部有manifest属性，它会请求manifest文件，如果是第一次访问app，那么浏览器就会根据manifest文件的内容下载相应的资源并且进行离线存储。如果已经访问过app并且资源已经离线存储了，那么浏览器就会使用离线的资源加载页面，然后浏览器会对比新的manifest文件与旧的manifest文件，如果文件没有发生改变，就不做任何操作，如果文件改变了，那么就会重新下载文件中的资源并进行离线存储。
 		离线的情况下，浏览器就直接使用离线存储的资源。
-	详细的使用请参考：[有趣的HTML5：离线存储](http://segmentfault.com/a/1190000000732617)
+	详细请参考：[有趣的HTML5：离线存储](http://segmentfault.com/a/1190000000732617)
 
 - 请描述一下 cookies，sessionStorage 和 localStorage 的区别？
 
@@ -462,20 +462,24 @@ HTML5？
 - CSS3有哪些新特性？
 
 		  新增各种CSS选择器	（: not(.input)：所有 class 不是“input”的节点）
-  		  圆角		   （border-radius:8px）
-		  多列布局	   	  （multi-column layout）
-		  阴影和反射		 （Shadow\Reflect）
+  		  圆角		    （border-radius:8px）
+		  多列布局	    （multi-column layout）
+		  阴影和反射	（Shadow\Reflect）
 		  文字特效		（text-shadow、）
 		  文字渲染		（Text-decoration）
 		  线性渐变		（gradient）
-		  旋转		  （transform）
-          增加了旋转,缩放,定位,倾斜,动画，多背景
-		  transform:\scale(0.85,0.90)\ translate(0px,-30px)\ skew(-9deg,0deg)\Animation:
+		  旋转		 	（transform）
+          缩放,定位,倾斜,动画,多背景
+		  例如:transform:\scale(0.85,0.90)\ translate(0px,-30px)\ skew(-9deg,0deg)\Animation:
 
 - 请解释一下CSS3的Flexbox（弹性盒布局模型）,以及适用场景？
 
-		 一个用于页面布局的全新CSS3功能，Flexbox可以把列表放在同一个方向（从上到下排列，从左到右），并让列表能延伸到占用可用的空间。较为复杂的布局还可以通过嵌套一个伸缩容器（flex container）来实现。
-		 采用Flex布局的元素，称为Flex容器（flex container），简称"容器"。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称"项目"。常规布局是基于块和内联流方向，而Flex布局是基于flex-flow流可以很方便的用来做局中，能对不同屏幕大小自适应。在布局上有了比以前更加灵活的空间。
+		 一个用于页面布局的全新CSS3功能，Flexbox可以把列表放在同一个方向（从上到下排列，从左到右），并让列表能延伸到占用可用的空间。
+		 较为复杂的布局还可以通过嵌套一个伸缩容器（flex container）来实现。
+		 采用Flex布局的元素，称为Flex容器（flex container），简称"容器"。
+		 它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称"项目"。
+		 常规布局是基于块和内联流方向，而Flex布局是基于flex-flow流可以很方便的用来做局中，能对不同屏幕大小自适应。
+		 在布局上有了比以前更加灵活的空间。
 
 		 具体：http://www.w3cplus.com/css3/flexbox-basics.html
 
@@ -500,7 +504,9 @@ HTML5？
 - css多列等高如何实现？
 
 		利用padding-bottom|margin-bottom正负值相抵；
-		设置父容器设置超出隐藏（overflow:hidden），这样子父容器的高度就还是它里面的列没有设定padding-bottom时的高度，当它里面的任 一列高度增加了，则父容器的高度被撑到里面最高那列的高度，其他比这列矮的列会用它们的padding-bottom补偿这部分高度差。
+		设置父容器设置超出隐藏（overflow:hidden），这样子父容器的高度就还是它里面的列没有设定padding-bottom时的高度，
+		当它里面的任 一列高度增加了，则父容器的高度被撑到里面最高那列的高度，
+		其他比这列矮的列会用它们的padding-bottom补偿这部分高度差。
 
 
 - 经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧 ？
@@ -624,10 +630,81 @@ HTML5？
 		如果权重相同，则最后定义的样式会起作用，但是应该避免这种情况出现
 
 
-- 请解释一下为什么会出现浮动和什么时候需要清除浮动？清除浮动的方式
+- 请解释一下为什么需要清除浮动？清除浮动的方式
 
+	清除浮动是为了清除使用浮动元素产生的影响。浮动的元素，高度会塌陷，而高度的塌陷使我们页面后面的布局不能正常显示。
+
+		1、父级div定义height；
+		2、父级div 也一起浮动；
+		3、常规的使用一个class；
+			.clearfix:before, .clearfix:after {
+			    content: " ";
+			    display: table;
+			}
+			.clearfix:after {
+			    clear: both;
+			}
+			.clearfix {
+			    *zoom: 1;
+			}
+
+		4、SASS编译的时候，浮动元素的父级div定义伪类:after
+			&:after,&:before{
+			    content: " ";
+		        visibility: hidden;
+		        display: block;
+		        height: 0;
+		        clear: both;
+			}
+
+		解析原理：
+		1) display:block 使生成的元素以块级元素显示,占满剩余空间;
+		2) height:0 避免生成内容破坏原有布局的高度。
+		3) visibility:hidden 使生成的内容不可见，并允许可能被生成内容盖住的内容可以进行点击和交互;
+		4）通过 content:"."生成内容作为最后一个元素，至于content里面是点还是其他都是可以的，例如oocss里面就有经典的 content:".",有些版本可能content 里面内容为空,一丝冰凉是不推荐这样做的,firefox直到7.0 content:”" 仍然会产生额外的空隙；
+		5）zoom：1 触发IE hasLayout。
+
+		通过分析发现，除了clear：both用来闭合浮动的，其他代码无非都是为了隐藏掉content生成的内容，这也就是其他版本的闭合浮动为什么会有font-size：0，line-height：0。
+
+
+- zoom:1的清楚浮动原理?
+
+		清楚浮动，触发hasLayout；
+		Zoom属性是IE浏览器的专有属性，它可以设置或检索对象的缩放比例。解决ie下比较奇葩的bug。
+		譬如外边距（margin）的重叠，浮动清除，触发ie的haslayout属性等。
+
+		来龙去脉大概如下：
+		当设置了zoom的值之后，所设置的元素就会就会扩大或者缩小，高度宽度就会重新计算了，这里一旦改变zoom值时其实也会发生重新渲染，运用这个原理，也就解决了ie下子元素浮动时候父元素不随着自动扩大的问题。
+
+		Zoom属是IE浏览器的专有属性，火狐和老版本的webkit核心的浏览器都不支持这个属性。然而，zoom现在已经被逐步标准化，出现在 CSS 3.0 规范草案中。
+
+		目前非ie由于不支持这个属性，它们又是通过什么属性来实现元素的缩放呢？
+		可以通过css3里面的动画属性scale进行缩放。
 
 - 移动端的布局用过媒体查询吗？
+
+
+	假设你现在正用一台显示设备来阅读这篇文章，同时你也想把它投影到屏幕上，或者打印出来，
+	而显示设备、屏幕投影和打印等这些媒介都有自己的特点，CSS就是为文档提供在不同媒介上展示的适配方法
+
+	<!-- link元素中的CSS媒体查询 -->
+	当媒体查询为真时，相关的样式表或样式规则会按照正常的级联规被应用。
+	当媒体查询返回假， <link> 标签上带有媒体查询的样式表 仍将被下载 （只不过不会被应用）。
+	
+	<link rel="stylesheet" media="(max-width: 800px)" href="example.css" />
+
+	<!-- 样式表中的CSS媒体查询 -->
+	包含了一个媒体类型和至少一个使用 宽度、高度和颜色等媒体属性来限制样式表范围的表达式。
+	CSS3加入的媒体查询使得无需修改内容便可以使样式应用于某些特定的设备范围。
+
+	<style>
+		@media (min-width: 700px) and (orientation: landscape){
+		  .sidebar {
+		    display: none;
+		  }
+		}
+	</style>
+
 
 
 - 使用 CSS 预处理器吗？喜欢那个？
@@ -637,11 +714,26 @@ HTML5？
 
 - CSS优化、提高性能的方法有哪些？
 
+	关键选择器（key selector）。选择器的最后面的部分为关键选择器（即用来匹配目标元素的部分）；
+	如果规则拥有 ID 选择器作为其关键选择器，则不要为规则增加标签。过滤掉无关的规则（这样样式系统就不会浪费时间去匹配它们了）；
+	提取项目的通用公有样式，增强可复用性，按模块编写组件；增强项目的协同开发性、可维护性和可扩展性;
+	使用预处理工具或构建工具（gulp对css进行语法检查、自动补前缀、打包压缩、自动优雅降级）；
+
+
 - 浏览器是怎样解析CSS选择器的？
+
+	样式系统从关键选择器开始匹配，然后左移查找规则选择器的祖先元素。
+	只要选择器的子树一直在工作，样式系统就会持续左移，直到和规则匹配，或者是因为不匹配而放弃该规则。
+
 
 - 在网页中的应该使用奇数还是偶数的字体？为什么呢？
 
 - margin和padding分别适合什么场景使用？
+
+	margin是用来隔开元素与元素的间距；padding是用来隔开元素与内容的间隔。
+	margin用于布局分开元素使元素与元素互不相干；
+	padding用于元素与内容之间的间隔，让内容（文字）与（包裹）元素之间有一段
+
 
 - 抽离样式模块怎么写，说出思路，有无实践经验？[阿里航旅的面试题]
 
@@ -654,12 +746,30 @@ HTML5？
 - 视差滚动效果，如何给每页做不同的动画？（回到顶部，向下滑动要再次出现，和只出现一次分别怎么做？）
 
 - ::before 和 :after中双冒号和单冒号 有什么区别？解释一下这2个伪元素的作用。
+	
+	单冒号(:)用于CSS3伪类，双冒号(::)用于CSS3伪元素。（伪元素由双冒号和伪元素名称组成）
+	双冒号是在当前规范中引入的，用于区分伪类和伪元素。不过浏览器需要同时支持旧的已经存在的伪元素写法，
+	比如:first-line、:first-letter、:before、:after等，
+	而新的在CSS3中引入的伪元素则不允许再支持旧的单冒号的写法。
+
+	想让插入的内容出现在其它内容前，使用::before，否者，使用::after；
+	在代码顺序上，::after生成的内容也比::before生成的内容靠后。
+	如果按堆栈视角，::after生成的内容会在::before生成的内容之上
+
 
 - 如何修改chrome记住密码后自动填充表单的黄色背景 ？
 
+		input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+		  background-color: rgb(250, 255, 189); /* #FAFFBD; */
+		  background-image: none;
+		  color: rgb(0, 0, 0);
+		}
+
 - 你对line-height是如何理解的？
 
-- 设置元素浮动后，该元素的display值是多少？（自动变成display:block）
+- 设置元素浮动后，该元素的display值是多少？
+
+	自动变成了 display:block
 
 - 怎么让Chrome支持小于12px 的文字？
 	1、用图片：如果是内容固定不变情况下，使用将小于12px文字内容切出做图片，这样不影响兼容也不影响美观。
@@ -667,16 +777,19 @@ HTML5？
 	3、继续使用小于12px字体大小样式设置：如果不考虑chrome可以不用考虑兼容，同时在设置小于12px对象设置-webkit-text-size-adjust:none，做到最大兼容考虑。
 	4、使用12px以上字体：为了兼容、为了代码更简单 从新考虑权重下兼容性。        
 
-- 让页面里的字体变清晰，变细用CSS怎么做？（-webkit-font-smoothing: antialiased;）
+- 让页面里的字体变清晰，变细用CSS怎么做？
+
+	-webkit-font-smoothing: antialiased;
 
 - font-style属性可以让它赋值为“oblique” oblique是什么意思？
+
+	倾斜的字体样式
 
 - position:fixed;在android下无效怎么处理？
 
 - 如果需要手动写动画，你认为最小时间间隔是多久，为什么？（阿里）
 
 		多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小间隔为1/60＊1000ms ＝ 16.7ms
-
 
 - display:inline-block 什么时候会显示间隙？(携程)
 
@@ -702,6 +815,7 @@ HTML5？
 
 
 - style标签写在body后与body前有什么区别？
+
 
 - 什么是CSS 预处理器 / 后处理器？
 
@@ -1888,7 +2002,30 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 
 
-###更新时间:  2016-3-25
+**备注：**
+
+	根据自己需要选择性阅读，面试题是对理论知识的总结，让自己学会应该如何表达。
+
+	资料答案不够正确和全面，欢迎欢迎Star和提交issues。
+
+	格式不断修改更新中。
+
+	在 github 项目的右上角，有三个按钮,分别是 watch、star、fork，新来的同学注意不要用错了，无休止的邮件提醒会给你造成不必要的信息干扰。
+
+	当你选择Watching，表示你以后会关注这个项目的全部动态，以后只要这个项目发生变动，被别人提交了pull request、被发起了issue等情况你都会收到邮件通知。
+
+	star相当于是点赞或收藏，方便以后查找。
+
+	fork表示你想要补充完善这个项目的内容。
+
+	更新记录：
+	
+		2016年10月20日:更新一些已被发现的问题。
+
+		2016年3月25日：新增ECMAScript6 相关问题
+
+
+###更新时间:  2016年10月20日
 
 	爱机车、爱骑行、爱旅行、爱摄影、爱阅读的前端开发攻城师。
 
