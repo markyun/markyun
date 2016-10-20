@@ -108,6 +108,10 @@
 			鲜为人知的是：
 			<area> <base> <col> <command> <embed> <keygen> <param> <source> <track> <wbr>
 
+		不同浏览器（版本）、HTML4（5）、CSS2等实际略有差异
+		参考: http://stackoverflow.com/questions/6867254/browsers-default-css-for-html-elements
+
+
 
 - 页面导入样式时，使用link和@import有什么区别？
 
@@ -199,7 +203,11 @@ HTML5？
 			/ /offline.html
 		3、在离线状态时，操作window.applicationCache进行需求实现。
 
-	详细的使用请参考：[有趣的HTML5：离线存储](http://segmentfault.com/a/1190000000732617)
+	详细的使用请参考：
+	
+		[HTML5 离线缓存-manifest简介](http://yanhaijing.com/html/2014/12/28/html5-manifest/)
+
+		[有趣的HTML5：离线存储](http://segmentfault.com/a/1190000000732617)
 
 
 
@@ -369,13 +377,13 @@ HTML5？
 			div {
 				position: absolute;
 				width: 300px;
-				height: 300px
+				height: 300px;
 				margin: auto;
 				top: 0;
 				left: 0;
 				bottom: 0;
 				right: 0;
-				background-color: pink;	 	/* 方便看效果 */
+				background-color: pink;	/* 方便看效果 */
 			}
 			
 	*  水平垂直居中一
@@ -466,7 +474,10 @@ HTML5？
 
 - 请解释一下CSS3的Flexbox（弹性盒布局模型）,以及适用场景？
 
-		 .
+		 一个用于页面布局的全新CSS3功能，Flexbox可以把列表放在同一个方向（从上到下排列，从左到右），并让列表能延伸到占用可用的空间。较为复杂的布局还可以通过嵌套一个伸缩容器（flex container）来实现。
+		 采用Flex布局的元素，称为Flex容器（flex container），简称"容器"。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称"项目"。常规布局是基于块和内联流方向，而Flex布局是基于flex-flow流可以很方便的用来做局中，能对不同屏幕大小自适应。在布局上有了比以前更加灵活的空间。
+
+		 具体：http://www.w3cplus.com/css3/flexbox-basics.html
 
 - 用纯CSS创建一个三角形的原理是什么？
 
@@ -511,11 +522,12 @@ HTML5？
 
           css
 	          .bb{
-		          background-color:#f1ee18;/*所有识别*/
-		          .background-color:#00deff\9; /*IE6、7、8识别*/
-		          +background-color:#a200ff;/*IE6、7识别*/
-		          _background-color:#1e0bd1;/*IE6识别*/
+		          background-color:red;/*所有识别*/
+			      background-color:#00deff\9; /*IE6、7、8识别*/
+			      +background-color:#a200ff;/*IE6、7识别*/
+			      _background-color:#1e0bd1;/*IE6识别*/
 	          }
+
 
 		*  IE下,可以使用获取常规属性的方法来获取自定义属性,
 		   也可以使用getAttribute()获取自定义属性;
@@ -706,7 +718,8 @@ HTML5？
 
 -  介绍js的基本数据类型。
 
-		 Undefined、Null、Boolean、Number、String、Symbol(new in ECMAScript 2015)
+		 Undefined、Null、Boolean、Number、String、
+		 ECMAScript 2015 新增:Symbol(创建后独一无二且不可变的数据类型 )
 
 -  介绍js有哪些内置对象？
 
@@ -714,6 +727,8 @@ HTML5？
 
 		数据封装类对象：Object、Array、Boolean、Number 和 String
 		其他对象：Function、Arguments、Math、Date、RegExp、Error
+		
+		参考：http://www.ibm.com/developerworks/cn/web/wa-objectsinjs-v1b/index.html
 
 -  说几条写JavaScript的基本规范？
 
@@ -761,8 +776,7 @@ HTML5？
 
 		两种类型的区别是：存储位置不同；
 		原始数据类型直接存储在栈(stack)中的简单数据段，占据空间小、大小固定，属于被频繁使用数据，所以放入栈中存储；
-		引用数据类型存储在堆(heap)中的对象,占据空间大、大小不固定,如果存储在栈中，将会影响程序运行的性能；引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其
-		在栈中的地址，取得地址后从堆中获得实体
+		引用数据类型存储在堆(heap)中的对象,占据空间大、大小不固定。如果存储在栈中，将会影响程序运行的性能；引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其在栈中的地址，取得地址后从堆中获得实体
 		
 	![Stated Clearly Image](http://www.w3school.com.cn/i/ct_js_value.gif)
 
@@ -1009,10 +1023,21 @@ HTML5？
 			};
 
 -  ["1", "2", "3"].map(parseInt) 答案是多少？
+		
+		parseInt() 函数能解析一个字符串，并返回一个整数，需要两个参数 (val, radix)，
+		其中 radix 表示要解析的数字的基数。【该值介于 2 ~ 36 之间，并且字符串中的数字不能大于radix才能正确返回数字结果值】;
+		但此处 map 传了 3 个 (element, index, array),我们重写parseInt函数测试一下是否符合上面的规则。
 
-		 [1, NaN, NaN] 因为 parseInt 需要两个参数 (val, radix)，
-		 其中 radix 表示解析时用的基数。
-		 map 传了 3 个 (element, index, array)，对应的 radix 不合法导致解析失败。
+		function parseInt(str, radix) {   
+		    return str+'-'+radix;   
+		};  
+		var a=["1", "2", "3"];  
+		a.map(parseInt);  // ["1-0", "2-1", "3-2"] 不能大于radix
+
+		因为二进制里面，没有数字3,导致出现超范围的radix赋值和不合法的进制解析，才会返回NaN
+		所以["1", "2", "3"].map(parseInt) 答案也就是：[1, NaN, NaN]
+
+		详细解析：http://blog.csdn.net/justjavac/article/details/19473199
 
 -  事件是？IE与火狐的事件机制有什么区别？ 如何阻止冒泡？
 
@@ -1039,12 +1064,14 @@ HTML5？
 	        <li> index = 3</li>
 	    </ul>
 		<script type="text/javascript">
-		    var nodes = document.getElementsByTagName("li");
-		    for(i = 0;i<nodes.length;i+= 1){
-		        nodes[i].onclick = function(){
-		            console.log(i+1);//不用闭包的话，值每次都是4
-		        }(i);
-		    }
+		  	var nodes = document.getElementsByTagName("li");
+			for(i = 0;i<nodes.length;i+= 1){
+			    nodes[i].onclick = (function(i){
+			              return function() {
+			                 console.log(i);
+			              } //不用闭包的话，值每次都是4
+			            })(i);
+			}
 		</script>
 
 
@@ -1411,15 +1438,17 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 - 用js实现千位分隔符?(来源：[前端农民工](http://div.io/topic/744)，提示：正则+replace)
 
+
+		参考：http://www.tuicool.com/articles/ArQZfui
 		function commafy(num) {
-			 num = num + '';
-			 var reg = /(-?d+)(d{3})/;
-			
-			if(reg.test(num)){
-			 num = num.replace(reg, '$1,$2');
-			}
-			return num;
+		    return num && num
+		        .toString()
+		        .replace(/(\d)(?=(\d{3})+\.)/g, function($0, $1) {
+		            return $1 + ",";
+		        });
 		}
+		console.log(commafy(1234567.90)); //1,234,567.90
+		
 
 	
 - 检测浏览器版本版本有哪些方式？
