@@ -604,6 +604,7 @@ HTML5？
 		（W3C CSS 2.1 规范中的一个概念,它是一个独立容器，决定了元素如何对其内容进行定位,以及与其他元素的关系和相互作用。）
 		 一个页面是由很多个 Box 组成的,元素的类型和 display 属性,决定了这个 Box 的类型。
 		 不同类型的 Box,会参与不同的 Formatting Context（决定如何渲染文档的容器）,因此Box内的元素会以不同的方式渲染,也就是说BFC内部的元素和外部的元素不会互相影响。
+		 
 - css定义的权重
 
 		以下是权重的规则：标签的权重为1，class的权重为10，id的权重为100，以下例子是演示各种定义的权重值：
@@ -910,6 +911,46 @@ HTML5？
 		* parseFloat('12.3b');
 		* 正则表达式，'12.3b'.match(/(\d)+(\.)?(\d)+/g)[0] * 1, 但是这个不太靠谱，提供一种思路而已。
 
+- 如何实现数组的随机排序？
+		方法一：
+		```javascript
+				var arr = [1,2,3,4,5,6,7,8,9,10];
+				function randSort1(arr){
+					for(var i = 0,len = arr.length;i < len; i++ ){
+						var rand = parseInt(Math.random()*len);
+						var temp = arr[rand];
+						arr[rand] = arr[i];
+						arr[i] = temp;
+					}
+					return arr;
+				}
+				console.log(randSort1(arr));
+				
+		```
+		方法二：
+		```javascript
+				var arr = [1,2,3,4,5,6,7,8,9,10];
+				function randSort2(arr){
+					var mixedArray = [];
+					while(arr.length > 0){
+						var randomIndex = parseInt(Math.random()*arr.length);
+						mixedArray.push(arr[randomIndex]);
+						arr.splice(randomIndex, 1);
+					}
+					return mixedArray;
+				}
+				console.log(randSort2(arr));
+				
+		```
+		方法三：
+		```javascript
+				var arr = [1,2,3,4,5,6,7,8,9,10];
+				arr.sort(function(){
+					return Math.random() - 0.5;
+				})
+				console.log(arr);
+		```
+	
 -  Javascript如何实现继承？
 
 		1、构造继承
