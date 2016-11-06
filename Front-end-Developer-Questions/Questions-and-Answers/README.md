@@ -1350,6 +1350,18 @@ HTML5？
 		(5)获取异步调用返回的数据
 		(6)使用JavaScript和DOM实现局部刷新
 
+- Ajax 解决浏览器缓存问题？
+		
+		1、在ajax发送请求前加上 anyAjaxObj.setRequestHeader("If-Modified-Since","0")。
+ 
+        2、在ajax发送请求前加上 anyAjaxObj.setRequestHeader("Cache-Control","no-cache")。
+ 
+        3、在URL后面加上一个随机数： "fresh=" + Math.random();。
+ 
+        4、在URL后面加上时间搓："nowtime=" + new Date().getTime();。
+    
+        5、如果是使用jQuery，直接这样就可以了 $.ajaxSetup({cache:false})。这样页面的所有ajax都会执行这条语句就是不需要保存缓存记录。
+
 -  同步和异步的区别?
 
 	同步的概念应该是来自于OS中关于同步的概念:不同进程为协同完成某项工作而在先后次序上调整(通过阻塞,唤醒等方式).同步强调的是顺序性.谁先谁后.异步则不存在这种顺序性.
