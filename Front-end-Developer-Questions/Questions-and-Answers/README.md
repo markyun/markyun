@@ -911,6 +911,16 @@ HTML5？
 		* parseFloat('12.3b');
 		* 正则表达式，'12.3b'.match(/(\d)+(\.)?(\d)+/g)[0] * 1, 但是这个不太靠谱，提供一种思路而已。
 
+- 如何将浮点数点左边的数每三位添加一个逗号，如12000000.11转化为『12,000,000.11』?
+		
+		function commafy(num){
+			return num && num
+				.toString()
+				.replace(/(\d)(?=(\d{3})+\.)/g, function($1, $2){
+					return $2 + ',';
+				});
+		}
+
 - 如何实现数组的随机排序？
 		方法一：
 		```javascript
