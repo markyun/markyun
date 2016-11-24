@@ -340,12 +340,12 @@ HTML5？
 - CSS优先级算法如何计算？
 
 		*   优先级就近原则，同权重情况下样式定义最近者为准;
-
 		*   载入样式以最后载入的定位为准;
 
 		优先级为:
-		   !important >  id > class > tag
-		   	important 比 内联优先级高
+			同权重: 内联样式表（标签内部）> 嵌入样式表（当前文件中）> 外部样式表（外部文件中）。
+			!important >  id > class > tag
+			important 比 内联优先级高
 
 - CSS3新增伪类有那些？
 
@@ -604,6 +604,7 @@ HTML5？
 		（W3C CSS 2.1 规范中的一个概念,它是一个独立容器，决定了元素如何对其内容进行定位,以及与其他元素的关系和相互作用。）
 		 一个页面是由很多个 Box 组成的,元素的类型和 display 属性,决定了这个 Box 的类型。
 		 不同类型的 Box,会参与不同的 Formatting Context（决定如何渲染文档的容器）,因此Box内的元素会以不同的方式渲染,也就是说BFC内部的元素和外部的元素不会互相影响。
+		 
 - css定义的权重
 
 		以下是权重的规则：标签的权重为1，class的权重为10，id的权重为100，以下例子是演示各种定义的权重值：
@@ -666,10 +667,15 @@ HTML5？
 
 		通过分析发现，除了clear：both用来闭合浮动的，其他代码无非都是为了隐藏掉content生成的内容，这也就是其他版本的闭合浮动为什么会有font-size：0，line-height：0。
 
+- 什么是外边距合并？
 
-- zoom:1的清楚浮动原理?
+		外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。
+		合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。
+		w3school介绍网址： http://www.w3school.com.cn/css/css_margin_collapsing.asp
 
-		清楚浮动，触发hasLayout；
+- zoom:1的清除浮动原理?
+
+		清除浮动，触发hasLayout；
 		Zoom属性是IE浏览器的专有属性，它可以设置或检索对象的缩放比例。解决ie下比较奇葩的bug。
 		譬如外边距（margin）的重叠，浮动清除，触发ie的haslayout属性等。
 
@@ -776,7 +782,7 @@ HTML5？
 		1、用图片：如果是内容固定不变情况下，使用将小于12px文字内容切出做图片，这样不影响兼容也不影响美观。
 		2、使用12px及12px以上字体大小：为了兼容各大主流浏览器，建议设计美工图时候设置大于或等于12px的字体大小，如果是接单的这个时候就需要给客户讲解小于12px浏览器不兼容等事宜。
 		3、继续使用小于12px字体大小样式设置：如果不考虑chrome可以不用考虑兼容，同时在设置小于12px对象设置-webkit-text-size-adjust:none，做到最大兼容考虑。
-		4、使用12px以上字体：为了兼容、为了代码更简单 从新考虑权重下兼容性。        
+		4、使用12px以上字体：为了兼容、为了代码更简单 从新考虑权重下兼容性。
 
 - 让页面里的字体变清晰，变细用CSS怎么做？
 
@@ -900,8 +906,61 @@ HTML5？
 		
 	![Stated Clearly Image](http://www.w3school.com.cn/i/ct_js_value.gif)
 
+- 如何将字符串转化为数字，例如'12.3b'?
 
+		* parseFloat('12.3b');
+		* 正则表达式，'12.3b'.match(/(\d)+(\.)?(\d)+/g)[0] * 1, 但是这个不太靠谱，提供一种思路而已。
 
+- 如何将浮点数点左边的数每三位添加一个逗号，如12000000.11转化为『12,000,000.11』?
+		
+		function commafy(num){
+			return num && num
+				.toString()
+				.replace(/(\d)(?=(\d{3})+\.)/g, function($1, $2){
+					return $2 + ',';
+				});
+		}
+
+- 如何实现数组的随机排序？
+		方法一：
+		```javascript
+				var arr = [1,2,3,4,5,6,7,8,9,10];
+				function randSort1(arr){
+					for(var i = 0,len = arr.length;i < len; i++ ){
+						var rand = parseInt(Math.random()*len);
+						var temp = arr[rand];
+						arr[rand] = arr[i];
+						arr[i] = temp;
+					}
+					return arr;
+				}
+				console.log(randSort1(arr));
+				
+		```
+		方法二：
+		```javascript
+				var arr = [1,2,3,4,5,6,7,8,9,10];
+				function randSort2(arr){
+					var mixedArray = [];
+					while(arr.length > 0){
+						var randomIndex = parseInt(Math.random()*arr.length);
+						mixedArray.push(arr[randomIndex]);
+						arr.splice(randomIndex, 1);
+					}
+					return mixedArray;
+				}
+				console.log(randSort2(arr));
+				
+		```
+		方法三：
+		```javascript
+				var arr = [1,2,3,4,5,6,7,8,9,10];
+				arr.sort(function(){
+					return Math.random() - 0.5;
+				})
+				console.log(arr);
+		```
+	
 -  Javascript如何实现继承？
 
 		1、构造继承
@@ -910,21 +969,21 @@ HTML5？
 		4、拷贝继承
 
 		原型prototype机制或apply和call方法去实现较简单，建议使用构造函数与原型混合方式。
-```javascript
-		function Parent(){
-        	this.name = 'wang';
-		}
-		
-		function Child(){
-			this.age = 28;
-		}
-		Child.prototype = new Parent();//继承了Parent，通过原型
-		
-		var demo = new Child();
-		alert(demo.age);
-		alert(demo.name);//得到被继承的属性
+		```javascript
+				function Parent(){
+		        	this.name = 'wang';
+				}
+				
+				function Child(){
+					this.age = 28;
+				}
+				Child.prototype = new Parent();//继承了Parent，通过原型
+				
+				var demo = new Child();
+				alert(demo.age);
+				alert(demo.name);//得到被继承的属性
 
-```
+		```
 - JavaScript继承的几种实现方式？
   - 参考：[构造函数的继承](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html)，[非构造函数的继承](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance_continued.html)；
 
@@ -934,7 +993,7 @@ HTML5？
 		javascript创建对象简单的说,无非就是使用内置对象或各种自定义对象，当然还可以用JSON；但写法有很多种，也能混合使用。
 
 
-		1、对象字面量的方式   
+		1、对象字面量的方式
 
 			person={firstname:"Mark",lastname:"Yun",age:25,eyecolor:"black"};
 
@@ -1017,12 +1076,14 @@ HTML5？
 		由JSON字符串转换为JSON对象的时候可以用eval，var obj =eval('('+ str +')');
 
 -  什么是window对象? 什么是document对象?
-
+		
+		window对象是指浏览器打开的窗口。
+		document对象是Documentd对象（HTML 文档对象）的一个只读引用，window对象的一个属性。
 
 -  null，undefined 的区别？
 
 		null 		表示一个对象是“没有值”的值，也就是值为“空”；
-		undefined 	表示一个变量没有被声明，不存在这个值，或者被声明了但没有被赋值；
+		undefined 	表示一个变量声明了没有初始化(赋值)；
 
 		undefined不是一个有效的JSON，而null是；
 		undefined的类型(typeof)是undefined；
@@ -1057,7 +1118,9 @@ HTML5？
 	
 			undefined
 			Q：有张三这个人么？
-			A：没有！
+			A：有！
+			Q: 张三有多少岁？
+			A: 不知道（没有被告诉）
 	
 	参考阅读：[undefined与null的区别](http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html)
 
@@ -1148,10 +1211,10 @@ HTML5？
 		其中 radix 表示要解析的数字的基数。【该值介于 2 ~ 36 之间，并且字符串中的数字不能大于radix才能正确返回数字结果值】;
 		但此处 map 传了 3 个 (element, index, array),我们重写parseInt函数测试一下是否符合上面的规则。
 
-		function parseInt(str, radix) {   
-		    return str+'-'+radix;   
-		};  
-		var a=["1", "2", "3"];  
+		function parseInt(str, radix) {
+		    return str+'-'+radix;
+		};
+		var a=["1", "2", "3"];
 		a.map(parseInt);  // ["1-0", "2-1", "3-2"] 不能大于radix
 
 		因为二进制里面，没有数字3,导致出现超范围的radix赋值和不合法的进制解析，才会返回NaN
@@ -1296,6 +1359,18 @@ HTML5？
 		(4)发送HTTP请求
 		(5)获取异步调用返回的数据
 		(6)使用JavaScript和DOM实现局部刷新
+
+- Ajax 解决浏览器缓存问题？
+		
+		1、在ajax发送请求前加上 anyAjaxObj.setRequestHeader("If-Modified-Since","0")。
+ 
+        2、在ajax发送请求前加上 anyAjaxObj.setRequestHeader("Cache-Control","no-cache")。
+ 
+        3、在URL后面加上一个随机数： "fresh=" + Math.random();。
+ 
+        4、在URL后面加上时间搓："nowtime=" + new Date().getTime();。
+    
+        5、如果是使用jQuery，直接这样就可以了 $.ajaxSetup({cache:false})。这样页面的所有ajax都会执行这条语句就是不需要保存缓存记录。
 
 -  同步和异步的区别?
 
@@ -1450,6 +1525,13 @@ HTML5？
 -  jQuery 的属性拷贝(extend)的实现原理是什么，如何实现深拷贝？ 
 
 -  jquery.extend 与 jquery.fn.extend的区别？
+		
+		* jquery.extend 为jquery类添加类方法，可以理解为添加静态方法
+		* jquery.fn.extend: 
+			源码中jquery.fn = jquery.prototype，所以对jquery.fn的扩展，就是为jquery类添加成员函数
+		使用：
+		jquery.extend扩展，需要通过jquery类来调用，而jquery.fn.extend扩展，所有jquery实例都可以直接调用。
+
 
 -  jQuery 的队列是如何实现的？队列可以用在哪些地方？
 
@@ -1511,12 +1593,16 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 -  需求：实现一个页面操作不会整页刷新的网站，并且能在浏览器前进、后退时正确响应。给出你的技术实现方案？
 
 - 如何判断当前脚本运行在浏览器还是node环境中？（阿里）
+		
+		this === window ? 'browser' : 'node';
 
 		通过判断Global对象是否为window，如果不为window，当前脚本没有运行在浏览器中
 
 -  移动端最小触控区域是多大？
 
 -  jQuery 的 slideUp动画 ，如果目标元素是被外部事件驱动, 当鼠标快速地连续触发外部元素事件, 动画会滞后的反复执行，该如何处理呢?
+		
+		jquery stop(): 如：$("#div").stop().animate({width:"100px"},100);
 
 -  把 Script 标签 放在页面的最底部的body封闭之前 和封闭之后有什么区别？浏览器会如何解析它们？
 
@@ -1538,6 +1624,14 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 -  JQuery一个对象可以同时绑定多个事件，这是如何实现的？
 
+		* 多个事件同一个函数：
+			$("div").on("click mouseover", function(){});
+		* 多个事件不同函数
+			$("div").on({
+				click: function(){},
+				mouseover: function(){}
+			});
+
 -  Node.js的适用场景？
 
 -  (如果会用node)知道route, middleware, cluster, nodemon, pm2, server-side rendering么?
@@ -1547,6 +1641,8 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 - 什么是“前端路由”?什么时候适合使用“前端路由”? “前端路由”有哪些优点和缺点?
 
 - 知道什么是webkit么? 知道怎么用浏览器的各种工具来调试和debug代码么?
+
+		Chrome,Safari浏览器内核。
 
 - 如何测试前端代码么? 知道BDD, TDD, Unit Test么? 知道怎么测试你的前端工程么(mocha, sinon, jasmin, qUnit..)?
 
