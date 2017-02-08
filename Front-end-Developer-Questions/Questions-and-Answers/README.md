@@ -204,7 +204,7 @@ HTML5？
 		3、在离线状态时，操作window.applicationCache进行需求实现。
 
 	详细的使用请参考：
-	
+
 	[HTML5 离线缓存-manifest简介](http://yanhaijing.com/html/2014/12/28/html5-manifest/)
 
 	[有趣的HTML5：离线存储](http://segmentfault.com/a/1190000000732617)
@@ -276,7 +276,7 @@ HTML5？
 
 		通过 visibilityState 的值检测页面当前是否可见，以及打开网页的时间等;
 		在页面被切换到其他后台进程的时候，自动暂停音乐或视频的播放；
-		
+
 
 - 如何在页面上实现一个圆形的可点击区域？
 
@@ -301,13 +301,13 @@ HTML5？
 		strong是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：<strong>会重读，而<B>是展示强调内容。
 
 		i内容展示为斜体，em表示强调的文本；
-		
+
 		Physical Style Elements -- 自然样式标签
 		b, i, u, s, pre
 		Semantic Style Elements -- 语义样式标签
 		strong, em, ins, del, code
 		应该准确使用语义样式标签, 但不能滥用, 如果不能确定时首选使用自然样式标签。
-		
+
 
 ## <a name='css'>CSS</a>
 
@@ -385,7 +385,7 @@ HTML5？
 				right: 0;
 				background-color: pink;	/* 方便看效果 */
 			}
-			
+
 	*  水平垂直居中一
 
 			确定容器的宽高 宽500 高 300 的层
@@ -393,40 +393,40 @@ HTML5？
 
 			div {
 				position: relative;		/* 相对定位或绝对定位均可 */
-				width:500px; 
+				width:500px;
 				height:300px;
 				top: 50%;
 				left: 50%;
 				margin: -150px 0 0 -250px;     	/* 外边距为自身宽高的一半 */
 				background-color: pink;	 	/* 方便看效果 */
-				  
+
 			 }
 
 	*  水平垂直居中二
-				
+
 			未知容器的宽高，利用 `transform` 属性
-			
+
 			div {
 				position: absolute;		/* 相对定位或绝对定位均可 */
-				width:500px; 
+				width:500px;
 				height:300px;
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
 				background-color: pink;	 	/* 方便看效果 */
-				  
+
 			}
 
 	*  水平垂直居中三
-	
+
 			利用 flex 布局
 			实际使用时应考虑兼容性
-			
+
 			.container {
-				display: flex; 
+				display: flex;
 				align-items: center; 		/* 垂直居中 */
 				justify-content: center;	/* 水平居中 */
-				
+
 			}
 			.container div {
 				width: 100px;
@@ -553,7 +553,7 @@ HTML5？
 
 
 - li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？
-		
+
 		行框的排列会受到中间空白（回车\空格）等的影响，因为空格也属于字符,这些空白也会被应用样式，占据空间，所以会有间隔，把字符大小设为0，就没有空格了。
 
 
@@ -597,14 +597,20 @@ HTML5？
 
 - CSS里的visibility属性有个collapse属性值是干嘛用的？在不同浏览器下以后什么区别？
 
+	对于普通元素visibility:collapse;会将元素完全隐藏,不占据页面布局空间,与display:none;表现相同.
+	如果目标元素为table,visibility:collapse;将table隐藏,但是会占据页面布局空间.
+	仅在Firefox下起作用,IE会显示元素,Chrome会将元素隐藏,但是占据空间.
+
 - position跟display、margin collapse、overflow、float这些特性相互叠加后会怎么样？
 
+	如果元素的display为none,那么元素不被渲染,position,float不起作用,如果元素拥有position:absolute;或者position:fixed;属性那么元素将为绝对定位,float不起作用.如果元素float属性不是none,元素会脱离文档流,根据float属性值来显示.有浮动,绝对定位,inline-block属性的元素,margin不会和垂直方向上的其他元素margin折叠.
+	
 - 对BFC规范(块级格式化上下文：block formatting context)的理解？
 
 		（W3C CSS 2.1 规范中的一个概念,它是一个独立容器，决定了元素如何对其内容进行定位,以及与其他元素的关系和相互作用。）
 		 一个页面是由很多个 Box 组成的,元素的类型和 display 属性,决定了这个 Box 的类型。
 		 不同类型的 Box,会参与不同的 Formatting Context（决定如何渲染文档的容器）,因此Box内的元素会以不同的方式渲染,也就是说BFC内部的元素和外部的元素不会互相影响。
-		 
+
 - css定义的权重
 
 		以下是权重的规则：标签的权重为1，class的权重为10，id的权重为100，以下例子是演示各种定义的权重值：
@@ -696,7 +702,7 @@ HTML5？
 	<!-- link元素中的CSS媒体查询 -->
 	当媒体查询为真时，相关的样式表或样式规则会按照正常的级联规被应用。
 	当媒体查询返回假， <link> 标签上带有媒体查询的样式表 仍将被下载 （只不过不会被应用）。
-	
+
 	<link rel="stylesheet" media="(max-width: 800px)" href="example.css" />
 
 	<!-- 样式表中的CSS媒体查询 -->
@@ -752,7 +758,7 @@ HTML5？
 - 视差滚动效果，如何给每页做不同的动画？（回到顶部，向下滑动要再次出现，和只出现一次分别怎么做？）
 
 - ::before 和 :after中双冒号和单冒号 有什么区别？解释一下这2个伪元素的作用。
-	
+
 		单冒号(:)用于CSS3伪类，双冒号(::)用于CSS3伪元素。（伪元素由双冒号和伪元素名称组成）
 		双冒号是在当前规范中引入的，用于区分伪类和伪元素。不过浏览器需要同时支持旧的已经存在的伪元素写法，
 		比如:first-line、:first-letter、:before、:after等，
@@ -853,7 +859,7 @@ HTML5？
 
 		数据封装类对象：Object、Array、Boolean、Number 和 String
 		其他对象：Function、Arguments、Math、Date、RegExp、Error
-		
+
 		参考：http://www.ibm.com/developerworks/cn/web/wa-objectsinjs-v1b/index.html
 
 -  说几条写JavaScript的基本规范？
@@ -893,17 +899,17 @@ HTML5？
 			// Func { name="Sean", getInfo=function()}
 
 
-			
+
 
 -  JavaScript有几种类型的值？，你能画一下他们的内存图吗？
 
-		栈：原始数据类型（Undefined，Null，Boolean，Number、String） 
+		栈：原始数据类型（Undefined，Null，Boolean，Number、String）
 		堆：引用数据类型（对象、数组和函数）
 
 		两种类型的区别是：存储位置不同；
 		原始数据类型直接存储在栈(stack)中的简单数据段，占据空间小、大小固定，属于被频繁使用数据，所以放入栈中存储；
 		引用数据类型存储在堆(heap)中的对象,占据空间大、大小不固定。如果存储在栈中，将会影响程序运行的性能；引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其在栈中的地址，取得地址后从堆中获得实体
-		
+
 	![Stated Clearly Image](http://www.w3school.com.cn/i/ct_js_value.gif)
 
 - 如何将字符串转化为数字，例如'12.3b'?
@@ -912,7 +918,7 @@ HTML5？
 		* 正则表达式，'12.3b'.match(/(\d)+(\.)?(\d)+/g)[0] * 1, 但是这个不太靠谱，提供一种思路而已。
 
 - 如何将浮点数点左边的数每三位添加一个逗号，如12000000.11转化为『12,000,000.11』?
-		
+
 		function commafy(num){
 			return num && num
 				.toString()
@@ -935,7 +941,7 @@ HTML5？
 					return arr;
 				}
 				console.log(randSort1(arr));
-				
+
 		```
 		方法二：
 		```javascript
@@ -950,7 +956,7 @@ HTML5？
 					return mixedArray;
 				}
 				console.log(randSort2(arr));
-				
+
 		```
 		方法三：
 		```javascript
@@ -960,7 +966,7 @@ HTML5？
 				})
 				console.log(arr);
 		```
-	
+
 -  Javascript如何实现继承？
 
 		1、构造继承
@@ -973,12 +979,12 @@ HTML5？
 				function Parent(){
 		        	this.name = 'wang';
 				}
-				
+
 				function Child(){
 					this.age = 28;
 				}
 				Child.prototype = new Parent();//继承了Parent，通过原型
-				
+
 				var demo = new Child();
 				alert(demo.age);
 				alert(demo.name);//得到被继承的属性
@@ -1023,7 +1029,7 @@ HTML5？
 
 
 		4、用工厂方式来创建（内置对象）
-	
+
 			 var wcDog =new Object();
 			 wcDog.name="旺财";
 			 wcDog.age=3;
@@ -1036,7 +1042,7 @@ HTML5？
 		5、用原型方式来创建
 
 			function Dog(){
-			
+
 			 }
 			 Dog.prototype.name="旺财";
 			 Dog.prototype.eat=function(){
@@ -1050,13 +1056,13 @@ HTML5？
 
 			function Car(name,price){
 			  this.name=name;
-			  this.price=price; 
+			  this.price=price;
 			}
 			 Car.prototype.sell=function(){
 			   alert("我是"+this.name+"，我现在卖"+this.price+"万元");
 			  }
 			var camry =new Car("凯美瑞",27);
-			camry.sell(); 
+			camry.sell();
 
 -  Javascript作用链域?
 
@@ -1076,7 +1082,7 @@ HTML5？
 		由JSON字符串转换为JSON对象的时候可以用eval，var obj =eval('('+ str +')');
 
 -  什么是window对象? 什么是document对象?
-		
+
 		window对象是指浏览器打开的窗口。
 		document对象是Documentd对象（HTML 文档对象）的一个只读引用，window对象的一个属性。
 
@@ -1095,19 +1101,19 @@ HTML5？
 
 	    typeof undefined
 			//"undefined"
-			undefined :是一个表示"无"的原始值或者说表示"缺少值"，就是此处应该有一个值，但是还没有定义。当尝试读取时会返回 undefined； 
+			undefined :是一个表示"无"的原始值或者说表示"缺少值"，就是此处应该有一个值，但是还没有定义。当尝试读取时会返回 undefined；
 			例如变量被声明了，但没有赋值时，就等于undefined
 
 		typeof null
 			//"object"
 			null : 是一个对象(空对象, 没有任何属性和方法)；
 			例如作为函数的参数，表示该函数的参数不是对象；
-	
+
 		注意：
 			在验证null时，一定要使用　=== ，因为 == 无法分别 null 和　undefined
  			null == undefined // true
   			null === undefined // false
-		
+
 		再来一个例子：
 
 			null
@@ -1115,13 +1121,13 @@ HTML5？
 			A：有！
 			Q：张三有房子么？
 			A：没有！
-	
+
 			undefined
 			Q：有张三这个人么？
 			A：有！
 			Q: 张三有多少岁？
 			A: 不知道（没有被告诉）
-	
+
 	参考阅读：[undefined与null的区别](http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html)
 
 
@@ -1206,7 +1212,7 @@ HTML5？
 			};
 
 -  ["1", "2", "3"].map(parseInt) 答案是多少？
-		
+
 		parseInt() 函数能解析一个字符串，并返回一个整数，需要两个参数 (val, radix)，
 		其中 radix 表示要解析的数字的基数。【该值介于 2 ~ 36 之间，并且字符串中的数字不能大于radix才能正确返回数字结果值】;
 		但此处 map 传了 3 个 (element, index, array),我们重写parseInt函数测试一下是否符合上面的规则。
@@ -1329,12 +1335,12 @@ HTML5？
 		JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。
 		它是基于JavaScript的一个子集。数据格式简单, 易于读写, 占用带宽小
         如：{"age":"12", "name":"back"}
-        
+
         JSON字符串转换为JSON对象:
 		var obj =eval('('+ str +')');
 		var obj = str.parseJSON();
 		var obj = JSON.parse(str);
-		
+
 		JSON对象转换为JSON字符串：
 		var last=obj.toJSONString();
 		var last=JSON.stringify(obj);
@@ -1361,29 +1367,29 @@ HTML5？
 		(6)使用JavaScript和DOM实现局部刷新
 
 - Ajax 解决浏览器缓存问题？
-		
+
 		1、在ajax发送请求前加上 anyAjaxObj.setRequestHeader("If-Modified-Since","0")。
- 
+
         2、在ajax发送请求前加上 anyAjaxObj.setRequestHeader("Cache-Control","no-cache")。
- 
+
         3、在URL后面加上一个随机数： "fresh=" + Math.random();。
- 
+
         4、在URL后面加上时间搓："nowtime=" + new Date().getTime();。
-    
+
         5、如果是使用jQuery，直接这样就可以了 $.ajaxSetup({cache:false})。这样页面的所有ajax都会执行这条语句就是不需要保存缓存记录。
 
 -  同步和异步的区别?
 
 	同步的概念应该是来自于OS中关于同步的概念:不同进程为协同完成某项工作而在先后次序上调整(通过阻塞,唤醒等方式).同步强调的是顺序性.谁先谁后.异步则不存在这种顺序性.
-	
-	
-	
+
+
+
 	同步：浏览器访问服务器请求，用户看得到页面刷新，重新发请求,等请求完，页面刷新，新内容出现，用户看到新内容,进行下一步操作。
 
 	异步：浏览器访问服务器请求，用户正常操作，浏览器后端进行请求。等请求完，页面不刷新，新内容也会出现，用户看到新内容。
 
-	
-	
+
+
 	（待完善）
 
 -  如何解决跨域问题?
@@ -1446,14 +1452,14 @@ HTML5？
 
 -  requireJS的核心原理是什么？（如何动态加载的？如何避免多次加载的？如何
 缓存的？）
-	
+
 		参考：http://annn.me/how-to-realize-cmd-loader/
 
 -  JS模块加载器的轮子怎么造，也就是如何实现一个模块加载器？
 
 -  谈一谈你对ECMAScript6的了解？
 
--  ECMAScript6 怎么写class么，为什么会出现class这种东西? 
+-  ECMAScript6 怎么写class么，为什么会出现class这种东西?
 
 -  异步加载JS的方式有哪些？
 
@@ -1522,12 +1528,12 @@ HTML5？
 
 -  jquery中如何将数组转化为json字符串，然后再转化回来？
 
--  jQuery 的属性拷贝(extend)的实现原理是什么，如何实现深拷贝？ 
+-  jQuery 的属性拷贝(extend)的实现原理是什么，如何实现深拷贝？
 
 -  jquery.extend 与 jquery.fn.extend的区别？
-		
+
 		* jquery.extend 为jquery类添加类方法，可以理解为添加静态方法
-		* jquery.fn.extend: 
+		* jquery.fn.extend:
 			源码中jquery.fn = jquery.prototype，所以对jquery.fn的扩展，就是为jquery类添加成员函数
 		使用：
 		jquery.extend扩展，需要通过jquery类来调用，而jquery.fn.extend扩展，所有jquery实例都可以直接调用。
@@ -1593,7 +1599,7 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 -  需求：实现一个页面操作不会整页刷新的网站，并且能在浏览器前进、后退时正确响应。给出你的技术实现方案？
 
 - 如何判断当前脚本运行在浏览器还是node环境中？（阿里）
-		
+
 		this === window ? 'browser' : 'node';
 
 		通过判断Global对象是否为window，如果不为window，当前脚本没有运行在浏览器中
@@ -1601,7 +1607,7 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 -  移动端最小触控区域是多大？
 
 -  jQuery 的 slideUp动画 ，如果目标元素是被外部事件驱动, 当鼠标快速地连续触发外部元素事件, 动画会滞后的反复执行，该如何处理呢?
-		
+
 		jquery stop(): 如：$("#div").stop().animate({width:"100px"},100);
 
 -  把 Script 标签 放在页面的最底部的body封闭之前 和封闭之后有什么区别？浏览器会如何解析它们？
@@ -1664,9 +1670,9 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 		        });
 		}
 		console.log(commafy(1234567.90)); //1,234,567.90
-		
 
-	
+
+
 - 检测浏览器版本版本有哪些方式？
 
 		功能检测、userAgent特征检测
@@ -1676,7 +1682,7 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 		  (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36"
 
 
-- What is a Polyfill? 
+- What is a Polyfill?
 
 		polyfill 是“在旧版浏览器上复制标准 API 的 JavaScript 补充”,可以动态地加载 JavaScript 代码或库，在不支持这些标准 API 的浏览器中模拟它们。
 		例如，geolocation（地理位置）polyfill 可以在 navigator 对象上添加全局的 geolocation 对象，还能添加 getCurrentPosition 函数以及“坐标”回调对象，
@@ -1685,7 +1691,7 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 - 做的项目中，有没有用过或自己实现一些 polyfill 方案（兼容性处理方案）？
 
-		比如： html5shiv、Geolocation、Placeholder 
+		比如： html5shiv、Geolocation、Placeholder
 
 - 我们给一个dom同时绑定两个点击事件，一个用捕获，一个用冒泡。会执行几次事件，会先执行冒泡还是捕获？
 
@@ -1694,19 +1700,19 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 		function getFileExtension(filename) {
 		  return filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
-		}	
+		}
 
 		String.lastIndexOf() 方法返回指定值（本例中的'.'）在调用该方法的字符串中最后出现的位置，如果没找到则返回 -1。
 		对于'filename'和'.hiddenfile'，lastIndexOf的返回值分别为0和-1无符号右移操作符(»>) 将-1转换为4294967295，将-2转换为4294967294，这个方法可以保证边缘情况时文件名不变。
 		String.prototype.slice() 从上面计算的索引处提取文件的扩展名。如果索引比文件名的长度大，结果为""。
-				
+
 
 #### <a name='other'>ECMAScript6 相关</a>
 
-- Object.is() 与原来的比较操作符“ ===”、“ ==”的区别？ 
-		
+- Object.is() 与原来的比较操作符“ ===”、“ ==”的区别？
+
 		两等号判等，会在比较时进行类型转换；
-		三等号判等(判断严格)，比较时不进行隐式类型转换,（类型不同则会返回false）； 
+		三等号判等(判断严格)，比较时不进行隐式类型转换,（类型不同则会返回false）；
 
 		Object.is 在三等号判等的基础上特别处理了 NaN 、-0 和 +0 ，保证 -0 和 +0 不再相同，
 		但 Object.is(NaN, NaN) 会返回 true.
@@ -1761,18 +1767,18 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 		HTTP服务器的文件缓存
 
 - 列举IE与其他浏览器不一样的特性？
-		
+
 
 		1、事件不同之处：
 
 		   	触发事件的元素被认为是目标（target）。而在 IE 中，目标包含在 event 对象的 srcElement 属性；
-			
+
 			获取字符代码、如果按键代表一个字符（shift、ctrl、alt除外），IE 的 keyCode 会返回字符代码（Unicode），DOM 中按键的代码和字符是分离的，要获取字符代码，需要使用 charCode 属性；
 
 			阻止某个事件的默认行为，IE 中阻止某个事件的默认行为，必须将 returnValue 属性设置为 false，Mozilla 中，需要调用 preventDefault() 方法；
 
 			停止事件冒泡，IE 中阻止事件进一步冒泡，需要设置 cancelBubble 为 true，Mozzilla 中，需要调用 stopPropagation()；
-		
+
 
 - 99%的网站都需要被重构是那本书上写的？
 
@@ -2121,7 +2127,7 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 	fork表示你想要补充完善这个项目的内容。
 
 	更新记录：
-	
+
 		2016年10月20日:更新一些已被发现的问题。
 
 		2016年3月25日：新增ECMAScript6 相关问题
