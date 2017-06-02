@@ -928,44 +928,39 @@ HTML5？
 		}
 
 - 如何实现数组的随机排序？
+		
 		方法一：
-		```javascript
-				var arr = [1,2,3,4,5,6,7,8,9,10];
-				function randSort1(arr){
-					for(var i = 0,len = arr.length;i < len; i++ ){
-						var rand = parseInt(Math.random()*len);
-						var temp = arr[rand];
-						arr[rand] = arr[i];
-						arr[i] = temp;
-					}
-					return arr;
+			var arr = [1,2,3,4,5,6,7,8,9,10];
+			function randSort1(arr){
+				for(var i = 0,len = arr.length;i < len; i++ ){
+					var rand = parseInt(Math.random()*len);
+					var temp = arr[rand];
+					arr[rand] = arr[i];
+					arr[i] = temp;
 				}
-				console.log(randSort1(arr));
-
-		```
+				return arr;
+			}
+			console.log(randSort1(arr));
+			
 		方法二：
-		```javascript
-				var arr = [1,2,3,4,5,6,7,8,9,10];
-				function randSort2(arr){
-					var mixedArray = [];
-					while(arr.length > 0){
-						var randomIndex = parseInt(Math.random()*arr.length);
-						mixedArray.push(arr[randomIndex]);
-						arr.splice(randomIndex, 1);
-					}
-					return mixedArray;
+			var arr = [1,2,3,4,5,6,7,8,9,10];
+			function randSort2(arr){
+				var mixedArray = [];
+				while(arr.length > 0){
+					var randomIndex = parseInt(Math.random()*arr.length);
+					mixedArray.push(arr[randomIndex]);
+					arr.splice(randomIndex, 1);
 				}
-				console.log(randSort2(arr));
+				return mixedArray;
+			}
+			console.log(randSort2(arr));
 
-		```
 		方法三：
-		```javascript
-				var arr = [1,2,3,4,5,6,7,8,9,10];
-				arr.sort(function(){
-					return Math.random() - 0.5;
-				})
-				console.log(arr);
-		```
+			var arr = [1,2,3,4,5,6,7,8,9,10];
+			arr.sort(function(){
+				return Math.random() - 0.5;
+			})
+			console.log(arr);
 
 -  Javascript如何实现继承？
 
@@ -975,21 +970,20 @@ HTML5？
 		4、拷贝继承
 
 		原型prototype机制或apply和call方法去实现较简单，建议使用构造函数与原型混合方式。
-		```javascript
-				function Parent(){
-		        	this.name = 'wang';
-				}
+		
+			function Parent(){
+				this.name = 'wang';
+			}
 
-				function Child(){
-					this.age = 28;
-				}
-				Child.prototype = new Parent();//继承了Parent，通过原型
+			function Child(){
+				this.age = 28;
+			}
+			Child.prototype = new Parent();//继承了Parent，通过原型
 
-				var demo = new Child();
-				alert(demo.age);
-				alert(demo.name);//得到被继承的属性
+			var demo = new Child();
+			alert(demo.age);
+			alert(demo.name);//得到被继承的属性
 
-		```
 - JavaScript继承的几种实现方式？
   - 参考：[构造函数的继承](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html)，[非构造函数的继承](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance_continued.html)；
 
