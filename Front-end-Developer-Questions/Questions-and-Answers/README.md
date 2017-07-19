@@ -356,8 +356,8 @@ HTML5？
 			p:only-child		选择属于其父元素的唯一子元素的每个 <p> 元素。
 			p:nth-child(2)	选择属于其父元素的第二个子元素的每个 <p> 元素。
 
-			:after			在元素之前添加内容,也可以用来做清除浮动。
-			:before			在元素之后添加内容
+			::after			在元素之前添加内容,也可以用来做清除浮动。
+			::before			在元素之后添加内容
 	 	    :enabled  		
 			:disabled 		控制表单控件的禁用状态。
 			:checked        单选框或复选框被选中。
@@ -644,11 +644,11 @@ HTML5？
 		1、父级div定义height；
 		2、父级div 也一起浮动；
 		3、常规的使用一个class；
-			.clearfix:before, .clearfix:after {
+			.clearfix::before, .clearfix::after {
 			    content: " ";
 			    display: table;
 			}
-			.clearfix:after {
+			.clearfix::after {
 			    clear: both;
 			}
 			.clearfix {
@@ -656,7 +656,7 @@ HTML5？
 			}
 
 		4、SASS编译的时候，浮动元素的父级div定义伪类:after
-			&:after,&:before{
+			&::after,&::before{
 			    content: " ";
 		        visibility: hidden;
 		        display: block;
