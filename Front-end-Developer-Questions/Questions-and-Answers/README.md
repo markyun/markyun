@@ -3,7 +3,7 @@
 ## <a name='preface'>前言</a> ##
 
 
-[只看问题点这里 ](http://markyun.github.io/2015/Front-end-Developer-Questions/ "Questions")
+[只看问题点这里 ](https://markyun.github.io/2015/Front-end-Developer-Questions/ "Questions")
 
 [看全部问题和答案点这里](https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers "Questions-and-Answers")
 
@@ -26,19 +26,20 @@
 1. 资深的前端开发能把absolute和relative弄混，这样的人不要也罢，因为团队需要的是：你这个人具有可以依靠的才能（靠谱）。
 
 
-
-**前端开发知识点：**
+**前端开发所需掌握知识点概要：**
 
 	HTML&CSS：
-		对Web标准的理解、浏览器内核差异、兼容性、hack、CSS基本功：布局、盒子模型、选择器优先级、
-		HTML5、CSS3、Flexbox
-
+		对Web标准的理解（结构、表现、行为）、浏览器内核、渲染原理、依赖管理、兼容性、CSS语法、层次关系，常用属性、布局、选择器、权重、盒模型、
+		Hack、CSS预处理器、CSS3、Flexbox、CSS Modules、Document flow、BFC、HTML5（离线 & 存储、Histoy,多媒体、WebGL\SVG\Canvas）；		
 	JavaScript：
-        数据类型、运算、对象、Function、继承、闭包、作用域、原型链、事件、RegExp、JSON、Ajax、
-		DOM、BOM、内存泄漏、跨域、异步装载、模板引擎、前端MVC、路由、模块化、Canvas、ECMAScript 6、Nodejs
+        数据类型、运算、对象、Function、继承、闭包、作用域、事件、Prototype、RegExp、JSON、Ajax、DOM、BOM、
+        内存泄漏、跨域、异步请求、模板引擎、模块化、Flux、同构、算法、ECMAScript6、Nodejs、HTTP、
 
 	其他：
-        移动端、响应式、自动化构建、HTTP、离线存储、WEB安全、优化、重构、团队协作、可维护、易用性、SEO、UED、架构、职业生涯、快速学习能力
+        主流MVVM框架(React\Vue\Angular)、Hybrid App\React Native\Weex、TypeScript、RESTFul、WEB安全、前端工程化、依赖管理、性能优化、
+        重构、团队协作、可维护、易用性、SEO、UED、前端技术选型、快速学习能力等；
+
+
 
 作为一名前端工程师，**无论工作年头长短都应该掌握的知识点**：
 
@@ -75,10 +76,10 @@
 	格式不断修改更新中。
 
 	更新记录：
-	2016年3月25日：新增ECMAScript6 相关问题
+	2018-01-14： 公司在招聘前端，使用react技术栈；借此机会更新一波前端框架相关的题目；
+	2016-10-20： 更新一些已被发现的问题。
+	2016-03-25： 新增ECMAScript6 相关问题
 
-
-### 更新时间:  2016-3-25
 
 
 
@@ -143,8 +144,7 @@
 
 
 
-- html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和
-HTML5？
+- html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？
 
 
 		* HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。
@@ -844,6 +844,10 @@ HTML5？
 		  是给CSS属性添加浏览器私有前缀，实现跨浏览器兼容性的问题。
 
 
+- rem布局的优缺点
+
+
+
 
 ## <a name='js'>JavaScript</a>
 
@@ -1395,6 +1399,11 @@ HTML5？
 
 -  页面编码和被请求的资源编码如果不一致如何处理？
 
+-  服务器代理转发时，该如何处理cookie？
+
+		nginx
+	
+
 -  模块化开发怎么做？
 
 	 [ 立即执行函数](http://benalman.com/news/2010/11/immediately-invoked-function-expression/),不暴露私有成员
@@ -1703,6 +1712,18 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 		对于'filename'和'.hiddenfile'，lastIndexOf的返回值分别为0和-1无符号右移操作符(»>) 将-1转换为4294967295，将-2转换为4294967294，这个方法可以保证边缘情况时文件名不变。
 		String.prototype.slice() 从上面计算的索引处提取文件的扩展名。如果索引比文件名的长度大，结果为""。
 
+- Webpack热更新实现原理?
+
+		1. Webpack编译期，为需要热更新的 entry 注入热更新代码(EventSource通信)
+		2. 页面首次打开后，服务端与客户端通过 EventSource 建立通信渠道，把下一次的 hash 返回前端
+		3. 客户端获取到hash，这个hash将作为下一次请求服务端 hot-update.js 和 hot-update.json的hash
+		4. 修改页面代码后，Webpack 监听到文件修改后，开始编译，编译完成后，发送 build 消息给客户端
+		5. 客户端获取到hash，成功后客户端构造hot-update.js script链接，然后插入主文档
+		6. hot-update.js 插入成功后，执行hotAPI 的 createRecord 和 reload方法，获取到 Vue 组件的 render方法，重新 render 组件， 继而实现 UI 无刷新更新。
+
+- 请介绍一下JS之事件节流？
+
+- 什么是JS的函数防抖？
 
 #### <a name='other'>ECMAScript6 相关</a>
 
@@ -1716,14 +1737,106 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
  		Object.is 应被认为有其特殊的用途，而不能用它认为它比其它的相等对比更宽松或严格。
 
+- ES6是如何实现编译成ES5的？
+
+- css-loader的原理？
 
 
+## <a name='other'>前端框架</a>
 
-#### <a name='other'>前端框架相关</a>
+- React 使用场景？
 
-- react-router 路由系统的实现原理？
+			逻辑复杂单页应用，偏中后台管理系统，纯展示性的UI页面不合适、
 
-- React中如何解决第三方类库的问题?
+- 描述一下React 生命周期
+
+			渲染过程调用到的生命周期函数，主要几个要知道；
+			* constructor 
+			* getInitialState 
+			* getDefaultProps 
+			* componentWillMount 
+			* render 
+			* componentDidMount 
+
+			更新过程
+
+			* componentWillReceiveProps 
+			* shouldComponentUpdate 
+			* componentWillUpdate 
+			* render 
+			* componentDidUpdate 
+
+			卸载过程
+
+			componentWillUnmount
+
+
+- 实现组件有哪些方式？
+
+		React.createClass 使用API来定义组件
+		React ES6 class component 用 ES6 的class 来定义组件
+		Functional stateless component 通过函数定义无状态组件
+
+
+- 应该在React生命周期的什么阶段发出ajax请求，为什么？
+
+				AJAX请求应在 componentDidMount函数 进行请求。
+
+- shouldComponentUpdate函数有什么作用？
+
+				shouldComponentUpdate是一个允许我们自行决定某些组件（以及他们的子组件）是否进行更新的生命周期函数，reconciliation的最终目的是尽可能以最有效的方式去根据新的state更新UI，
+				如果你已经知道UI的哪些状态无需进行改变，就没必要去让React去判断它是否该改变。 让shouldComponentUpdate返回falss, React就会让当前的组件和其子组件保持不变。
+
+- 当组件的setState函数被调用之后，发生了什么？
+
+				React会做的第一件事就是把你传递给setState的参数对象合并到组件原先的state。这个事件会导致一个“reconciliation”（调和）的过程。reconciliation的最终目标就是，
+				尽可能以最高效的方法，去基于新的state来更新UI。为了达到这个目的，React会构建一个React元素树（你可以把这个想象成一个表示UI的一个对象）。一旦这个树构建完毕，
+				React为了根据新的state去决定UI要怎么进行改变，它会找出这棵新树和旧树的不同之处。React能够相对精确地找出哪些位置发生了改变以及如何发生了什么变化，
+				并且知道如何只通过必要的更新来最小化重渲染。
+
+- 为什么循环产生的组件中要利用上key这个特殊的prop？
+
+				Keys负责帮助React跟踪列表中哪些元素被改变/添加/移除。React利用子元素的key在比较两棵树的时候，快速得知一个元素是新的还是刚刚被移除。没有keys，React也就不知道当前哪一个的item被移除了。
+
+- React-router 路由的实现原理？
+
+- 说说React Native,Weex框架的实现原理？
+
+- 受控组件(Controlled Component)与非受控组件(Uncontrolled Component)的区别
+
+- refs 是什么?
+
+			Refs是能访问DOM元素或组件实例的一个函数；
+
+- React为什么自己定义一套事件体系呢，与浏览器原生事件体系有什么关系？
+
+- 什么时候应该选择用class实现一个组件，什么时候用一个函数实现一个组件？
+
+			组件用到了state或者用了生命周期函数，那么就该使用Class component。其他情况下，应使用Functional component。
+
+- 什么是HoC（Higher-Order Component）？适用于什么场景？
+
+			高阶组件就是一个 React 组件包裹着另外一个 React 组件
+
+- 并不是父子关系的组件，如何实现相互的数据通信？
+
+			使用父组件，通过props将变量传入子组件 （如通过refs，父组件获取一个子组件的方法，简单包装后，将包装后的方法通过props传入另一个子组件 ）
+
+- 用过 React 技术栈中哪些数据流管理库？
+
+			Redux\Dva
+
+- Redux是如何做到可预测呢？
+
+- Redux将React组件划分为哪两种？
+
+- Redux是如何将state注入到React组件上的？
+
+- 请描述一次完整的 Redux 数据流
+
+- React的批量更新机制 BatchUpdates？
+
+- React与Vue，各自的组件更新进行对比，它们有哪些区别？
 
 
 ## <a name='other'>其他问题</a>
@@ -1962,14 +2075,18 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 - 从打开app到刷新出内容，整个过程中都发生了什么，如果感觉慢，怎么定位问题，怎么解决?
 
+- 第一次访问页面中时弹出引导，用户关闭引导，之后再次进入页面时不希望出现引导，如何实现？
+
+			localStorage
+
 - 除了前端以外还了解什么其它技术么？你最最厉害的技能是什么？
 
 - 你用的得心应手用的熟练地编辑器&开发环境是什么样子？
 
-		Sublime Text 3 + 相关插件编写前端代码
-		Google chrome 、Mozilla Firefox浏览器 +firebug 兼容测试和预览页面UI、动画效果和交互功能
-		Node.js+Gulp
-		git 用于版本控制和Code Review
+		Sublime Text 3 + 插件
+		Google chrome 查看页面UI、动画效果和交互功能，Firebug 兼容测试和
+		Node.js + webpack
+		Git 版本控制和Code Review
 
 - 对前端工程师这个职位是怎么样理解的？它的前景会怎么样？
 
@@ -1994,6 +2111,11 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 - 你怎么看待Web App 、hybrid App、Native App？
 
 - 你移动端前端开发的理解？（和 Web 前端开发的主要区别是什么？）
+
+- 产品进行版本升级时，可能发生不兼容性问题，如何提前预防和解决？
+
+		非覆盖式发布，API新增而不是在原来的上面修改；
+		提前做好 @Deprecated的版本提示；
 
 - 你对加班的看法？
 
@@ -2124,13 +2246,12 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 	fork表示你想要补充完善这个项目的内容。
 
 	更新记录：
+	2018-01-14： 公司在招聘前端，使用react技术栈；借此机会更新一波前端框架相关的题目；
+	2016-10-20： 更新一些已被发现的问题。
+	2016-03-25： 新增ECMAScript6 相关问题
 
-		2016年10月20日:更新一些已被发现的问题。
 
-		2016年3月25日：新增ECMAScript6 相关问题
-
-
-### 更新时间:  2016年10月20日
+### 更新时间:  2018-01-14
 
 	爱机车、爱骑行、爱旅行、爱摄影、爱阅读的前端开发攻城师。
 

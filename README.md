@@ -12,7 +12,7 @@
 爱骑行、爱摄影、爱阅读的理想青年。 
 
 
-![Stated Clearly Image](http://p1.bqimg.com/1949/52083bc7619100de.jpg)
+![Stated Clearly Image](https://raw.githubusercontent.com/markyun/markyun.github.io/master/assets/images/Nanjing2.jpg)
 
 
 南京

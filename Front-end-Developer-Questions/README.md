@@ -28,18 +28,18 @@
 
 
 
-**前端开发知识点：**
+**前端开发所需掌握知识点概要：**
 
 	HTML&CSS：
-		对Web标准的理解、浏览器内核差异、兼容性、hack、CSS基本功：布局、盒子模型、选择器优先级、
-		HTML5、CSS3、Flexbox
-
+		对Web标准的理解（结构、表现、行为）、浏览器内核、渲染原理、依赖管理、兼容性、CSS语法、层次关系，常用属性、布局、选择器、权重、盒模型、Hack、CSS预处理器、
+		CSS3、Flexbox、CSS Modules、Document flow、BFC、HTML5（离线 & 存储、Histoy,多媒体、WebGL\SVG\Canvas）；		
 	JavaScript：
-        数据类型、运算、对象、Function、继承、闭包、作用域、原型链、事件、RegExp、JSON、Ajax、
-		DOM、BOM、内存泄漏、跨域、异步装载、模板引擎、前端MVC、路由、模块化、Canvas、ECMAScript 6、Nodejs
+        数据类型、运算、对象、Function、继承、闭包、作用域、事件、Prototype、RegExp、JSON、Ajax、DOM、BOM、
+        内存泄漏、跨域、异步请求、模板引擎、模块化、Flux、同构、算法、ECMAScript6、Nodejs、HTTP、
 
 	其他：
-        移动端、响应式、自动化构建、HTTP、离线存储、WEB安全、优化、重构、团队协作、可维护、易用性、SEO、UED、架构、职业生涯、快速学习能力
+        主流MVVM框架(React\Vue\Angular)、Hybrid App\React Native\Weex、TypeScript、RESTFul、WEB安全、前端工程化、依赖管理、性能优化、
+        重构、团队协作、可维护、易用性、SEO、UED、前端技术选型、快速学习能力等；
 
 
 作为一名前端工程师，**无论工作年头长短都应该掌握的知识点**：
@@ -85,11 +85,12 @@
 	fork表示你想要补充完善这个项目的内容。
 
 	更新记录：
-	2016年10月20日:更新一些已被发现的问题。
-	2016年3月25日：新增ECMAScript6 相关问题
+	2018-01-14： 公司在招聘前端，使用react技术栈；借此机会更新一波前端框架相关的题目；
+	2016-10-20： 更新一些已被发现的问题。
+	2016-03-25： 新增ECMAScript6 相关问题
 
 
-### 更新时间:  2016年10月20日
+### 更新时间:  2018-01-14
 		
 
 	爱机车、爱骑行、爱旅行、爱摄影、爱阅读的前端开发攻城师。微博：http://weibo.com/920802999
