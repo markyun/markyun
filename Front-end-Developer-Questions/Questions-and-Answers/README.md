@@ -783,6 +783,13 @@
 
 - 你对line-height是如何理解的？
 
+		首先在视觉方面，行高是可以优化阅读效果的重要属性。
+		其次在CSS样式方面
+			1.对于块级元素，它指定元素行盒的最小高度。即文本是可以超出元素的盒子。
+			2.对于inline元素，它用于计算行盒的高度。行盒会根据行高占据垂直方向的空间。
+
+		[line-height描述参考](https://developer.mozilla.org/zh-CN/docs/Web/CSS/line-height)
+
 - 设置元素浮动后，该元素的display值是多少？
 
 		自动变成了 display:block
