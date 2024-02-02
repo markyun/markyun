@@ -3,11 +3,11 @@
 
 <h2 align=center>Web Developer/ Photog/ Work at NanJing</h2>
 
-[markyun的博客首页](http://markyun.github.io/ "markyun的博客")
+[MarkYun Bolg](http://markyun.github.io/ "markyun 的博客")
 
-[WebCIA Weekly (Web 情报局)](https://markyun.github.io/weekly/ "Web 情报局 周刊")
+[WebCIA Weekly (Web情报局)](https://markyun.github.io/weekly/ "Web情报局 周刊")
 
-[markyun的语雀](https://www.yuque.com/yyyy "markyun的语雀")
+[MarkYun 语雀](https://www.yuque.com/yyyy "markyun 的语雀")
 
 
 #### 这里是Github托管的Bolg，记录一些学习的日常，以保持领先所需的见解。
