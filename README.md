@@ -1,5 +1,5 @@
 
-<h1 align=center>MarkYun Bolg</h1>
+<h1 align=center>MarkYun blog</h1>
 
 <h2 align=center>Web Developer/ Photog/ Work at NanJing</h2>
 
