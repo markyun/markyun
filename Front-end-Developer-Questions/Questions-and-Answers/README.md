@@ -28,46 +28,31 @@
 1. 资深的前端开发能把absolute和relative弄混，这样的人不要也罢，因为团队需要的是：你这个人具有可以依靠的才能（靠谱）。
 
 
-**前端开发所需掌握知识点概要：**
+**前端开发所需掌握知识点概要：**（按进阶层级组织：高级工程师 → 技术专家 Staff → 首席/架构 Principal）
 
-	HTML&CSS：
-		对Web标准的理解（结构、表现、行为）、浏览器内核、渲染原理、依赖管理、兼容性、CSS语法、层次关系，常用属性、布局、选择器、权重、盒模型、
-		Hack、CSS预处理器、CSS3、Flexbox、CSS Modules、Document flow、BFC、HTML5（离线 & 存储、Histoy,多媒体、WebGL\SVG\Canvas）；		
-	JavaScript：
-        数据类型、运算、对象、Function、继承、闭包、作用域、事件、Prototype、RegExp、JSON、Ajax、DOM、BOM、
-        内存泄漏、跨域、异步请求、模板引擎、模块化、Flux、同构、算法、ECMAScript6、Nodejs、HTTP、
+	高级工程师（面谈主力层级，「知其然还知其所以然」）：
+		渲染与语言底座 —— 从输入 URL 到首帧：解析、样式、布局、绘制、合成；事件循环与微/宏任务、Promise/async 演进、Proxy/Reflect、V8 隐藏类与分代 GC；
+		现代 CSS/HTML —— 盒模型、BFC、层叠上下文、Flex/Grid、容器查询、:has()、@layer、原生嵌套、语义化与无障碍；
+		TypeScript 7（Go 原生编译器）—— 类型擦除、结构化类型、泛型与工具类型，类型只在编译期存在、运行时校验交给 Zod；
+		框架原理（React 19.2 / Vue 3.5）—— Fiber 可中断协调、Hooks 闭包陷阱、Server Components 边界、Suspense/水合、Actions(useActionState/useOptimistic)、keep-alive、信号化趋势；
+		状态与数据 —— URL 状态 / 服务端状态(TanStack Query) / 客户端状态按域选型，不是「上来就 Redux」；
+		工程链 —— Node v22+、pnpm 内容寻址存储与幽灵依赖、Vite 8(Rolldown/Rust 打包)与 Rust 工具链生态、ESLint flat + type-aware、缓存与分包；
+		性能与安全 —— Core Web Vitals(LCP/INP/CLS，75 分位字段数据)、关键路径与 INP 三段拆解、XSS/CSRF/CSP/SameSite 防御机制；
+		网络 —— HTTP/2 多路复用与 HPACK、HTTP/3 QUIC 与队头阻塞、缓存体系、跨域与 WebSocket/SSE；
+		质量 —— 测试金字塔(Vitest/Playwright)、错误监控与 RUM、CI/CD 流水线。
 
-	其他：
-        主流框架(React\Vue)、Next.js、微前端、TypeScript、RESTFul、WEB安全、前端工程化(Vite\Rspack\pnpm\Monorepo)、
-        依赖管理、性能优化(Core Web Vitals)、HTTP/2\HTTP/3、Nodejs\Bun\Serverless、重构、团队协作、可维护、易用性、
-        SEO、UED、前端技术选型、AI辅助编程、AI Agent与Harness、流式内容渲染、快速学习能力等；
+	技术专家 Staff（主导跨团队方案与平台能力）：
+		大规模应用架构 —— 设计系统、Monorepo 与多产品复用、微前端与模块联邦的适用边界、遗留系统渐进迁移；
+		性能与稳定的体系化 —— 度量基线、劣化门禁、容量与降级预案、可观测闭环，而不是一次性优化；
+		协作与契约 —— 前后端契约(OpenAPI/类型共享)、技术规范制定与推广、以 Code Review 和工具链放大团队产能；
+		跨端与元框架 —— Next/Nuxt SSR/SSG/ISG 的 TTFB 与 SEO 权衡、桌面(Electron/Tauri)、移动(RN/小程序)交付形态选型。
 
+	首席/架构 Principal（技术战略与组织影响力）：
+		方向判断 —— Rust 工具链演进、WebAssembly、边缘计算与 Serverless 的引入时机评估；
+		AI 工程范式 —— 辅助编程与代码质量治理、Agent 与 harness(context engineering、hooks、评测)、流式产品协议(SSE/AG-UI)、AI 产品前端架构与 Token 成本；
+		技术资产与组织 —— 平台化与开源、技术品牌、人才梯队与标准建设、前端在业务大盘中的价值度量。
 
-
-作为一名前端工程师，**无论工作年头长短都应该掌握的知识点**：
-
-此条由 王子墨 发表在 [攻城师的实验室](http://lab.yuanwai.wang/)
-
-		1、DOM结构 —— 两个节点之间可能存在哪些关系以及如何在节点之间任意移动。
-
-		2、DOM操作 —— 如何添加、移除、移动、复制、创建和查找节点等。
-
-		3、事件 —— 如何使用事件，以及IE和标准DOM事件模型之间存在的差别。
-
-		4、XMLHttpRequest —— 这是什么、怎样完整地执行一次GET请求、怎样检测错误。
-
-		5、严格模式与混杂模式 —— 如何触发这两种模式，区分它们有何意义。
-
-		6、盒模型 —— 外边距、内边距和边框之间的关系，及IE8以下版本的浏览器中的盒模型
-
-		7、块级元素与行内元素 —— 怎么用CSS控制它们、以及如何合理的使用它们
-
-		8、浮动元素 —— 怎么使用它们、它们有什么问题以及怎么解决这些问题。
-
-		9、HTML与XHTML —— 二者有什么区别，你觉得应该使用哪一个并说出理由。
-
-		10、JSON —— 作用、用途、设计结构。
-
+	（清单只是入口：每一项都要求能讲出机制与取舍，并给出真实项目中的证据；IE、XHTML、XMLHttpRequest 这类历史内容仅在「技术史」语境保留。）
 
 
 **备注：**
@@ -79,6 +64,7 @@
 	格式不断修改更新中。
 
 	更新记录：
+	2026-09-23： 文首「知识点概要」按 高级工程师 → Staff → Principal 三级进阶重构，同步 2026-09 口径（TS 7、Vite 8/Rolldown、React 19.2、Vue 3.5、CWV）；删除 2015 时代「无论工作年头长短」清单（IE 事件模型/XHTML/XMLHttpRequest 等）；
 	2026-09-22： 网掘 2025-2026 真实大厂面经（腾讯/字节/拼多多/美团/阿里/米哈游/QQ音乐/Shopee/蔚来）和 AI 编程面经，新增 45 道实战题：hooks/Fiber/setState 批处理/zustand/SSR 水合/Error Boundary、webpack 插件、模块联邦、首屏口径、错误监控上报、埋点、HPACK/拥塞控制/大文件上传/防超卖、B 端 C 端对比、vibe coding（优势五件套/Token 成本/代码泄露/Skills/agent loop/SDD）等，全部配答案；
 	2026-09-22： 清理淘汰了一批彻底过时的老题和答案（jQuery/Zepto 源码细节、Backbone/Ember/Meteor、Mustache/Handlebars 模板、requireJS/AMD/CMD、applicationCache 离线储存、改密码黄底之类的 trivia），并去掉重复题目；IE、Weex 按“技术史”保留；
 	2026-09-22： 新增《AI 时代的Web工程实践》章节；Agent 与 harness（context engineering、CLAUDE.md、hooks、跨模型）、AI 代码质量与 vibe coding、面向用户的 AI 产品（流式/SSE、AG-UI 事件协议、生成式 UI、断线恢复、TTFT、RAG 前端）等题目和答案，Staff 向深度；同时给 HTML/CSS/JS/TypeScript/框架/工程化/业务各方向各补了一批结合原理和真实场景的进阶题；
@@ -129,7 +115,7 @@
 		（2）页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载;
 
 		（3）import是CSS2.1 提出的，只在IE5以上才能被识别，而link是XHTML标签，无兼容问题;
-		 
+
 		 (4)link支持使用js控制DOM去改变样式，而@import不支持;
 
 
@@ -445,7 +431,7 @@
 
 			::after			在元素之前添加内容,也可以用来做清除浮动。
 			::before			在元素之后添加内容
-	 	    :enabled  		
+	 	    :enabled
 			:disabled 		控制表单控件的禁用状态。
 			:checked        单选框或复选框被选中。
 
@@ -519,7 +505,7 @@
 				width: 100px;
 				height: 100px;
 				background-color: pink;		/* 方便看效果 */
-			}  
+			}
 
 
 - display有哪些值？说明他们的作用。
@@ -691,7 +677,7 @@
 - position跟display、margin collapse、overflow、float这些特性相互叠加后会怎么样？
 
 	如果元素的display为none,那么元素不被渲染,position,float不起作用,如果元素拥有position:absolute;或者position:fixed;属性那么元素将为绝对定位,float不起作用.如果元素float属性不是none,元素会脱离文档流,根据float属性值来显示.有浮动,绝对定位,inline-block属性的元素,margin不会和垂直方向上的其他元素margin折叠.
-	
+
 - 对BFC规范(块级格式化上下文：block formatting context)的理解？
 
 		（W3C CSS 2.1 规范中的一个概念,它是一个独立容器，决定了元素如何对其内容进行定位,以及与其他元素的关系和相互作用。）
@@ -1112,7 +1098,7 @@
 		}
 
 - 如何实现数组的随机排序？
-		
+
 		方法一：
 			var arr = [1,2,3,4,5,6,7,8,9,10];
 			function randSort1(arr){
@@ -1125,7 +1111,7 @@
 				return arr;
 			}
 			console.log(randSort1(arr));
-			
+
 		方法二：
 			var arr = [1,2,3,4,5,6,7,8,9,10];
 			function randSort2(arr){
@@ -1154,7 +1140,7 @@
 		4、拷贝继承
 
 		原型prototype机制或apply和call方法去实现较简单，建议使用构造函数与原型混合方式。
-		
+
 			function Parent(){
 				this.name = 'wang';
 			}
@@ -1582,7 +1568,7 @@
 -  服务器代理转发时，该如何处理cookie？
 
 		nginx
-	
+
 
 -  模块化开发怎么做？
 
@@ -1986,20 +1972,20 @@
 - 描述一下React 生命周期
 
 			渲染过程调用到的生命周期函数，主要几个要知道；
-			* constructor 
-			* getInitialState 
-			* getDefaultProps 
-			* componentWillMount 
-			* render 
-			* componentDidMount 
+			* constructor
+			* getInitialState
+			* getDefaultProps
+			* componentWillMount
+			* render
+			* componentDidMount
 
 			更新过程
 
-			* componentWillReceiveProps 
-			* shouldComponentUpdate 
-			* componentWillUpdate 
-			* render 
-			* componentDidUpdate 
+			* componentWillReceiveProps
+			* shouldComponentUpdate
+			* componentWillUpdate
+			* render
+			* componentDidUpdate
 
 			卸载过程
 
@@ -2059,7 +2045,7 @@
 
 - 并不是父子关系的组件，如何实现相互的数据通信？
 
-			使用父组件，通过props将变量传入子组件 （如通过refs，父组件获取一个子组件的方法，简单包装后，将包装后的方法通过props传入另一个子组件 ）
+			使用父组件，通过props将变量传入子组件（如通过refs，父组件获取一个子组件的方法，简单包装后，将包装后的方法通过props传入另一个子组件）
 
 - 用过 React 技术栈中哪些数据流管理库？
 
