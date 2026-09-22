@@ -13,6 +13,8 @@
 
 最近也收到许多微博私信的鼓励和更正题目信息，后面会经常更新题目和答案到[github博客](http://markyun.github.io/)。希望前端er达到既能使用也会表达，对理论知识有自己的理解。可根据下面的知识点一个一个去进阶学习，形成自己的职业技能链。
 
+先交代一下：距离上一次更新，居然已经是2018年的事了，中间因为工作和生活的原因荒废了很久，惭愧。这几年前端的变化比预期还快——构建工具从 webpack 一路换到 Vite 和 Rust 工具链，CSS 原生嵌套、:has()、容器查询全都落地了，React 走进了 Hooks 和 Server Components 时代，Vue 3 成了新项目的默认选择，TypeScript 基本是标配；最颠覆的是 AI 已经开始直接参与写代码，"你平时怎么用 Copilot / Cursor 这类工具"快变成面试必问题目了。这一波把题目和答案按当下的实际考法更新了一版；老题目里确实过时的（IE hack、Weex 之类）我没有删，留着当技术史看，读的时候心里有个时间概念就好。
+
 
 **面试有几点需注意：(来源[寒冬winter](http://weibo.com/wintercn "微博：寒冬winter") 老师，github:@wintercn)**
 
@@ -38,8 +40,9 @@
         内存泄漏、跨域、异步请求、模板引擎、模块化、Flux、同构、算法、ECMAScript6、Nodejs、HTTP、
 
 	其他：
-        主流MVVM框架(React\Vue\Angular)、Hybrid App\React Native\Weex、TypeScript、RESTFul、WEB安全、前端工程化、依赖管理、性能优化、
-        重构、团队协作、可维护、易用性、SEO、UED、前端技术选型、快速学习能力等；
+        主流框架(React\Vue)、Next.js、微前端、TypeScript、RESTFul、WEB安全、前端工程化(Vite\Rspack\pnpm\Monorepo)、
+        依赖管理、性能优化(Core Web Vitals)、HTTP/2\HTTP/3、Nodejs\Bun\Serverless、重构、团队协作、可维护、易用性、
+        SEO、UED、前端技术选型、AI辅助编程、AI Agent与Harness、流式内容渲染、快速学习能力等；
 
 
 作为一名前端工程师，**无论工作年头长短都应该掌握的知识点**：
@@ -85,12 +88,16 @@
 	fork表示你想要补充完善这个项目的内容。
 
 	更新记录：
+	2026-09-22： 网掘 2025-2026 真实大厂面经（腾讯/字节/拼多多/美团/阿里/米哈游/QQ音乐/Shopee/蔚来）和 AI 编程面经，新增 45 道实战题：hooks/Fiber/setState 批处理/zustand/SSR 水合/Error Boundary、webpack 插件、模块联邦、首屏口径、错误监控上报、埋点、HPACK/拥塞控制/大文件上传/防超卖、B 端 C 端对比、vibe coding（优势五件套/Token 成本/代码泄露/Skills/agent loop/SDD）等，全部配答案；
+	2026-09-22： 清理淘汰了一批彻底过时的老题和答案（jQuery/Zepto 源码细节、Backbone/Ember/Meteor、Mustache/Handlebars 模板、requireJS/AMD/CMD、applicationCache 离线储存、改密码黄底之类的 trivia），并去掉重复题目；IE、Weex 按“技术史”保留；
+	2026-09-22： 新增《AI 时代的Web工程实践》章节；Agent 与 harness（context engineering、CLAUDE.md、hooks、跨模型）、AI 代码质量与 vibe coding、面向用户的 AI 产品（流式/SSE、AG-UI 事件协议、生成式 UI、断线恢复、TTFT、RAG 前端）等题目和答案，Staff 向深度；同时给 HTML/CSS/JS/TypeScript/框架/工程化/业务各方向各补了一批结合原理和真实场景的进阶题；
+        2026-09-22： 荒废多年后的大更新；新增 CSS 新特性（嵌套 / :has() / 容器查询）、TypeScript、Vite 与 Rust 工具链、pnpm、React 18/19、Vue 3、Core Web Vitals、HTTP/3、AI 辅助编程等题目和答案；老答案里过时的部分加了批注；
 	2018-01-14： 公司在招聘前端，使用react技术栈；借此机会更新一波前端框架相关的题目；
 	2016-10-20： 更新一些已被发现的问题。
 	2016-03-25： 新增ECMAScript6 相关问题
 
 
-### 更新时间:  2018-01-14
+### 更新时间:  2026-09-22
 		
 
 	爱机车、爱骑行、爱旅行、爱摄影、爱阅读的前端开发攻城师。微博：http://weibo.com/920802999
